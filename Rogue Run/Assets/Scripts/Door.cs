@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private Transform previousRoom;
-    [SerializeField] private Transform nextRoom;
-    [SerializeField] private CameraController cam;
+    [SerializeField] private CinemachineConfiner confiner;
+    [SerializeField] private Collider2D nextRoom;
+    [SerializeField] private Collider2D previousRoom;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,11 +18,11 @@ public class Door : MonoBehaviour
             //moves camera to room depending on position coming from.
             if (collision.transform.position.x < transform.position.x)
             {
-                cam.MoveToNewRoom(nextRoom);
+                confiner.m_BoundingShape2D = nextRoom;
             }
             else
             {
-                cam.MoveToNewRoom(previousRoom);
+                confiner.m_BoundingShape2D = previousRoom;
             }
         }
     }
