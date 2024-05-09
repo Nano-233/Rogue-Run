@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if colliding with a player.
+        //if colliding with a player。
         if (collision.CompareTag("Player"))
         {
             //moves camera to room depending on position coming from.

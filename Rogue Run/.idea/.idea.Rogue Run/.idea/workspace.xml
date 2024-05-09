@@ -25,8 +25,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/09 Forbiddens Saga (SNES style)/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/09 Forbiddens Saga (SNES style)/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/10 Battle1 (8bit style)/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/10 Battle1 (8bit style)/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
@@ -127,6 +125,8 @@
       <workItem from="1715076163262" duration="2834000" />
       <workItem from="1715085325889" duration="2098000" />
       <workItem from="1715175404201" duration="3608000" />
+      <workItem from="1715221968880" duration="716000" />
+      <workItem from="1715229399846" duration="4703000" />
     </task>
     <servers />
   </component>
