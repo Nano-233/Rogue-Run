@@ -13,21 +13,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite/Food.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite/Food.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Decors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Decors.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/ExampleTiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/ExampleTiles.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Mockup2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Mockup2x.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Tileset.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Cave/_LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Cave/_LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/00 Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/00 Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/01 Furious Battle/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/01 Furious Battle/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/02 Conflict/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/02 Conflict/Assets_for_Unity/Read Me.txt" afterDir="false" />
@@ -39,12 +25,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/08 SAMURAI BLADE/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/08 SAMURAI BLADE/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/09 Forbiddens Saga (SNES style)/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/09 Forbiddens Saga (SNES style)/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/10 Battle1 (8bit style)/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/10 Battle1 (8bit style)/Assets_for_Unity/Read Me.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +133,7 @@
       <workItem from="1715229399846" duration="4703000" />
       <workItem from="1715241322256" duration="3880000" />
       <workItem from="1715311244307" duration="706000" />
-      <workItem from="1715321812259" duration="1060000" />
+      <workItem from="1715321812259" duration="3337000" />
     </task>
     <servers />
   </component>
