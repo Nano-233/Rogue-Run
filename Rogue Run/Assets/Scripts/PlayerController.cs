@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         {
             _isMoving = value;
             //sync with the animator
-            _animator.SetBool("isMoving", value);
+            _animator.SetBool(AnimationStrings.IsMoving, value);
         }
     }
 

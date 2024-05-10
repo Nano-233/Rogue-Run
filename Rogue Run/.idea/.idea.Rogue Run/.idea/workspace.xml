@@ -13,6 +13,21 @@
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite/Food.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/PixelFood/Sprite/Food.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/BG3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Decors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Decors.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/ExampleTiles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/ExampleTiles.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Mockup2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Mockup2x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Tileset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Tileset/Tileset.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/00 Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/00 Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/01 Furious Battle/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/01 Furious Battle/Assets_for_Unity/Read Me.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Audio/Music/02 Conflict/Assets_for_Unity/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/Music/02 Conflict/Assets_for_Unity/Read Me.txt" afterDir="false" />
@@ -29,6 +44,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +55,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Behaviours/CinemachineConfiner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.9.7/Runtime/Core/CinemachineExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Editor/Internal/AdvancedDropdown/AdvancedDropdownGUI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -128,7 +145,9 @@
       <workItem from="1715175404201" duration="3608000" />
       <workItem from="1715221968880" duration="716000" />
       <workItem from="1715229399846" duration="4703000" />
-      <workItem from="1715241322256" duration="2641000" />
+      <workItem from="1715241322256" duration="3880000" />
+      <workItem from="1715311244307" duration="706000" />
+      <workItem from="1715321812259" duration="1060000" />
     </task>
     <servers />
   </component>
