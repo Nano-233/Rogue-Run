@@ -5,11 +5,12 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
 {
-    //walking speed of player
+    //speed of player
     public float movementSpeed = 5f;
+    public float jumpImpulse = 6f;
     
     private Vector2 _moveInput; //gets vector from player input.
     private Rigidbody2D _rb; //Rigidbody2D of player.
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private bool _isMoving = false; //is the player moving
     public bool isFacingRight = true; //which way the player is facing
+
+    private TouchingDirections _touchingDirections; //Used for ground checking
 
     //checks if the player is moving
     public bool IsMoving
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
         //gets the rigidbody.
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>(); //gets the animator
+        _touchingDirections = GetComponent<TouchingDirections>();
     }
 
     // Start is called before the first frame update
@@ -88,6 +92,20 @@ public class PlayerController : MonoBehaviour
         IsMoving = _moveInput != Vector2.zero;
         //sets the facing direction
         SetFacingDirection(_moveInput);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // TODO: check if alive
+        if (context.started && _touchingDirections.IsGrounded)
+        {
+            _animator.SetTrigger(AnimationStrings.jump);
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpImpulse);
+        }
+        if (context.canceled && _rb.velocity.y > 0f)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
+        }
     }
 
     //sets the sprite direction

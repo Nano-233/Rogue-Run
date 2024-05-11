@@ -13,19 +13,18 @@ public class TouchingDirections : MonoBehaviour
 
     private RaycastHit2D[] _groundHits = new RaycastHit2D[5];
 
-    
     [SerializeField]
-    public bool isGrounded = true;
+    private bool _isGrounded = true;
 
     public bool IsGrounded
     {
         get
         {
-            return isGrounded;
+            return _isGrounded;
         }
         private set
         {
-            isGrounded = value;
+            _isGrounded = value;
             _animator.SetBool(AnimationStrings.isGrounded, value);
         }
     }
