@@ -99,7 +99,19 @@ MonoBehaviour:
     m_ActionId: 6406a10e-5d41-481f-80f5-ea24bc420baa
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 863505823574797350}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b1c45678-4f10-4da5-b7de-e8da871c265c
     m_ActionName: Player/Dash[/Mouse/leftButton,/Keyboard/shift]
   - m_PersistentCalls:
@@ -325,4 +337,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   groundDistance: 0.05
+  wallDistance: 0.2
+  ceilDistance: 0.05
   _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeil: 1

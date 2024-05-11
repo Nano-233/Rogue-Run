@@ -16,7 +16,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
 
+    private int _maxDash = 1; //does the player have a dash
+    private int _dashCount = 1;
     private bool _isMoving = false; //is the player moving
+    
     public bool isFacingRight = true; //which way the player is facing
 
     private TouchingDirections _touchingDirections; //Used for ground checking
@@ -33,6 +36,15 @@ public class PlayerController : MonoBehaviour
             _isMoving = value;
             //sync with the animator
             _animator.SetBool(AnimationStrings.isMoving, value);
+        }
+    }
+
+    //checks if the player can move
+    public bool CanMove
+    {
+        get
+        {
+            return _animator.GetBool(AnimationStrings.canMove);
         }
     }
 
@@ -81,6 +93,7 @@ public class PlayerController : MonoBehaviour
         
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
+        _dashCount = _touchingDirections.IsGrounded ? _maxDash : _dashCount;
     }
 
     //player moves
@@ -97,14 +110,23 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         // TODO: check if alive
-        if (context.started && _touchingDirections.IsGrounded)
+        if (context.started && _touchingDirections.IsGrounded && CanMove)
         {
-            _animator.SetTrigger(AnimationStrings.jump);
+            _animator.SetTrigger(AnimationStrings.jumpTrigger);
             _rb.velocity = new Vector2(_rb.velocity.x, jumpImpulse);
         }
         if (context.canceled && _rb.velocity.y > 0f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
+        }
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.started && _dashCount > 0)
+        {
+            _animator.SetTrigger(AnimationStrings.dashTrigger);
+            _dashCount--;
         }
     }
 
@@ -125,15 +147,22 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            if (IsMoving && !_touchingDirections.IsOnWall)
+            if (CanMove) //checks if can move
             {
-                return movementSpeed;
+                if (IsMoving && !_touchingDirections.IsOnWall) //if not on a wall and moving
+                {
+                    return movementSpeed;
+                }
+                else //if not moving or against wall
+                {
+                    return 0;
+                }
             }
-            else
+            else //if cannot move
             {
                 return 0;
             }
         }
     }
-
+    
 }
