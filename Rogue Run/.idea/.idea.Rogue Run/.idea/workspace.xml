@@ -3475,11 +3475,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Characters.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups.meta" afterDir="false" />
@@ -3648,7 +3646,7 @@
       <workItem from="1715311244307" duration="706000" />
       <workItem from="1715321812259" duration="3337000" />
       <workItem from="1715415598009" duration="142000" />
-      <workItem from="1715415765469" duration="20035000" />
+      <workItem from="1715415765469" duration="21452000" />
     </task>
     <servers />
   </component>
