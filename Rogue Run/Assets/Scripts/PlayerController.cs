@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //changes the velocity
-        _rb.velocity = new Vector2(_moveInput.x * movementSpeed, _rb.velocity.y);
+        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y);
         
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
@@ -121,5 +121,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    public float CurrentMoveSpeed
+    {
+        get
+        {
+            if (IsMoving && !_touchingDirections.IsOnWall)
+            {
+                return movementSpeed;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+
 }
