@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         {
             _isMoving = value;
             //sync with the animator
-            _animator.SetBool(AnimationStrings.IsMoving, value);
+            _animator.SetBool(AnimationStrings.isMoving, value);
         }
     }
 
@@ -74,6 +74,9 @@ public class PlayerController : MonoBehaviour
     {
         //changes the velocity
         _rb.velocity = new Vector2(_moveInput.x * movementSpeed, _rb.velocity.y);
+        
+        //sets the y velocity of the animator to check for rising or falling
+        _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
     }
 
     //player moves
