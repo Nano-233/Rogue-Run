@@ -10,14 +10,15 @@ public class PlayerController : MonoBehaviour
 {
     //speed of player
     public float movementSpeed = 5f;
-    public float jumpImpulse = 6f;
+    public float jumpImpulse = 6f; //velocity of jump
+    private float _dashSpeed = 50f; //current dash speed if should be kept
     
     private Vector2 _moveInput; //gets vector from player input.
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
 
-    private int _maxDash = 1; //does the player have a dash
-    private int _dashCount = 1;
+    private int _maxDash = 1; //Number of dashes that can be replenished to
+    private int _dashCount = 1; //player's current dash count
     private bool _isMoving = false; //is the player moving
     
     public bool isFacingRight = true; //which way the player is facing
@@ -45,6 +46,15 @@ public class PlayerController : MonoBehaviour
         get
         {
             return _animator.GetBool(AnimationStrings.canMove);
+        }
+    }
+    
+    //checks if the player is dashing
+    public bool Dashing
+    {
+        get
+        {
+            return _animator.GetBool(AnimationStrings.dashing);
         }
     }
 
@@ -121,6 +131,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //when player dashes
     public void OnDash(InputAction.CallbackContext context)
     {
         if (context.started && _dashCount > 0)
@@ -160,7 +171,7 @@ public class PlayerController : MonoBehaviour
             }
             else //if cannot move
             {
-                return 0;
+                return Dashing ? _dashSpeed : 0;
             }
         }
     }

@@ -3500,6 +3500,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Lit2DSceneTemplate.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Lit2DSceneTemplate.scenetemplate" afterDir="false" />
@@ -3646,7 +3647,7 @@
       <workItem from="1715311244307" duration="706000" />
       <workItem from="1715321812259" duration="3337000" />
       <workItem from="1715415598009" duration="142000" />
-      <workItem from="1715415765469" duration="16590000" />
+      <workItem from="1715415765469" duration="18368000" />
     </task>
     <servers />
   </component>
