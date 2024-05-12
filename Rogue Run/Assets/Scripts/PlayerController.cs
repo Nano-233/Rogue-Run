@@ -127,9 +127,16 @@ public class PlayerController : MonoBehaviour
         //if dashing, dash in the direction the player is facing
         if (Dashing) 
         {
-            if (Math.Abs(inputX) + Math.Abs(inputY) > 1)
+            if (Math.Abs(inputY) > 0)
             {
-                _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
+                if (Math.Abs(inputX) + Math.Abs(inputY) > 1)
+                {
+                    _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
+                }
+                else
+                { 
+                    _rb.velocity = _dashDir.normalized * _dashSpeed / 1.5f;
+                }
             }
             else
             {
