@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
             if (StopDash) //if the dash should be stopped
             {
                 //keeps a portion of the upwards momentum only
-                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.2f);
+                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
                 //resets the value of stop dash.
                 _animator.SetBool(AnimationStrings.stopDash, false);
             }

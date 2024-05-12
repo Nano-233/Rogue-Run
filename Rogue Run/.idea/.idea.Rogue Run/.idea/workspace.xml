@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_0.PNG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_0.PNG.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/icons.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icons/16x16.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/icons/16x16.meta" afterDir="false" />
@@ -3269,6 +3270,25 @@
       <change beforePath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/ExampleTiles.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/ExampleTiles.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/Mockup2x.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/Mockup2x.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/Tileset.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Placeholder Tiles/Tileset.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash0.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash0.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash1.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash2.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash3.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash4.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash5.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player dash/player_dash5.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player idle/player_idle2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_fall0.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_fall0.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_fall1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_fall1.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump0.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump0.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump1.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump2.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player jump/player_jump3.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Player/player run/player_run3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Straight arrow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Straight arrow.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Cave.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Cave.meta" afterDir="false" />
@@ -3479,16 +3499,78 @@
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_falling.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_falling.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_jump.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_jump.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_rising.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_rising.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash0.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash1.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash2.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash3.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash4.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player dash/player_dash5.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/char_idle2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/mainchar_idle3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player idle/player_walk3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump0.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump1.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump2.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player jump/player_jump3.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/player run/player_run3.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
@@ -3542,7 +3624,6 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -3648,7 +3729,7 @@
       <workItem from="1715321812259" duration="3337000" />
       <workItem from="1715415598009" duration="142000" />
       <workItem from="1715415765469" duration="21514000" />
-      <workItem from="1715479736756" duration="6816000" />
+      <workItem from="1715479736756" duration="11989000" />
     </task>
     <servers />
   </component>
