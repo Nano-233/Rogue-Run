@@ -9,9 +9,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     //speed of player
-    public float movementSpeed = 5f;
+    public float movementSpeed = 8f;
     public float jumpImpulse = 15f; //velocity of jump
-    private float _dashSpeed = 40f; //current dash speed if should be kept
+    private float _dashSpeed = 30f; //current dash speed if should be kept
     
     private Vector2 _moveInput; //gets vector from player input.
     private Rigidbody2D _rb; //Rigidbody2D of player.

@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfdd211932a67c4a845602533b7f9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 8
   jumpImpulse: 15
   isFacingRight: 1
 --- !u!114 &4665087760788423319
