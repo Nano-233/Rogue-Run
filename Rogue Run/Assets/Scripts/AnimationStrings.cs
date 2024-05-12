@@ -11,6 +11,7 @@ internal class AnimationStrings
     internal static string yVelocity = "yVelocity";
     internal static string canMove = "canMove";
     internal static string dashing = "dashing";
+    internal static string stopDash = "stopDash";
     internal static string jumpTrigger = "jump";
     internal static string dashTrigger = "dash";
 }

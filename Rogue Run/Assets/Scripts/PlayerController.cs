@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     //speed of player
     public float movementSpeed = 5f;
-    public float jumpImpulse = 6f; //velocity of jump
+    public float jumpImpulse = 15f; //velocity of jump
     private float _dashSpeed = 40f; //current dash speed if should be kept
     
     private Vector2 _moveInput; //gets vector from player input.
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool _isMoving = false; //is the player moving
     private float _lastDash = -999f; //time since last dash
     private float _dashCD = 0.3f; //cooldown of dash
+    private Vector2 _dashDir; //direction of dash
     
     public bool isFacingRight = true; //which way the player is facing
 
@@ -57,6 +58,15 @@ public class PlayerController : MonoBehaviour
         get
         {
             return _animator.GetBool(AnimationStrings.dashing);
+        }
+    }
+    
+    //checks if the player should stop dashing
+    public bool StopDash
+    {
+        get
+        {
+            return _animator.GetBool(AnimationStrings.stopDash);
         }
     }
 
@@ -100,11 +110,52 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //changes the velocity
-        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y);
+        
+        float inputX = Input.GetAxisRaw("Horizontal");//horizontal input
+        float inputY = Input.GetAxisRaw("Vertical");//vertical input
+        
+        
+        //finds the direction the dash is going to
+        _dashDir = new Vector2(inputX, inputY);
+        
+        //if the player is not moving, set the direction the player is facing as the dash direction.
+        if (_dashDir == Vector2.zero)
+        {
+            _dashDir = new Vector2(transform.localScale.x, 0);
+        }
+
+        //if dashing, dash in the direction the player is facing
+        if (Dashing) 
+        {
+            if (Math.Abs(inputX) + Math.Abs(inputY) > 1)
+            {
+                _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
+            }
+            else
+            {
+                _rb.velocity = _dashDir.normalized * _dashSpeed;
+            }
+        }
+        else
+        {
+            if (StopDash) //if the dash should be stopped
+            {
+                //keeps a portion of the upwards momentum only
+                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.2f);
+                //resets the value of stop dash.
+                _animator.SetBool(AnimationStrings.stopDash, false);
+            }
+            else //change the velocity normally
+            {
+                //changes the velocity
+                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y);
+            }
+        }
         
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
+        
+        //replenish dash if is on the ground
         _dashCount = _touchingDirections.IsGrounded ? _maxDash : _dashCount;
     }
 
@@ -178,7 +229,7 @@ public class PlayerController : MonoBehaviour
             }
             else //if cannot move
             {
-                return Dashing ? _dashSpeed : 0;
+                return 0;
             }
         }
     }
