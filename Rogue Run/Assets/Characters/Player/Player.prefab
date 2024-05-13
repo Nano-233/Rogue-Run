@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6467118801653235912}
   - component: {fileID: 8218184215102793574}
   - component: {fileID: 9012103032562565174}
+  - component: {fileID: 2009314772901787083}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -339,6 +340,20 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilDistance: 0.05
+  potDistance: 3
   _isGrounded: 1
   _isOnWall: 1
+  _isOnPot: 1
   _isOnCeil: 1
+--- !u!114 &2009314772901787083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462292895031109194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1f491b6d6f82144a1d9c720b4a57a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

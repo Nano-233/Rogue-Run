@@ -120,12 +120,12 @@ public class Octo : MonoBehaviour
     private void FixedUpdate()
     {
         
-        
         //if is on the floor and collided with a wall, turn around
         if (_touchingDirections.IsOnWall && _touchingDirections.IsGrounded)
         {
             FlipDirection();
         }
+        
         
         //makes the octo move
         if (CanMove)
@@ -146,6 +146,8 @@ public class Octo : MonoBehaviour
                     ChaseFound(); //if can chase after the player
                 }
             }
+            
+           
 
             if (!_touchingDirections.IsOnWall) //if walking normally
             {
@@ -172,21 +174,23 @@ public class Octo : MonoBehaviour
     //sets the correct direction for chasing
     private void ChaseFound()
     {
+        
         //goes to the direction of the player
         if ((_playerPos.x > _rb.position.x && transform.localScale.x < 0) || (_playerPos.x < _rb.position.x &&  transform.localScale.x > 0))
         {
             FlipDirection();
         }
-
+        
         //jumps if the player is above
         if (_touchingDirections.IsOnPot && _touchingDirections.IsGrounded)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 8f);
         }
-        else if (_touchingDirections.IsGrounded && _playerPos.x > _rb.position.x -1f && _playerPos.x < _rb.position.x +1f)
+        else if (_touchingDirections.IsGrounded && _playerPos.x > _rb.position.x -3f && _playerPos.x < _rb.position.x +3f && _playerPos.y > _rb.position.y + 1f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 8f);
         }
+
     }
 
     private void FlipDirection()
