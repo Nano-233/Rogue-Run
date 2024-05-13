@@ -12,22 +12,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_0.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_0.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_1.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_2.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 attack/enemy1attack_2.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_0.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_0.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_1.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_2.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_2.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_3.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Enemies/enemy1 die/enemy1die_3.PNG.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/icons.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icons/16x16.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Icons/icons/16x16.meta" afterDir="false" />
@@ -3491,10 +3475,13 @@
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/AC_Octo.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/AC_Octo.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/OctoEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/OctoEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/octo_attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/octo_attack.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/AC_Player.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/PlayerInputActions.inputactions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_dash_1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups.meta" afterDir="false" />
@@ -3510,6 +3497,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" afterDir="false" />
@@ -3534,8 +3522,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref" beforeDir="false" afterPath="$PROJECT_DIR$/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
@@ -3555,6 +3541,7 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
@@ -3670,7 +3657,9 @@
       <workItem from="1715479736756" duration="13594000" />
       <workItem from="1715509491533" duration="61000" />
       <workItem from="1715509564046" duration="539000" />
-      <workItem from="1715524334119" duration="2423000" />
+      <workItem from="1715524334119" duration="6255000" />
+      <workItem from="1715565043057" duration="8759000" />
+      <workItem from="1715582667863" duration="1888000" />
     </task>
     <servers />
   </component>

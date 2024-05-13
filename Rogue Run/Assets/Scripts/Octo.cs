@@ -12,15 +12,20 @@ public class Octo : MonoBehaviour
     public DetectionZone foundZone; //zone of detection to chase player
     public bool hasTarget = false;
     public bool foundTarget = false;
+    public WalkableDirection startDirection = WalkableDirection.Right; //vector of initial walk
 
     private Rigidbody2D _rb; //rigidbody component of the octo.
     private TouchingDirections _touchingDirections; //using touchigndirections to check walls.
     private Animator _animator; //animator of the octo
+
+    private bool _hasLOS; //checks if the player is in line of sight
+    private Vector3 _playerPos; //the target player position
+    private Vector2 _walkDirectionVector; //vector of walk
     
     public enum WalkableDirection {Right, Left} //direction the octo is moving in
 
     private WalkableDirection _walkDirection; //direction of walk
-    private Vector2 _walkDirectionVector = Vector2.left; //vector of walk MIGHT CHANGE TO BE SERIALIZED
+    
 
     public WalkableDirection WalkDirection
     {
@@ -88,6 +93,18 @@ public class Octo : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _touchingDirections = GetComponent<TouchingDirections>();
         _animator = GetComponent<Animator>();
+        
+        //sets initial direction
+        _walkDirection = startDirection;
+        if (_walkDirection == WalkableDirection.Right)
+        {
+            _walkDirectionVector = Vector2.right;
+        }
+        else
+        {
+            _walkDirectionVector = Vector2.left;
+        }
+        
     }
     
     // Update is called once per frame
@@ -96,10 +113,14 @@ public class Octo : MonoBehaviour
         //checks if either a target is locked for attack or if is in range of chase
         HasTarget = attackZone.detectedColliders.Count > 0;
         foundTarget = foundZone.detectedColliders.Count > 0;
+
+        _playerPos = foundZone.playerPos;
     }
 
     private void FixedUpdate()
     {
+        
+        
         //if is on the floor and collided with a wall, turn around
         if (_touchingDirections.IsOnWall && _touchingDirections.IsGrounded)
         {
@@ -109,7 +130,36 @@ public class Octo : MonoBehaviour
         //makes the octo move
         if (CanMove)
         {
-            _rb.velocity = new Vector2(walkSpeed * _walkDirectionVector.x, _rb.velocity.y);
+            
+            // TODO: check if anything above, if not and detected in LOS, jump up.
+            if (foundTarget)
+            {
+                //checks for player LOS
+                RaycastHit2D ray = Physics2D.Raycast(transform.position, _playerPos - transform.position, 30f);
+                if (!(ray.collider is null))
+                {
+                    _hasLOS = ray.collider.CompareTag("Player");
+                }
+                
+                if (_hasLOS)
+                {
+                    ChaseFound(); //if can chase after the player
+                }
+            }
+
+            if (!_touchingDirections.IsOnWall) //if walking normally
+            {
+                _rb.velocity = new Vector2(walkSpeed * _walkDirectionVector.x, _rb.velocity.y);
+            }
+            else //if is on a wall, stop but keep the y momentum
+            {
+                _rb.velocity = new Vector2(0, _rb.velocity.y);
+            }
+
+            if (_rb.velocity.y > 0 && _playerPos.y + 2f < _rb.position.y ) //if already over the wall, stop y momentum
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.2f);
+            }
         }
         else
         {
@@ -119,16 +169,40 @@ public class Octo : MonoBehaviour
         
     }
 
+    //sets the correct direction for chasing
+    private void ChaseFound()
+    {
+        //goes to the direction of the player
+        if ((_playerPos.x > _rb.position.x && transform.localScale.x < 0) || (_playerPos.x < _rb.position.x &&  transform.localScale.x > 0))
+        {
+            FlipDirection();
+        }
+
+        //jumps if the player is above
+        if (_touchingDirections.IsOnPot && _touchingDirections.IsGrounded)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, 8f);
+        }
+        else if (_touchingDirections.IsGrounded && _playerPos.x > _rb.position.x -1f && _playerPos.x < _rb.position.x +1f)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, 8f);
+        }
+    }
+
     private void FlipDirection()
     {
-        if (WalkDirection == WalkableDirection.Right)
+        if (_touchingDirections.IsGrounded)
         {
-            WalkDirection = WalkableDirection.Left;
+            if (WalkDirection == WalkableDirection.Right)
+            {
+                WalkDirection = WalkableDirection.Left;
+            }
+            else if (WalkDirection == WalkableDirection.Left)
+            {
+                WalkDirection = WalkableDirection.Right;
+            }
         }
-        else if (WalkDirection == WalkableDirection.Left)
-        {
-            WalkDirection = WalkableDirection.Right;
-        }
+        
     }
 
     // Start is called before the first frame update

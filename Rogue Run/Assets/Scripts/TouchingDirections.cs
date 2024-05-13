@@ -10,6 +10,7 @@ public class TouchingDirections : MonoBehaviour
     public float groundDistance = 0.05f; //max distance between player and floor to be grounded.
     public float wallDistance = 0.2f; //max distance between player and wall to be on wall.
     public float ceilDistance = 0.05f; //max distance between player and ceiling to be on ceiling.
+    public float potDistance = 3f;
     
     private CapsuleCollider2D _touchingCol; //player collider
     private Animator _animator; //player animation
@@ -17,6 +18,7 @@ public class TouchingDirections : MonoBehaviour
     private RaycastHit2D[] _groundHits = new RaycastHit2D[5]; //ray casts that hits the floor
     private RaycastHit2D[] _wallHits = new RaycastHit2D[5];
     private RaycastHit2D[] _ceilHits = new RaycastHit2D[5];
+    private RaycastHit2D[] _potHits = new RaycastHit2D[5]; //potential walls
 
     //checks which direction the player is facing using localScale.
     private Vector2 WallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
@@ -56,6 +58,22 @@ public class TouchingDirections : MonoBehaviour
     }
     
     [SerializeField]
+    private bool _isOnPot = true; //player is front of wall
+    
+    //Property for if the player is front of wall.
+    public bool IsOnPot
+    {
+        get
+        {
+            return _isOnPot;
+        }
+        private set
+        {
+            _isOnPot = value;
+        }
+    }
+    
+    [SerializeField]
     private bool _isOnCeil = true; //player on ceiling?
     
     //Property for if the player is on a ceiling.
@@ -88,5 +106,6 @@ public class TouchingDirections : MonoBehaviour
         //checks if the player is touching a wall (on both sides)
         IsOnWall = _touchingCol.Cast(WallCheckDirection, castFilter, _wallHits, wallDistance) > 0;
         IsOnCeil = _touchingCol.Cast(Vector2.up, castFilter, _ceilHits, ceilDistance) > 0;
+        IsOnPot = _touchingCol.Cast(WallCheckDirection, castFilter, _potHits, potDistance) > 0;
     }
 }

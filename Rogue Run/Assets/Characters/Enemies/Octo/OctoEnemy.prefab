@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07264805, y: 0.7307358}
+  m_Offset: {x: -0.4784069, y: 1.4773778}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.965277, y: 7.4250546}
+  m_Size: {x: 16.632118, y: 3.8409398}
   m_EdgeRadius: 0
 --- !u!114 &6412068931520535560
 MonoBehaviour:
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedColliders: []
+  playerPos: {x: 0, y: 0, z: 0}
 --- !u!1 &2729585801460130172
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +262,7 @@ MonoBehaviour:
   foundZone: {fileID: 6412068931520535560}
   hasTarget: 0
   foundTarget: 0
+  startDirection: 0
 --- !u!114 &8049553679066062584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,8 +292,10 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilDistance: 0.05
+  potDistance: 3
   _isGrounded: 1
   _isOnWall: 1
+  _isOnPot: 1
   _isOnCeil: 1
 --- !u!95 &7631653361929793395
 Animator:
@@ -379,7 +383,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20708856, y: 0.6341455}
+  m_Offset: {x: -0.88543475, y: 0.30616772}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -390,7 +394,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5858229, y: 2.2682905}
+  m_Size: {x: 1.9425151, y: 1.612335}
   m_EdgeRadius: 0
 --- !u!114 &6918921032139715150
 MonoBehaviour:
@@ -405,3 +409,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedColliders: []
+  playerPos: {x: 0, y: 0, z: 0}
