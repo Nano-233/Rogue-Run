@@ -14,6 +14,8 @@ internal class AnimationStrings
     internal static string stopDash = "stopDash";
     internal static string foundTarget = "foundTarget";
     internal static string hasTarget = "hasTarget";
+    internal static string isAlive = "isAlive";
+    internal static string isHit = "isHit";
     internal static string jumpTrigger = "jump";
     internal static string dashTrigger = "dash";
 }

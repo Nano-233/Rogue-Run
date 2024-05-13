@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     //speed of player
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveInput; //gets vector from player input.
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
+    private Damageable _damageable; //damageable component
 
     private int _maxDash = 1; //Number of dashes that can be replenished to
     private int _dashCount = 1; //player's current dash count
@@ -69,6 +70,15 @@ public class PlayerController : MonoBehaviour
             return _animator.GetBool(AnimationStrings.stopDash);
         }
     }
+    
+    //checks if the player is alive
+    public bool IsAlive
+    {
+        get
+        {
+            return _animator.GetBool(AnimationStrings.isAlive);
+        }
+    }
 
     public bool IsFacingRight
     {
@@ -93,7 +103,8 @@ public class PlayerController : MonoBehaviour
         //gets the rigidbody.
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>(); //gets the animator
-        _touchingDirections = GetComponent<TouchingDirections>();
+        _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
+        _damageable = GetComponent<Damageable>(); //damageable component
     }
 
     // Start is called before the first frame update
@@ -124,40 +135,50 @@ public class PlayerController : MonoBehaviour
             _dashDir = new Vector2(transform.localScale.x, 0);
         }
 
-        //if dashing, dash in the direction the player is facing
-        if (Dashing) 
+        //if not being hit
+        if (!_damageable.IsHit)
         {
-            if (Math.Abs(inputY) > 0)
+            //if dashing, dash in the direction the player is facing
+            if (Dashing) 
             {
-                if (Math.Abs(inputX) + Math.Abs(inputY) > 1)
+                if (Math.Abs(inputY) > 0)
                 {
-                    _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
+                    if (Math.Abs(inputX) + Math.Abs(inputY) > 1)
+                    {
+                        _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
+                    }
+                    else
+                    { 
+                        _rb.velocity = _dashDir.normalized * _dashSpeed / 1.5f;
+                    }
                 }
                 else
-                { 
-                    _rb.velocity = _dashDir.normalized * _dashSpeed / 1.5f;
+                {
+                    _rb.velocity = _dashDir.normalized * _dashSpeed;
                 }
             }
             else
             {
-                _rb.velocity = _dashDir.normalized * _dashSpeed;
+                if (StopDash) //if the dash should be stopped
+                {
+                    //keeps a portion of the upwards momentum only
+                    _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
+                    //resets the value of stop dash.
+                    _animator.SetBool(AnimationStrings.stopDash, false);
+                }
+                else //change the velocity normally
+                {
+                    //changes the velocity
+                    _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y);
+                }
             }
         }
-        else
+        else //if got hit
         {
-            if (StopDash) //if the dash should be stopped
-            {
-                //keeps a portion of the upwards momentum only
-                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
-                //resets the value of stop dash.
-                _animator.SetBool(AnimationStrings.stopDash, false);
-            }
-            else //change the velocity normally
-            {
-                //changes the velocity
-                _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y);
-            }
+            _animator.SetBool(AnimationStrings.dashing, false);
+            _animator.SetBool(AnimationStrings.stopDash, true);
         }
+        
         
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
@@ -171,10 +192,18 @@ public class PlayerController : MonoBehaviour
     {
         //gets the vector of input
         _moveInput = context.ReadValue<Vector2>();
-        //checks if the player is moving
-        IsMoving = _moveInput != Vector2.zero;
-        //sets the facing direction
-        SetFacingDirection(_moveInput);
+
+        if (IsAlive) //only move if the player is living
+        {
+            //checks if the player is moving
+            IsMoving = _moveInput != Vector2.zero;
+            //sets the facing direction
+            SetFacingDirection(_moveInput);
+        }
+        else
+        {
+            _isMoving = false;
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -194,7 +223,7 @@ public class PlayerController : MonoBehaviour
     //when player dashes
     public void OnDash(InputAction.CallbackContext context)
     {
-        if (context.started && _dashCount > 0) //if has a dash
+        if (context.started && _dashCount > 0 && !_damageable.IsHit) //if has a dash
         {
             if (Time.time - _lastDash < _dashCD) //if dash cd not reached yet, cannot dash.
             {
@@ -219,6 +248,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //calculates the current x move speed
     public float CurrentMoveSpeed
     {
         get
@@ -240,5 +270,13 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+
+    //when the player is hit.
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        //add the knockback
+        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y + knockback.y); 
+    }
+   
+
 }

@@ -17,6 +17,7 @@ public class Octo : MonoBehaviour
     private Rigidbody2D _rb; //rigidbody component of the octo.
     private TouchingDirections _touchingDirections; //using touchigndirections to check walls.
     private Animator _animator; //animator of the octo
+    private Damageable _damageable; //damageable obj of Octo.
 
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
@@ -93,6 +94,7 @@ public class Octo : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _touchingDirections = GetComponent<TouchingDirections>();
         _animator = GetComponent<Animator>();
+        _damageable = GetComponent<Damageable>();
         
         //sets initial direction
         _walkDirection = startDirection;
@@ -182,7 +184,7 @@ public class Octo : MonoBehaviour
         }
         
         //jumps if the player is above
-        if (_touchingDirections.IsOnPot && _touchingDirections.IsGrounded)
+        if (_touchingDirections.IsOnPot && _touchingDirections.IsGrounded && _playerPos.y > _rb.position.y + 1f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 8f);
         }
@@ -208,6 +210,8 @@ public class Octo : MonoBehaviour
         }
         
     }
+
+   
 
     // Start is called before the first frame update
     void Start()
