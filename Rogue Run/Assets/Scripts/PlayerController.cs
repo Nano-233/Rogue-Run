@@ -275,7 +275,7 @@ public class PlayerController : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         //add the knockback
-        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y + knockback.y); 
+        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y); 
     }
    
 

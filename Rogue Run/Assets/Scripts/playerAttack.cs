@@ -6,11 +6,14 @@ using UnityEngine;
 public class playerAttack : MonoBehaviour
 {
     
-    public int AD = 10;
-    private Vector2 _knockBack = Vector2.zero;  
+    public int AD = 100;
+    private Vector2 _knockBack = Vector2.zero;  //no knockback from the player
+    
     [SerializeField]
     public Animator playerAnim;
 
+    
+    //if dashes into enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //check if can hit
@@ -23,6 +26,7 @@ public class playerAttack : MonoBehaviour
         }
     }
     
+    //if starts from enemy. Invincible takes care of multiple damage.
     private void OnTriggerExit2D(Collider2D collision)
     {
         //check if can hit

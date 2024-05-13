@@ -29,6 +29,7 @@ public class Damageable : MonoBehaviour
         }
         private set
         {
+            //sometimes dies in the middle of setting.
             if (IsAlive)
             {
                 _animator.SetBool(AnimationStrings.isHit, value);
@@ -94,6 +95,7 @@ public class Damageable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if is invincible, check to remove the status
         if (_isInvincible)
         {
             if (_timeSinceHit > _invincibilityTime)
