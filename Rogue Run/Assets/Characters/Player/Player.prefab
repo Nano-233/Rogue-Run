@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  jumpImpulse: 15
+  jumpImpulse: 13
   isFacingRight: 1
 --- !u!114 &4665087760788423319
 MonoBehaviour:
@@ -245,7 +245,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -398,7 +398,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 528363c5c1cf6a7458140c6851c77b68, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -419,7 +419,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.125
+  m_Time: 0.15
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -429,7 +429,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.0093307495
-        value: 1
+        value: 0.7731991
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -446,8 +446,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.96811825
-        value: 1
+        time: 0.97434384
+        value: 0.17525864
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -459,7 +459,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.3584906, g: 0.010145899, b: 0.28365853, a: 1}
+      key0: {r: 0.3584906, g: 0.010145899, b: 0.28365853, a: 0}
       key1: {r: 0.3584906, g: 0.010145899, b: 0.28365853, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -475,7 +475,7 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 34053
+      atime0: 0
       atime1: 65278
       atime2: 0
       atime3: 0

@@ -107,6 +107,9 @@ public class Damageable : MonoBehaviour
 
             _timeSinceHit += Time.deltaTime; //add the time increment.
         }
+
+        //Hit(30, Vector2.zero);
+
     }
     
     //checks if the player is hit

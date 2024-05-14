@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     //speed of player
     public float movementSpeed = 8f;
-    public float jumpImpulse = 15f; //velocity of jump
-    private float _dashSpeed = 30f; //current dash speed if should be kept
+    public float jumpImpulse = 10f; //velocity of jump
+    private float _dashSpeed = 35f; //current dash speed if should be kept
     
     private Vector2 _moveInput; //gets vector from player input.
     private Rigidbody2D _rb; //Rigidbody2D of player.
@@ -80,6 +80,15 @@ public class PlayerController : MonoBehaviour
             return _animator.GetBool(AnimationStrings.isAlive);
         }
     }
+    
+    //checks if the player is spawning
+    public bool IsSpawning
+    {
+        get
+        {
+            return _animator.GetBool(AnimationStrings.isSpawning);
+        }
+    }
 
     public bool IsFacingRight
     {
@@ -138,7 +147,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //if not being hit
-        if (!_damageable.IsHit)
+        if (!_damageable.IsHit && !IsSpawning)
         {
             //if dashing, dash in the direction the player is facing
             if (Dashing) 
@@ -189,6 +198,12 @@ public class PlayerController : MonoBehaviour
         
         //replenish dash if is on the ground
         _dashCount = _touchingDirections.IsGrounded ? _maxDash : _dashCount;
+
+        // if (_rb.position.y < -9.2f)
+        // {
+        //     _damageable.Hit(100, Vector2.zero);
+        //     _rb.velocity = Vector2.zero;
+        // }
     }
 
     //player moves
@@ -197,10 +212,10 @@ public class PlayerController : MonoBehaviour
         //gets the vector of input
         _moveInput = context.ReadValue<Vector2>();
 
-        if (IsAlive) //only move if the player is living
+        if (IsAlive && !IsSpawning) //only move if the player is living and active
         {
             //checks if the player is moving
-            IsMoving = _moveInput != Vector2.zero;
+            IsMoving = _moveInput.x != 0;
             //sets the facing direction
             SetFacingDirection(_moveInput);
         }
@@ -227,7 +242,8 @@ public class PlayerController : MonoBehaviour
     //when player dashes
     public void OnDash(InputAction.CallbackContext context)
     {
-        if (context.started && _dashCount > 0 && !_damageable.IsHit) //if has a dash
+        //if has a dash, not being hit and not spawning
+        if (context.started && _dashCount > 0 && !_damageable.IsHit && !IsSpawning) 
         {
             if (Time.time - _lastDash < _dashCD) //if dash cd not reached yet, cannot dash.
             {
