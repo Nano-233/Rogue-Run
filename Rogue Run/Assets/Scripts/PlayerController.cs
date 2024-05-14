@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
     private Damageable _damageable; //damageable component
+    private TrailRenderer _trail; //trail
 
     private int _maxDash = 1; //Number of dashes that can be replenished to
     private int _dashCount = 1; //player's current dash count
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>(); //gets the animator
         _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
         _damageable = GetComponent<Damageable>(); //damageable component
+        _trail = GetComponent<TrailRenderer>();
     }
 
     // Start is called before the first frame update
@@ -161,6 +163,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (StopDash) //if the dash should be stopped
                 {
+                    _trail.emitting = false; //stop the trail
                     //keeps a portion of the upwards momentum only
                     _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
                     //resets the value of stop dash.
@@ -175,6 +178,7 @@ public class PlayerController : MonoBehaviour
         }
         else //if got hit
         {
+            _trail.emitting = false; //stop the trail
             _animator.SetBool(AnimationStrings.dashing, false);
             _animator.SetBool(AnimationStrings.stopDash, true);
         }
@@ -229,6 +233,8 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+
+            _trail.emitting = true;
             _lastDash = Time.time; //reset the cd
             _animator.SetTrigger(AnimationStrings.dashTrigger);
             _dashCount--; //reduce a dash count

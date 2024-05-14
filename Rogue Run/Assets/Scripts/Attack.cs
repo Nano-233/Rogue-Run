@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class Attack : MonoBehaviour
@@ -16,8 +17,10 @@ public class Attack : MonoBehaviour
 
         if (damageable != null)
         {
+            Vector2 deliveredKnockBack =
+                transform.parent.localScale.x > 0 ? knockBack : new Vector2(-knockBack.x, knockBack.y);
             //hit
-            damageable.Hit(AD, knockBack);
+            damageable.Hit(AD, deliveredKnockBack);
         }
         
         

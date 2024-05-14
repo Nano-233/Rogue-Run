@@ -10,6 +10,7 @@ public class Octo : MonoBehaviour
     public float walkSpeed = 3f; //speed that the octo moves at
     public DetectionZone attackZone; //zone of detection for attack
     public DetectionZone foundZone; //zone of detection to chase player
+    public DetectionZone cliffZone; //checks if on an edge
     public bool hasTarget = false;
     public bool foundTarget = false;
     public WalkableDirection startDirection = WalkableDirection.Right; //vector of initial walk
@@ -123,7 +124,7 @@ public class Octo : MonoBehaviour
     {
         
         //if is on the floor and collided with a wall, turn around
-        if (_touchingDirections.IsOnWall && _touchingDirections.IsGrounded)
+        if (_touchingDirections.IsOnWall && _touchingDirections.IsGrounded || cliffZone.detectedColliders.Count == 0)
         {
             FlipDirection();
         }
