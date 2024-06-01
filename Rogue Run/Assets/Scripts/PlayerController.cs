@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float _dashSpeed = 35f; //current dash speed if should be kept
     
     private Vector2 _moveInput; //gets vector from player input.
+    
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
     private Damageable _damageable; //damageable component
@@ -132,6 +133,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if (!_damageable.IsAlive)
+        {
+            SceneController.instance.NextScene(0);
+        }
         
         float inputX = Input.GetAxisRaw("Horizontal");//horizontal input
         float inputY = Input.GetAxisRaw("Vertical");//vertical input
@@ -299,6 +305,14 @@ public class PlayerController : MonoBehaviour
         //add the knockback
         _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y); 
     }
-   
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //die when touch smth bad, 12 is groundhurt
+        if (other.gameObject.layer == 12)
+        {
+            _damageable.Hit(100, Vector2.zero);
+        }
+
+    }
 }

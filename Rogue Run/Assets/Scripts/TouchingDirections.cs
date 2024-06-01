@@ -10,7 +10,7 @@ public class TouchingDirections : MonoBehaviour
     public float groundDistance = 0.05f; //max distance between player and floor to be grounded.
     public float wallDistance = 0.2f; //max distance between player and wall to be on wall.
     public float ceilDistance = 0.05f; //max distance between player and ceiling to be on ceiling.
-    public float potDistance = 3f;
+    public float potDistance = 3f; //distance for enemy to jump
     
     private CapsuleCollider2D _touchingCol; //player collider
     private Animator _animator; //player animation
@@ -27,6 +27,7 @@ public class TouchingDirections : MonoBehaviour
     private bool _isGrounded = true; //player grounded?
 
     //Property for if the player is grounded.
+
     public bool IsGrounded
     {
         get
