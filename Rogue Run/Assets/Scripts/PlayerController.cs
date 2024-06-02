@@ -315,9 +315,19 @@ public class PlayerController : MonoBehaviour
         //if no overflow
         if (_dashCount < _maxDash)
         {
+            //add dash, disable
             _dashCount += count;
-            Destroy(obj);
+            StartCoroutine(DashUsed(obj));
         }
+    }
+
+    //disables the refill for a bit
+    IEnumerator DashUsed(GameObject obj)
+    {
+        obj.SetActive(false);
+        //Wait for 4 seconds
+        yield return new WaitForSeconds(4);
+        obj.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
