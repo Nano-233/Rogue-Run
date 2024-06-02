@@ -202,8 +202,11 @@ public class PlayerController : MonoBehaviour
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
         
-        //replenish dash if is on the ground
-        _dashCount = _touchingDirections.IsGrounded ? _maxDash : _dashCount;
+        //replenish dash if is on the ground and not already dashing
+        if (_touchingDirections.IsGrounded && !Dashing)
+        {
+            _dashCount = _maxDash;
+        }
 
         // if (_rb.position.y < -9.2f)
         // {
@@ -304,6 +307,17 @@ public class PlayerController : MonoBehaviour
     {
         //add the knockback
         _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y); 
+    }
+    
+    //change dash count
+    public void AddDash(int count, GameObject obj)
+    {
+        //if no overflow
+        if (_dashCount < _maxDash)
+        {
+            _dashCount += count;
+            Destroy(obj);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

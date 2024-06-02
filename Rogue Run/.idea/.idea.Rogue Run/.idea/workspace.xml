@@ -3292,7 +3292,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Hall/tileset.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Hall/tileset.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Hall/tilesettrans.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Hall/tilesettrans.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside/tilemap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside/tilemap.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside/tilemap.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Dark Outside/tilemap.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Generic Dungeon.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Generic Dungeon.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Generic Dungeon/Assets.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Generic Dungeon/Assets.png.meta" afterDir="false" />
@@ -3303,7 +3302,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - BackgroundDecoration.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - BackgroundDecoration.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - Decorations&amp;Hazards.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - Decorations&amp;Hazards.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - FloatingPlatforms.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - FloatingPlatforms.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - Hanging Plants.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - Hanging Plants.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - MossyHills.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - MossyHills.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - TileSet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Mossy/Mossy - TileSet.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Tilesets/Wasteland.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Tilesets/Wasteland.meta" afterDir="false" />
@@ -3485,10 +3483,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Testing.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" afterDir="false" />
@@ -3497,11 +3493,13 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Finish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Finish.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachines/RemoveBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachines/RemoveBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" afterDir="false" />
@@ -3514,7 +3512,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Scenes.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts.meta" afterDir="false" />
@@ -3524,7 +3521,6 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" afterDir="false" />
@@ -3536,7 +3532,6 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
@@ -3666,7 +3661,8 @@
       <workItem from="1715759965538" duration="2997000" />
       <workItem from="1716851280234" duration="2847000" />
       <workItem from="1717205613419" duration="2830000" />
-      <workItem from="1717283880677" duration="371000" />
+      <workItem from="1717283880677" duration="703000" />
+      <workItem from="1717300020047" duration="1792000" />
     </task>
     <servers />
   </component>
