@@ -11,7 +11,9 @@ public class Finish : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.gameObject.SetActive(false);
             SceneController.instance.NextScene(NextSceneId);
+            other.gameObject.SetActive(true);
         }
     }
 }

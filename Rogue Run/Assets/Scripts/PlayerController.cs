@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public bool isFacingRight = true; //which way the player is facing
 
     private TouchingDirections _touchingDirections; //Used for ground checking
+    
+    public static PlayerController instance;
 
     //checks if the player is moving
     public bool IsMoving
@@ -111,6 +113,15 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         //gets the rigidbody.
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>(); //gets the animator
@@ -319,6 +330,7 @@ public class PlayerController : MonoBehaviour
         {
             //add dash, disable
             _dashCount += count;
+            _maxDash++; //testing
             StartCoroutine(DashUsed(obj));
         }
     }
