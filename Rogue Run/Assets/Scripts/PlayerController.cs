@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
-    //speed of player
-    public float movementSpeed = 8f;
+    public float movementSpeed = 8f; //speed of player.
     public float jumpImpulse = 10f; //velocity of jump
     private float _dashSpeed = 35f; //current dash speed if should be kept
     
@@ -117,6 +117,8 @@ public class PlayerController : MonoBehaviour
         _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
         _damageable = GetComponent<Damageable>(); //damageable component
         _trail = GetComponent<TrailRenderer>();
+        
+        //TODO GET STATS FROM STAT MANAGER
     }
 
     // Start is called before the first frame update
@@ -128,8 +130,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
+
 
     private void FixedUpdate()
     {
