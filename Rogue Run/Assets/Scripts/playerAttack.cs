@@ -3,15 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
     
-    public int AD = 100;
+    public int _AD = 100;
     private Vector2 _knockBack = Vector2.zero;  //no knockback from the player
     
     [SerializeField]
     public Animator playerAnim;
 
+    public int AD
+    {
+        get
+        {
+            return _AD;
+        }
+        set
+        {
+            _AD = value;
+        }
+    }
     
     //if dashes into enemy
     private void OnTriggerEnter2D(Collider2D collision)

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     private TouchingDirections _touchingDirections; //Used for ground checking
 
+    private PlayerAttack _playerAttack; //player's attack info
+
     //checks if the player is moving
     public bool IsMoving
     {
@@ -117,7 +119,8 @@ public class PlayerController : MonoBehaviour
         _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
         _damageable = GetComponent<Damageable>(); //damageable component
         _trail = GetComponent<TrailRenderer>();
-        
+        _playerAttack = GetComponentInChildren<PlayerAttack>();
+
         //TODO GET STATS FROM STAT MANAGER
     }
 
@@ -337,8 +340,38 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
-            _damageable.Hit(100, Vector2.zero);
+            _damageable.Health = 0;
         }
 
+    }
+    
+    //saves stats whenever new scene
+    public Tuple<int[], float[]> SaveStats()
+    {
+        int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health};
+        float[] floatStats = new[] { _dashCD, movementSpeed };
+        return Tuple.Create(intStats, floatStats);
+    }
+
+    //loads stats whenever new scene
+    public void LoadStats(Tuple<int[], float[]> tuple)
+    {
+        //loads into arrays
+        int[] intStats = tuple.Item1;
+        float[] floatStats = tuple.Item2;
+        
+        //saves int info
+        _maxDash = intStats[0];
+        _damageable.MaxHealth = intStats[1];
+        _playerAttack.AD = intStats[2];
+        //checks if needs respawning
+        if (intStats[3] > 0) //if still alive, keep hp
+        {
+            _damageable.Health = intStats[3];
+        }
+        
+        //saves float info
+        _dashCD = floatStats[0];
+        movementSpeed = floatStats[1];
     }
 }
