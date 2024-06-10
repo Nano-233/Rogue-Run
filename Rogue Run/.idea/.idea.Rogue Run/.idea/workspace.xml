@@ -3476,6 +3476,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Canvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" afterDir="false" />
@@ -3483,12 +3484,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spawn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Spawn.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" afterDir="false" />
@@ -3527,7 +3524,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
@@ -3573,31 +3569,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "GameManager",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Harbour\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Harbour\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Harbour\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Harbour\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Harbour\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Harbour\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Tools\Unity\Unity Editor\2022.3.21f1\Editor\Unity.exe" />
@@ -3679,7 +3675,8 @@
       <workItem from="1717638769347" duration="2783000" />
       <workItem from="1717665169424" duration="156000" />
       <workItem from="1717904740045" duration="1588000" />
-      <workItem from="1717907552452" duration="5577000" />
+      <workItem from="1717907552452" duration="6451000" />
+      <workItem from="1718007263922" duration="1657000" />
     </task>
     <servers />
   </component>

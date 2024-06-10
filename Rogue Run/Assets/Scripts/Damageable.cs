@@ -117,7 +117,14 @@ public class Damageable : MonoBehaviour
     {
         if (IsAlive && !_isInvincible)
         {
-            Health -= damage;
+            if (Health - damage < 0)
+            {
+                Health = 0;
+            }
+            else
+            {
+                Health -= damage;
+            }
             _isInvincible = true;
 
             //notify other components damageable was hit and handle knockback.
