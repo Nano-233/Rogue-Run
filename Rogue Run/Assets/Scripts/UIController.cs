@@ -10,6 +10,10 @@ public class UIController : MonoBehaviour
     //canvas
     public Canvas canvas;
     
+    //player
+    private GameObject _player;
+    private PlayerController _playerController;
+    
     //health bar
     public TMP_Text healthText; //text of hp
     public Image healthBar; //green bar of hp
@@ -18,13 +22,18 @@ public class UIController : MonoBehaviour
     //floating text
     public GameObject damageTextPrefab; //damage text
     public GameObject healTextPrefab; //healing text
+    
+    //currencies
+    public TMP_Text darknessText; //text of darkness count
 
     private void Awake()
     {
         //gets the player component
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
         //gets damageable component
-        _damageable = player.GetComponent<Damageable>();
+        _damageable = _player.GetComponent<Damageable>();
+        //controller
+        _playerController = _player.GetComponent<PlayerController>();
         //gets canvas
         canvas = FindObjectOfType<Canvas>();
     }
@@ -52,6 +61,7 @@ public class UIController : MonoBehaviour
     {
         healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
         healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text
+        darknessText.text = _playerController.DarknessCount.ToString();
     }
 
     //when something takes damage, floating text

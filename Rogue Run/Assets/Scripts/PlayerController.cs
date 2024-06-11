@@ -9,29 +9,35 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+    //speeds
     public float movementSpeed = 8f; //speed of player.
     public float jumpImpulse = 10f; //velocity of jump
     private float _dashSpeed = 35f; //current dash speed if should be kept
     
+    //inputs
     private Vector2 _moveInput; //gets vector from player input.
     
+    //components
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
     private Damageable _damageable; //damageable component
     private TrailRenderer _trail; //trail
+    private TouchingDirections _touchingDirections; //Used for ground checking
+    private PlayerAttack _playerAttack; //player's attack info
 
+    //movement variables
     private int _maxDash = 1; //Number of dashes that can be replenished to
     private int _dashCount = 1; //player's current dash count
     private bool _isMoving = false; //is the player moving
     private float _lastDash = -999f; //time since last dash
     private float _dashCD = 0.3f; //cooldown of dash
     private Vector2 _dashDir; //direction of dash
-    
     public bool isFacingRight = true; //which way the player is facing
+    
+    //currency
+    private int _darknessCount = 0; //Count of currency
 
-    private TouchingDirections _touchingDirections; //Used for ground checking
-
-    private PlayerAttack _playerAttack; //player's attack info
+    
 
     //checks if the player is moving
     public bool IsMoving
@@ -108,6 +114,15 @@ public class PlayerController : MonoBehaviour
             }
 
             isFacingRight = value;
+        }
+    }
+
+    //gets darkness count
+    public int DarknessCount
+    {
+        get
+        {
+            return _darknessCount;
         }
     }
 
@@ -348,7 +363,7 @@ public class PlayerController : MonoBehaviour
     //saves stats whenever new scene
     public Tuple<int[], float[]> SaveStats()
     {
-        int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health};
+        int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
         float[] floatStats = new[] { _dashCD, movementSpeed };
         return Tuple.Create(intStats, floatStats);
     }
@@ -369,9 +384,17 @@ public class PlayerController : MonoBehaviour
         {
             _damageable.Health = intStats[3];
         }
+
+        _darknessCount = intStats[4];
         
         //saves float info
         _dashCD = floatStats[0];
         movementSpeed = floatStats[1];
+    }
+
+    //adds darkness
+    public void AddDarkness(int amount)
+    {
+        _darknessCount += amount;
     }
 }

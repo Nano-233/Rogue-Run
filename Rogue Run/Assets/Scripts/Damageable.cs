@@ -16,11 +16,24 @@ public class Damageable : MonoBehaviour
     private bool _isInvincible; //checks if character invincible
     private float _timeSinceHit = 0; //time since hit
     public float _invincibilityTime = 0.5f; //invincible after hit
+    private int _dropMultiplier = 1; //multiplies drops
 
     private bool _isAlive = true;
 
     private Animator _animator;
 
+    public float InvincibleTime
+    {
+        get
+        {
+            return _invincibilityTime;
+        }
+        set
+        {
+            _invincibilityTime = value;
+        }
+    }
+    
     public bool IsHit
     {
         get
@@ -76,6 +89,19 @@ public class Damageable : MonoBehaviour
         {
             _isAlive = value;
             _animator.SetBool(AnimationStrings.isAlive, value);
+        }
+    }
+    
+    //returns multiplier
+    public int Multiplier
+    {
+        get
+        {
+            return _dropMultiplier;
+        }
+        set
+        {
+            _dropMultiplier = value;
         }
     }
 

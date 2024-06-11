@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerAttack : MonoBehaviour
 {
     
-    public int _AD = 100;
+    public int _AD = 100; //attack damage
     private Vector2 _knockBack = Vector2.zero;  //no knockback from the player
+    private PlayerController _playerController; //player controller component
     
     [SerializeField]
     public Animator playerAnim;
@@ -23,7 +25,13 @@ public class PlayerAttack : MonoBehaviour
             _AD = value;
         }
     }
-    
+
+    private void Awake()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = player.GetComponent<PlayerController>(); //finds the player
+    }
+
     //if dashes into enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,6 +55,12 @@ public class PlayerAttack : MonoBehaviour
         {
             //hit
             damageable.Hit(AD, _knockBack);
+            //if killed, drop loot
+            if (!damageable.IsAlive)
+            {
+                //multiplies 
+                _playerController.AddDarkness(Convert.ToInt32(Random.Range(0f, 1f)) * damageable.Multiplier);
+            }
         }
         
     }
