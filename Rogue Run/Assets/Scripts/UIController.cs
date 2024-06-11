@@ -7,9 +7,17 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    //canvas
+    public Canvas canvas;
+    
+    //health bar
     public TMP_Text healthText; //text of hp
     public Image healthBar; //green bar of hp
     private Damageable _damageable; //player's damageable component
+    
+    //floating text
+    public GameObject damageTextPrefab; //damage text
+    public GameObject healTextPrefab; //healing text
 
     private void Awake()
     {
@@ -17,6 +25,20 @@ public class UIController : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         //gets damageable component
         _damageable = player.GetComponent<Damageable>();
+        //gets canvas
+        canvas = FindObjectOfType<Canvas>();
+    }
+
+    private void OnEnable()
+    {
+        CharacterEvents.CharacterDamaged += CharacterTookDamage;
+        CharacterEvents.CharacterHealed += CharacterHeals;
+    }
+
+    private void OnDisable()
+    {
+        CharacterEvents.CharacterDamaged -= CharacterTookDamage;
+        CharacterEvents.CharacterHealed -= CharacterHeals;
     }
 
     // Start is called before the first frame update
@@ -30,5 +52,32 @@ public class UIController : MonoBehaviour
     {
         healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
         healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text
+    }
+
+    //when something takes damage, floating text
+    public void CharacterTookDamage(GameObject character, int damage)
+    {
+        //create text where the character is
+        Vector3 spawnPos = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        //instantiates the text at where it should be
+        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity, canvas.transform)
+            .GetComponent<TMP_Text>();
+        //sets text
+        damage *= -1;
+        tmpText.text = damage.ToString();
+    }
+    
+    //when something heals, floating text
+    public void CharacterHeals(GameObject character, int heal)
+    {
+        //create text where the character is
+        Vector3 spawnPos = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        //instantiates the text at where it should be
+        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity, canvas.transform)
+            .GetComponent<TMP_Text>();
+        //sets text
+        tmpText.text = heal.ToString();
     }
 }
