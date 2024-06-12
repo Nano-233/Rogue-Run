@@ -3524,6 +3524,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Text/DamageText.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Text/DamageText.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Text/HealText.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Text/HealText.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
@@ -3681,7 +3683,7 @@
       <workItem from="1718062309996" duration="2867000" />
       <workItem from="1718068579335" duration="464000" />
       <workItem from="1718069059380" duration="680000" />
-      <workItem from="1718147367643" duration="2324000" />
+      <workItem from="1718147367643" duration="3267000" />
     </task>
     <servers />
   </component>

@@ -22,6 +22,7 @@ public class UIController : MonoBehaviour
     //floating text
     public GameObject damageTextPrefab; //damage text
     public GameObject healTextPrefab; //healing text
+    public GameObject dropTextPrefab; //drop text
     
     //currencies
     public TMP_Text darknessText; //text of darkness count
@@ -42,12 +43,14 @@ public class UIController : MonoBehaviour
     {
         CharacterEvents.CharacterDamaged += CharacterTookDamage;
         CharacterEvents.CharacterHealed += CharacterHeals;
+        CharacterEvents.CharacterDropped += CharacterDrops;
     }
 
     private void OnDisable()
     {
         CharacterEvents.CharacterDamaged -= CharacterTookDamage;
         CharacterEvents.CharacterHealed -= CharacterHeals;
+        CharacterEvents.CharacterDropped -= CharacterDrops;
     }
 
     // Start is called before the first frame update
@@ -89,5 +92,18 @@ public class UIController : MonoBehaviour
             .GetComponent<TMP_Text>();
         //sets text
         tmpText.text = heal.ToString();
+    }
+    
+    //when picks up darkness, floating text
+    public void CharacterDrops(GameObject character, int amount)
+    {
+        //create text where the character is
+        Vector3 spawnPos = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        //instantiates the text at where it should be
+        TMP_Text tmpText = Instantiate(dropTextPrefab, spawnPos, Quaternion.identity, canvas.transform)
+            .GetComponent<TMP_Text>();
+        //sets text
+        tmpText.text = "+" + amount + "darkness";
     }
 }

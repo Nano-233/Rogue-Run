@@ -58,8 +58,10 @@ public class PlayerAttack : MonoBehaviour
             //if killed, drop loot
             if (!damageable.IsAlive)
             {
-                //multiplies 
-                _playerController.AddDarkness(Convert.ToInt32(Random.Range(0f, 1f)) * damageable.Multiplier);
+                //randomly gain darkness according to multiplier
+                int gain = Convert.ToInt32(Random.Range(0f, 1f)) * damageable.Multiplier;
+                _playerController.AddDarkness(gain);
+                CharacterEvents.CharacterDropped.Invoke(gameObject, gain);
             }
         }
         

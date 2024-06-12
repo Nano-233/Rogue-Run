@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DMG
+  m_text: HEAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0817a9662c30e394382d196d6fc0d20c, type: 2}
   m_sharedMaterial: {fileID: -1202436083979380812, guid: 0817a9662c30e394382d196d6fc0d20c, type: 2}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 4278976256
   m_fontColor: {r: 0, g: 1, b: 0.041924477, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

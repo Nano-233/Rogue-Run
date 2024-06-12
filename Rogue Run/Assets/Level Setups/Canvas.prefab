@@ -540,6 +540,7 @@ MonoBehaviour:
   healthBar: {fileID: 6294486038527329278}
   damageTextPrefab: {fileID: 4344501038259787830, guid: 5101a20902f079944a8d81c34a7a6c3d, type: 3}
   healTextPrefab: {fileID: 4344501038259787830, guid: 05ae9bcf73338aa4f816b07a308e632c, type: 3}
+  dropTextPrefab: {fileID: 4344501038259787830, guid: f24f2434e527d5f4eac1db0750ddb3bd, type: 3}
   darknessText: {fileID: 4878197194140219285}
 --- !u!1 &4947317365035116303
 GameObject:

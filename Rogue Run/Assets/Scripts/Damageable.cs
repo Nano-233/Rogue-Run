@@ -156,6 +156,7 @@ public class Damageable : MonoBehaviour
             //notify other components damageable was hit and handle knockback.
             IsHit = true;
             damageableHit.Invoke(damage, knockback);
+            //floating text call
             CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
             
             return true;
