@@ -9,27 +9,35 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
+    //speeds
     public float movementSpeed = 8f; //speed of player.
     public float jumpImpulse = 10f; //velocity of jump
     private float _dashSpeed = 35f; //current dash speed if should be kept
     
+    //inputs
     private Vector2 _moveInput; //gets vector from player input.
     
+    //components
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
     private Damageable _damageable; //damageable component
     private TrailRenderer _trail; //trail
+    private TouchingDirections _touchingDirections; //Used for ground checking
+    private PlayerAttack _playerAttack; //player's attack info
 
+    //movement variables
     private int _maxDash = 1; //Number of dashes that can be replenished to
     private int _dashCount = 1; //player's current dash count
     private bool _isMoving = false; //is the player moving
     private float _lastDash = -999f; //time since last dash
     private float _dashCD = 0.3f; //cooldown of dash
     private Vector2 _dashDir; //direction of dash
-    
     public bool isFacingRight = true; //which way the player is facing
+    
+    //currency
+    private int _darknessCount = 0; //Count of currency
 
-    private TouchingDirections _touchingDirections; //Used for ground checking
+    
 
     //checks if the player is moving
     public bool IsMoving
@@ -109,6 +117,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //gets darkness count
+    public int DarknessCount
+    {
+        get
+        {
+            return _darknessCount;
+        }
+    }
+
     private void Awake()
     {
         //gets the rigidbody.
@@ -117,7 +134,8 @@ public class PlayerController : MonoBehaviour
         _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
         _damageable = GetComponent<Damageable>(); //damageable component
         _trail = GetComponent<TrailRenderer>();
-        
+        _playerAttack = GetComponentInChildren<PlayerAttack>();
+
         //TODO GET STATS FROM STAT MANAGER
     }
 
@@ -337,8 +355,46 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
-            _damageable.Hit(100, Vector2.zero);
+            _damageable.Health = 0;
         }
 
+    }
+    
+    //saves stats whenever new scene
+    public Tuple<int[], float[]> SaveStats()
+    {
+        int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
+        float[] floatStats = new[] { _dashCD, movementSpeed };
+        return Tuple.Create(intStats, floatStats);
+    }
+
+    //loads stats whenever new scene
+    public void LoadStats(Tuple<int[], float[]> tuple)
+    {
+        //loads into arrays
+        int[] intStats = tuple.Item1;
+        float[] floatStats = tuple.Item2;
+        
+        //saves int info
+        _maxDash = intStats[0];
+        _damageable.MaxHealth = intStats[1];
+        _playerAttack.AD = intStats[2];
+        //checks if needs respawning
+        if (intStats[3] > 0) //if still alive, keep hp
+        {
+            _damageable.Health = intStats[3];
+        }
+
+        _darknessCount = intStats[4];
+        
+        //saves float info
+        _dashCD = floatStats[0];
+        movementSpeed = floatStats[1];
+    }
+
+    //adds darkness
+    public void AddDarkness(int amount)
+    {
+        _darknessCount += amount;
     }
 }

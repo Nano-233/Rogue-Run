@@ -3476,6 +3476,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_idle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/player_run.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Canvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Confiner.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level Setups/Door.prefab.meta" afterDir="false" />
@@ -3483,11 +3484,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presets/PixelArtTextureImporter.preset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Spawn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Spawn.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AnimationStrings.cs.meta" afterDir="false" />
@@ -3497,7 +3495,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DetectionZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/CharacterEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/CharacterEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Finish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Finish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParallaxEffect.cs.meta" afterDir="false" />
@@ -3507,6 +3507,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachines/RemoveBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachines/RemoveBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateMachines/SetBoolBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TouchingDirections.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Lit2DSceneTemplate.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Lit2DSceneTemplate.scenetemplate" afterDir="false" />
@@ -3517,15 +3519,18 @@
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Scenes/URP2DSceneTemplate.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Fonts/m5x7.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Text/DamageText.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Text/DamageText.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Text/HealText.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Text/HealText.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/MemorySettings.asset" afterDir="false" />
@@ -3543,7 +3548,6 @@
       <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VersionControlSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -3575,14 +3579,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GameManager&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;FSharp&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -3672,6 +3676,14 @@
       <workItem from="1717559408812" duration="1914000" />
       <workItem from="1717570671318" duration="752000" />
       <workItem from="1717638769347" duration="2783000" />
+      <workItem from="1717665169424" duration="156000" />
+      <workItem from="1717904740045" duration="1588000" />
+      <workItem from="1717907552452" duration="6451000" />
+      <workItem from="1718007263922" duration="2204000" />
+      <workItem from="1718062309996" duration="2867000" />
+      <workItem from="1718068579335" duration="464000" />
+      <workItem from="1718069059380" duration="680000" />
+      <workItem from="1718147367643" duration="3267000" />
     </task>
     <servers />
   </component>

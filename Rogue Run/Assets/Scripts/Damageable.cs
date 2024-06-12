@@ -16,11 +16,24 @@ public class Damageable : MonoBehaviour
     private bool _isInvincible; //checks if character invincible
     private float _timeSinceHit = 0; //time since hit
     public float _invincibilityTime = 0.5f; //invincible after hit
+    private int _dropMultiplier = 1; //multiplies drops
 
     private bool _isAlive = true;
 
     private Animator _animator;
 
+    public float InvincibleTime
+    {
+        get
+        {
+            return _invincibilityTime;
+        }
+        set
+        {
+            _invincibilityTime = value;
+        }
+    }
+    
     public bool IsHit
     {
         get
@@ -78,6 +91,19 @@ public class Damageable : MonoBehaviour
             _animator.SetBool(AnimationStrings.isAlive, value);
         }
     }
+    
+    //returns multiplier
+    public int Multiplier
+    {
+        get
+        {
+            return _dropMultiplier;
+        }
+        set
+        {
+            _dropMultiplier = value;
+        }
+    }
 
     private void Awake()
     {
@@ -117,12 +143,21 @@ public class Damageable : MonoBehaviour
     {
         if (IsAlive && !_isInvincible)
         {
-            Health -= damage;
+            if (Health - damage < 0)
+            {
+                Health = 0;
+            }
+            else
+            {
+                Health -= damage;
+            }
             _isInvincible = true;
 
             //notify other components damageable was hit and handle knockback.
             IsHit = true;
             damageableHit.Invoke(damage, knockback);
+            //floating text call
+            CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
             
             return true;
         }

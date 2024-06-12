@@ -23,6 +23,7 @@ public class Octo : MonoBehaviour
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
     private Vector2 _walkDirectionVector; //vector of walk
+
     
     public enum WalkableDirection {Right, Left} //direction the octo is moving in
 
@@ -81,6 +82,7 @@ public class Octo : MonoBehaviour
             _animator.SetBool(AnimationStrings.foundTarget, value);
         }
     }
+    
 
     public bool CanMove
     {
@@ -107,7 +109,12 @@ public class Octo : MonoBehaviour
         {
             _walkDirectionVector = Vector2.left;
         }
-        
+
+        //setups damageable
+        _damageable.InvincibleTime = 0;
+        _damageable.Multiplier = 1;
+
+
     }
     
     // Update is called once per frame
