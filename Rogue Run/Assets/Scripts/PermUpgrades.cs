@@ -103,18 +103,45 @@ public class PermUpgrades : MonoBehaviour
         Dictionary<int, Color> rarityColors = new Dictionary<int, Color>();
         rarityColors.Add(0, new Color(1, 1, 1, 1));
         rarityColors.Add(1, new Color(0.5f, 1f, 0.5f, 1));
-        rarityColors.Add(2, new Color(0f, 0f, 1f, 1));
-        rarityColors.Add(3, new Color(1f, 1f, 0f, 1));
-        rarityColors.Add(4, new Color(0.5f, 0f, 0.5f, 1));
-        rarityColors.Add(5, new Color(1f, 0.5f, 0f, 1));
+        rarityColors.Add(2, new Color(0f, 0.5f, 1f, 1));
+        rarityColors.Add(3, new Color(0.3f, 0f, 0.5f, 1));
+        rarityColors.Add(4, new Color(1f, 1f, 0f, 1));
+        rarityColors.Add(5, new Color(1f, 0.5f, 0.2f, 1));
 
 
+        //sets colors, disable if needed
         Upgrade_button1.GetComponent<Image>().color = rarityColors[_levels[0]];
+        if (_levels[0] == 5)
+        {
+            Upgrade_button1.interactable = false;
+        }
         Upgrade_button2.GetComponent<Image>().color = rarityColors[_levels[1]];
+        if (_levels[1] == 5)
+        {
+            Upgrade_button2.interactable = false;
+        }
         Upgrade_button3.GetComponent<Image>().color = rarityColors[_levels[2]];
+        if (_levels[2] == 5)
+        {
+            Upgrade_button3.interactable = false;
+        }
         Upgrade_button4.GetComponent<Image>().color = rarityColors[_levels[3]];
-        Upgrade_button4.GetComponent<Image>().color = rarityColors[_levels[4]];
-        Upgrade_button4.GetComponent<Image>().color = rarityColors[_levels[5]];
+        if (_levels[3] == 5)
+        {
+            Upgrade_button4.interactable = false;
+        }
+        Upgrade_button5.GetComponent<Image>().color = rarityColors[_levels[4]];
+        if (_levels[4] == 5)
+        {
+            Upgrade_button5.interactable = false;
+        }
+        Upgrade_button6.GetComponent<Image>().color = rarityColors[_levels[5]];
+        if (_levels[5] == 5)
+        {
+            Upgrade_button6.interactable = false;
+        }
+        
+
     }
 
     // UPGRADES
