@@ -36,7 +36,14 @@ public class PlayerController : MonoBehaviour
     
     //currency
     private int _darknessCount = 0; //Count of currency
-
+    
+    //upgrades
+    private int _dashUp = 0; //decreased dash cd, in %
+    private int _behindUp = 0; //Increased damage to enemies from behind, in %
+    private int _decFirstUp = 0; //Decreased first damage taken per room, %
+    private int _roomHealUp = 0; //Damage healed per room, flat
+    private int _darkUp = 0; //Increased darkness gained, %
+    private int _killHealUp = 0; //Damaged healed per kill, flat
     
 
     //checks if the player is moving
@@ -396,5 +403,53 @@ public class PlayerController : MonoBehaviour
     public void AddDarkness(int amount)
     {
         _darknessCount += amount;
+    }
+    
+    //upgrades stats
+    public void PermUpgrade(int upgrade)
+    {
+        switch (upgrade)
+        {
+            case 0: //reduce dash cd
+                _dashUp += 10;
+                _dashCD -= 0.03f;
+                break;
+            case 1: //increase backstab dmg
+                _behindUp += 5;
+                break;
+            case 2: //first damage reduced
+                _decFirstUp += 5;
+                break;
+            case 3: //heal per room
+                _roomHealUp += 5;
+                break;
+            case 4: //increased darkness
+                _darkUp += 10;
+                break;
+            case 5: //kill to heal
+                _killHealUp += 2;
+                break;
+        }
+    }
+    
+    //Check levels of upgrades
+    public int GetPermUpgrade(int upgrade)
+    {
+        switch (upgrade)
+        {
+            case 0: //reduce dash cd
+                return _dashUp;
+            case 1: //increase backstab dmg
+                return _behindUp;
+            case 2: //first damage reduced
+                return _decFirstUp;
+            case 3: //heal per room
+                return _roomHealUp;
+            case 4: //increased darkness
+                return _darkUp;
+            case 5: //kill to heal
+                return _killHealUp;
+        }
+        return 0;
     }
 }
