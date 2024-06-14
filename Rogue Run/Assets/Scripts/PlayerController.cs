@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private float _dashCD = 0.3f; //cooldown of dash
     private Vector2 _dashDir; //direction of dash
     public bool isFacingRight = true; //which way the player is facing
+    private bool _canDash = true;
     
     //currency
     private int _darknessCount = 0; //Count of currency
@@ -44,7 +45,18 @@ public class PlayerController : MonoBehaviour
     private int _roomHealUp = 0; //Damage healed per room, flat
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
-    
+
+    public bool CanDash
+    {
+        get
+        {
+            return _canDash;
+        }
+        set
+        {
+            _canDash = value;
+        }
+    }
 
     //checks if the player is moving
     public bool IsMoving
@@ -279,7 +291,7 @@ public class PlayerController : MonoBehaviour
     public void OnDash(InputAction.CallbackContext context)
     {
         //if has a dash, not being hit and not spawning
-        if (context.started && _dashCount > 0 && !_damageable.IsHit && !IsSpawning) 
+        if (context.started && _dashCount > 0 && !_damageable.IsHit && !IsSpawning && CanDash) 
         {
             if (Time.time - _lastDash < _dashCD) //if dash cd not reached yet, cannot dash.
             {
