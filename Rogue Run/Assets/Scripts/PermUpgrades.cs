@@ -16,15 +16,20 @@ public class PermUpgrades : MonoBehaviour
     private int[] _stats = new int[6];
     private int[] _levels = new int[6];
     
+    //costs of upgrades
+    private int[] _commonCost = new int[] { 50, 100, 200, 300, 500 };
+    private int[] _rareCost = new int[] { 100, 200, 300, 500, 1000 };
+    private int[] _mythicCost = new int[] { 300, 500, 1000, 1500, 2000 };
+    
     //list of upgrades
     private Upgrade[] _upgrades = new Upgrade[]
     {
-        new Upgrade { Name = "Dasher", Description = "Decrease the delay between dashes by X%. \n Currently V%"},
-        new Upgrade { Name = "Assassin", Description = "Increases damage to enemies from behind by X%. \n Currently V%"},
-        new Upgrade { Name = "Vanguard", Description = "Decreases the first instance of damage taken per room by X%. \n Currently V%"},
-        new Upgrade { Name = "Undead", Description = "Heal for XHP after each room.  \n Currently VHP"},
-        new Upgrade { Name = "Gambler", Description = "You earn X% more darkness, but take twice the damage.  \n Currently V%"},
-        new Upgrade { Name = "Slayer", Description = "You have a X% chance to gain 5HP after each enemy killed.  \n Currently V%"},
+        new Upgrade { Name = "Dasher", Description = "Decrease the delay between dashes by X%. \n Currently V% \n\n Z"},
+        new Upgrade { Name = "Assassin", Description = "Increases damage to enemies from behind by X%. \n Currently V% \n\n Z"},
+        new Upgrade { Name = "Vanguard", Description = "Decreases the first instance of damage taken per room by X%. \n Currently V% \n\n Z"},
+        new Upgrade { Name = "Undead", Description = "Heal for XHP after each room.  \n Currently VHP \n\n Z"},
+        new Upgrade { Name = "Gambler", Description = "You earn X% more darkness, but take twice the damage.  \n Currently V% \n\n Z"},
+        new Upgrade { Name = "Slayer", Description = "You have a X% chance to gain 5HP after each enemy killed.  \n Currently V% \n\n Z"},
     };
 
     private void Awake()
@@ -84,19 +89,30 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_button5.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[4].Name;
         Upgrade_button6.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[5].Name;
 
-        // Replacing the X with increase value, and V with original value
+        //Replacing the X with increase value
         Upgrade_DescriptionText1.text = _upgrades[0].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText2.text = _upgrades[1].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText3.text = _upgrades[2].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText4.text = _upgrades[3].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText5.text = _upgrades[4].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText6.text = _upgrades[5].Description.Replace("X", (_stats[0] + 10).ToString());
+        //Replacing V with original value
+        Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("V", _stats[0].ToString());
+        Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[0].ToString());
+        Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("V", _stats[0].ToString());
+        Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("V", _stats[0].ToString());
+        Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("V", _stats[0].ToString());
+        //Replacing Z with colored cost
+        Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("Z", CostString(0));
+        Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("Z", CostString(1));
+        Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("Z", CostString(2));
+        Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("Z", CostString(3));
+        Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("Z", CostString(4));
+        Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("Z", CostString(5));
+        
+            
+        
         
         
         // Setting color of the buttons
@@ -147,7 +163,89 @@ public class PermUpgrades : MonoBehaviour
     // UPGRADES
     public void UpgradeChosen(int upgrade)
     {
-        _playerController.PermUpgrade(upgrade);
+        //common upgrades
+        if (upgrade <= 2)
+        {
+            //if have enough money, buy
+            if (_playerController.DarknessCount >= _commonCost[_levels[upgrade]])
+            {
+                _playerController.DarknessCount -= _commonCost[_levels[upgrade]];
+                _playerController.PermUpgrade(upgrade);
+            }
+        }
+        //rare upgrades
+        else if (upgrade <= 3)
+        {
+            //if have enough money, buy
+            if (_playerController.DarknessCount >= _rareCost[_levels[upgrade]])
+            {
+                _playerController.DarknessCount -= _rareCost[_levels[upgrade]];
+                _playerController.PermUpgrade(upgrade);
+            }
+        }
+        //mythic upgrades
+        else if (upgrade <= 5)
+        {
+            //if have enough money, buy
+            if (_playerController.DarknessCount >= _mythicCost[_levels[upgrade]])
+            {
+                _playerController.DarknessCount -= _mythicCost[_levels[upgrade]];
+                _playerController.PermUpgrade(upgrade);
+            }
+        }
+    }
+
+    private String CostString(int upgrade)
+    {
+        if (_levels[upgrade] == 5)
+        {
+            return "<color=\"purple\"> Maxed";
+        }
+        String str;
+        //common upgrades
+        if (upgrade <= 2)
+        {
+            str = _commonCost[_levels[upgrade]].ToString() + " darkness";
+            //if have enough money, green txt
+            if (_playerController.DarknessCount >= _commonCost[_levels[upgrade]])
+            {
+                return "<color=\"green\">" + str;
+            }
+            else //else red
+            {
+                return "<color=\"red\">" + str;
+            }
+        }
+        //rare upgrades
+        else if (upgrade <= 3)
+        {
+            str = _rareCost[_levels[upgrade]].ToString() + " darkness";
+            //if have enough money, green txt
+            if (_playerController.DarknessCount >= _rareCost[_levels[upgrade]])
+            {
+                return "<color=\"green\">" + str;
+            }
+            else
+            {
+                return "<color=\"red\">" + str;
+            }
+        }
+        //mythic upgrades
+        else if (upgrade <= 5)
+        {
+            str = _mythicCost[_levels[upgrade]].ToString() + " darkness";
+            //if have enough money, make text green
+            if (_playerController.DarknessCount >= _mythicCost[_levels[upgrade]])
+            {
+                return "<color=\"green\">" + str;
+            }
+            else
+            {
+                return "<color=\"red\">" + str;
+            }
+        }
+
+        return "";
     }
     
 

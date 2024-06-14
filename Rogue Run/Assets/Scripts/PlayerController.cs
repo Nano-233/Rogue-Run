@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool _canDash = true;
     
     //currency
-    private int _darknessCount = 0; //Count of currency
+    private int _darknessCount = 1000; //Count of currency
     
     //upgrades
     private int _dashUp = 0; //decreased dash cd, in %
@@ -142,6 +142,10 @@ public class PlayerController : MonoBehaviour
         get
         {
             return _darknessCount;
+        }
+        set
+        {
+            _darknessCount = value;
         }
     }
 
