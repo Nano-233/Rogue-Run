@@ -111,7 +111,7 @@ public class Octo : MonoBehaviour
         }
 
         //setups damageable
-        _damageable.InvincibleTime = 0;
+        _damageable.InvincibleTime = 0.1f;
         _damageable.Multiplier = 1;
 
 

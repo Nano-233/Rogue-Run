@@ -5940,8 +5940,7 @@ PrefabInstance:
       propertyPath: isGrounded
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5435033189903681077, guid: 7aa3b264a5a41ba4a90be9769819d0fc, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4072007626109224560, guid: 7aa3b264a5a41ba4a90be9769819d0fc, type: 3}
     m_AddedGameObjects: []

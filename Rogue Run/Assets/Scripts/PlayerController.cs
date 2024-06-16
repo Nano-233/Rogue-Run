@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private bool _canDash = true;
     
     //currency
-    private int _darknessCount = 1000; //Count of currency
+    private int _darknessCount = 10000; //Count of currency
     
     //upgrades
     private int _dashUp = 0; //decreased dash cd, in %
@@ -46,6 +47,15 @@ public class PlayerController : MonoBehaviour
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
 
+    //bonus dmg in percentage striking from behind
+    public int BehindBuff
+    {
+        get
+        {
+            return _behindUp;
+        }
+    }
+    
     public bool CanDash
     {
         get
@@ -384,20 +394,18 @@ public class PlayerController : MonoBehaviour
     }
     
     //saves stats whenever new scene
-    public Tuple<int[], float[]> SaveStats()
+    public (int[] intStats, float[] floatStats, int[] upStats) SaveStats()
     {
         int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
         float[] floatStats = new[] { _dashCD, movementSpeed };
-        return Tuple.Create(intStats, floatStats);
+        int[] upStats = new[] { _dashUp, _behindUp, _decFirstUp, _roomHealUp, _darkUp, _killHealUp };
+        return (intStats, floatStats, upStats);
     }
 
+
     //loads stats whenever new scene
-    public void LoadStats(Tuple<int[], float[]> tuple)
+    public void LoadStats(int[] intStats, float[] floatStats, int[] upStats)
     {
-        //loads into arrays
-        int[] intStats = tuple.Item1;
-        float[] floatStats = tuple.Item2;
-        
         //saves int info
         _maxDash = intStats[0];
         _damageable.MaxHealth = intStats[1];
@@ -407,12 +415,20 @@ public class PlayerController : MonoBehaviour
         {
             _damageable.Health = intStats[3];
         }
-
         _darknessCount = intStats[4];
         
         //saves float info
         _dashCD = floatStats[0];
         movementSpeed = floatStats[1];
+        
+        //saves upgrade info
+        _dashUp = upStats[0];
+        _behindUp = upStats[1];
+        _decFirstUp = upStats[2];
+        _roomHealUp = upStats[3];
+        _darkUp= upStats[4];
+        _killHealUp = upStats[5];
+
     }
 
     //adds darkness
@@ -467,5 +483,26 @@ public class PlayerController : MonoBehaviour
                 return _killHealUp;
         }
         return 0;
+    }
+    
+    //Heal after each room
+    public void RoomHeal()
+    {
+        if (_roomHealUp > 0)
+        {
+            _damageable.Heal(_roomHealUp);
+        }
+    }
+    
+    //Heal after kill
+    public void KillHeal()
+    {
+        if (_killHealUp > 0)
+        {
+            if (Random.Range(0, 100f) < 25)
+            {
+                _damageable.Heal(_killHealUp);
+            }
+        }
     }
 }

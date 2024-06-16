@@ -88,7 +88,7 @@ public class UIController : MonoBehaviour
         Vector3 spawnPos = Camera.main.WorldToScreenPoint(character.transform.position);
 
         //instantiates the text at where it should be
-        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPos, Quaternion.identity, canvas.transform)
+        TMP_Text tmpText = Instantiate(healTextPrefab, spawnPos, Quaternion.identity, canvas.transform)
             .GetComponent<TMP_Text>();
         //sets text
         tmpText.text = heal.ToString();

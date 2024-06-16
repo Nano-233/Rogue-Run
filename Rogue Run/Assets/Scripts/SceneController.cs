@@ -11,8 +11,11 @@ public class SceneController : MonoBehaviour
 
     //field for player controller
     private PlayerController _playerController;
+    
     //field for all data
-    private Tuple<int[], float[]> _data;
+    private int[] _intStats;
+    private float[] _floatStats;
+    private int[] _upStats;
 
     private void Awake()
     {
@@ -31,7 +34,7 @@ public class SceneController : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerController = player.GetComponent<PlayerController>(); //finds the player
-        
+        EndRoom();
         SaveStats(); //save all needed stats
 
         StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
@@ -67,12 +70,23 @@ public class SceneController : MonoBehaviour
     //save the stats locally
     private void SaveStats()
     {
-        _data = _playerController.SaveStats();
+        var data = _playerController.SaveStats();
+        _intStats = data.intStats;
+        _floatStats = data.floatStats;
+        _upStats = data.upStats;
+
     }
 
     //load the stats to the player
     private void LoadStats()
     {
-        _playerController.LoadStats(_data);
+        _playerController.LoadStats(_intStats, _floatStats, _upStats);
+    }
+    
+    //action to player
+    private void EndRoom()
+    {
+        //heal if upgrade
+        _playerController.RoomHeal();
     }
 }

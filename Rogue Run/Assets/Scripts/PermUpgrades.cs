@@ -89,20 +89,33 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_button5.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[4].Name;
         Upgrade_button6.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[5].Name;
 
-        //Replacing the X with increase value
-        Upgrade_DescriptionText1.text = _upgrades[0].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText2.text = _upgrades[1].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText3.text = _upgrades[2].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText4.text = _upgrades[3].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText5.text = _upgrades[4].Description.Replace("X", (_stats[0] + 10).ToString());
-        Upgrade_DescriptionText6.text = _upgrades[5].Description.Replace("X", (_stats[0] + 10).ToString());
+        
+        //replaces X with new value
+        Upgrade_DescriptionText1.text = _levels[0] == 5
+            ? _upgrades[0].Description.Replace("X", (_stats[0]).ToString()) 
+            : _upgrades[0].Description.Replace("X", (_stats[0] + 10).ToString());
+        Upgrade_DescriptionText2.text = _levels[1] == 5
+            ? _upgrades[1].Description.Replace("X", (_stats[1]).ToString()) 
+            : _upgrades[1].Description.Replace("X", (_stats[1] + 5).ToString());
+        Upgrade_DescriptionText3.text = _levels[2] == 5
+            ? _upgrades[2].Description.Replace("X", (_stats[2]).ToString()) 
+            : _upgrades[2].Description.Replace("X", (_stats[2] + 5).ToString());
+        Upgrade_DescriptionText4.text = _levels[3] == 5
+            ? _upgrades[3].Description.Replace("X", (_stats[3]).ToString()) 
+            : _upgrades[3].Description.Replace("X", (_stats[3] + 5).ToString());
+        Upgrade_DescriptionText5.text = _levels[4] == 5
+            ? _upgrades[4].Description.Replace("X", (_stats[4]).ToString()) 
+            : _upgrades[4].Description.Replace("X", (_stats[4] + 10).ToString());
+        Upgrade_DescriptionText6.text = _levels[5] == 5
+            ? _upgrades[5].Description.Replace("X", (_stats[5]).ToString()) 
+            : _upgrades[5].Description.Replace("X", (_stats[5] + 2).ToString());
         //Replacing V with original value
         Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("V", _stats[0].ToString());
-        Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[0].ToString());
-        Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("V", _stats[0].ToString());
-        Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("V", _stats[0].ToString());
-        Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("V", _stats[0].ToString());
-        Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("V", _stats[0].ToString());
+        Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[1].ToString());
+        Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("V", _stats[2].ToString());
+        Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("V", _stats[3].ToString());
+        Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("V", _stats[4].ToString());
+        Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("V", _stats[5].ToString());
         //Replacing Z with colored cost
         Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("Z", CostString(0));
         Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("Z", CostString(1));
@@ -110,9 +123,6 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("Z", CostString(3));
         Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("Z", CostString(4));
         Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("Z", CostString(5));
-        
-            
-        
         
         
         // Setting color of the buttons
@@ -123,8 +133,9 @@ public class PermUpgrades : MonoBehaviour
         rarityColors.Add(3, new Color(0.3f, 0f, 0.5f, 1));
         rarityColors.Add(4, new Color(1f, 1f, 0f, 1));
         rarityColors.Add(5, new Color(1f, 0.5f, 0.2f, 1));
+        
 
-
+        
         //sets colors, disable if needed
         Upgrade_button1.GetComponent<Image>().color = rarityColors[_levels[0]];
         if (_levels[0] == 5)

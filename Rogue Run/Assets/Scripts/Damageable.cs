@@ -138,7 +138,7 @@ public class Damageable : MonoBehaviour
 
     }
     
-    //checks if the player is hit
+    //hits the player
     public bool Hit(int damage, Vector2 knockback)
     {
         if (IsAlive && !_isInvincible)
@@ -163,6 +163,22 @@ public class Damageable : MonoBehaviour
         }
 
         return false;
+    }
+    
+    //heals the player
+    public void Heal(int healing)
+    {
+        if (IsAlive)
+        {
+            //makes sure healing doesnt surpass max hp
+            int maxHeal = Mathf.Max(MaxHealth - Health, 0);
+            int actualHeal = Mathf.Min(maxHeal, healing);
+            Health += actualHeal;
+            if (actualHeal > 0)
+            {
+                CharacterEvents.CharacterHealed.Invoke(gameObject, healing);
+            }
+        }
     }
 
 }

@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public int _AD = 100; //attack damage
     private Vector2 _knockBack = Vector2.zero;  //no knockback from the player
     private PlayerController _playerController; //player controller component
+    private GameObject _player; //player
     
     [SerializeField]
     public Animator playerAnim;
@@ -28,8 +29,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        _playerController = player.GetComponent<PlayerController>(); //finds the player
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>(); //finds the player
     }
 
     //if dashes into enemy
@@ -37,11 +38,21 @@ public class PlayerAttack : MonoBehaviour
     {
         //check if can hit
         Damageable damageable = collision.GetComponent<Damageable>(); //can use interface (IDamageable)
-
+        //get bonus dmg striking from behind
+        float bonus = _playerController.BehindBuff / 100f + 1;
+        
         if (damageable != null && playerAnim.GetBool(AnimationStrings.dashing))
         {
-            //hit
-            damageable.Hit(AD, _knockBack);
+            if (Math.Sign(_player.transform.localScale.x) == Math.Sign(collision.transform.localScale.x) && bonus > 0)
+            {
+                //hit extra
+                damageable.Hit(Convert.ToInt32(AD * bonus), _knockBack);
+            }
+            else
+            {
+                //hit
+                damageable.Hit(AD, _knockBack);
+            }
         }
     }
     
@@ -50,18 +61,36 @@ public class PlayerAttack : MonoBehaviour
     {
         //check if can hit
         Damageable damageable = collision.GetComponent<Damageable>(); //can use interface (IDamageable)
+        //get bonus dmg striking from behind
+        float bonus = _playerController.BehindBuff / 100 + 1;
 
         if (damageable != null && playerAnim.GetBool(AnimationStrings.dashing))
         {
-            //hit
-            damageable.Hit(AD, _knockBack);
+            if (Math.Sign(_player.transform.localScale.x) == Math.Sign(collision.transform.localScale.x) && bonus > 0)
+            {
+                //hit extra
+                damageable.Hit(Convert.ToInt32(AD * bonus), _knockBack);
+            }
+            else
+            {
+                //hit
+                damageable.Hit(AD, _knockBack);
+            }
+            
             //if killed, drop loot
             if (!damageable.IsAlive)
             {
                 //randomly gain darkness according to multiplier
                 int gain = Convert.ToInt32(Random.Range(0f, 1f)) * damageable.Multiplier;
-                _playerController.AddDarkness(gain);
-                CharacterEvents.CharacterDropped.Invoke(gameObject, gain);
+                if (gain > 0)
+                {
+                    _playerController.AddDarkness(gain);
+                    //floating text
+                    CharacterEvents.CharacterDropped.Invoke(gameObject, gain);
+                }
+                
+                //heal if upgrade
+                _playerController.KillHeal();
             }
         }
         
