@@ -81,12 +81,10 @@ public class PlayerAttack : MonoBehaviour
             if (!damageable.IsAlive)
             {
                 //randomly gain darkness according to multiplier
-                int gain = Convert.ToInt32(Random.Range(0f, 1f)) * damageable.Multiplier;
+                int gain = Random.Range(0, damageable.Multiplier);
                 if (gain > 0)
                 {
                     _playerController.AddDarkness(gain);
-                    //floating text
-                    CharacterEvents.CharacterDropped.Invoke(gameObject, gain);
                 }
                 
                 //heal if upgrade

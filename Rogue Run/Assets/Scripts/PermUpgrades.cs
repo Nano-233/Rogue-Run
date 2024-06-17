@@ -69,14 +69,17 @@ public class PermUpgrades : MonoBehaviour
             //gets the flat levels
             switch (i)
             {
-                case 0: case 4:
-                    _levels[i] = _stats[i] / 10;
+                //assassin, undead
+                case 1: case 3:
+                    _levels[i] = _stats[i] / UpgradeInts.assasinIncr;
                     break;
+                //slayer
                 case 5:
-                    _levels[i] = _stats[i] / 2;
+                    _levels[i] = _stats[i] / UpgradeInts.slayerIncr;
                     break;
+                //dasher, vanguard, gambler
                 default:
-                    _levels[i] = _stats[i] / 5;
+                    _levels[i] = _stats[i] / UpgradeInts.dasherIncr;
                     break;
             }
         }
@@ -91,24 +94,26 @@ public class PermUpgrades : MonoBehaviour
 
         
         //replaces X with new value
+        
+        //Dasher, assassin, vanguard, undead, gambler, slayer
         Upgrade_DescriptionText1.text = _levels[0] == 5
             ? _upgrades[0].Description.Replace("X", (_stats[0]).ToString()) 
-            : _upgrades[0].Description.Replace("X", (_stats[0] + 10).ToString());
+            : _upgrades[0].Description.Replace("X", (_stats[0] + UpgradeInts.dasherIncr).ToString());
         Upgrade_DescriptionText2.text = _levels[1] == 5
             ? _upgrades[1].Description.Replace("X", (_stats[1]).ToString()) 
-            : _upgrades[1].Description.Replace("X", (_stats[1] + 5).ToString());
+            : _upgrades[1].Description.Replace("X", (_stats[1] + UpgradeInts.assasinIncr).ToString());
         Upgrade_DescriptionText3.text = _levels[2] == 5
             ? _upgrades[2].Description.Replace("X", (_stats[2]).ToString()) 
-            : _upgrades[2].Description.Replace("X", (_stats[2] + 5).ToString());
+            : _upgrades[2].Description.Replace("X", (_stats[2] + UpgradeInts.vanguardIncr).ToString());
         Upgrade_DescriptionText4.text = _levels[3] == 5
             ? _upgrades[3].Description.Replace("X", (_stats[3]).ToString()) 
-            : _upgrades[3].Description.Replace("X", (_stats[3] + 5).ToString());
+            : _upgrades[3].Description.Replace("X", (_stats[3] + UpgradeInts.undeadIncr).ToString());
         Upgrade_DescriptionText5.text = _levels[4] == 5
             ? _upgrades[4].Description.Replace("X", (_stats[4]).ToString()) 
-            : _upgrades[4].Description.Replace("X", (_stats[4] + 10).ToString());
+            : _upgrades[4].Description.Replace("X", (_stats[4] + UpgradeInts.gamblerIncr).ToString());
         Upgrade_DescriptionText6.text = _levels[5] == 5
             ? _upgrades[5].Description.Replace("X", (_stats[5]).ToString()) 
-            : _upgrades[5].Description.Replace("X", (_stats[5] + 2).ToString());
+            : _upgrades[5].Description.Replace("X", (_stats[5] + UpgradeInts.slayerIncr).ToString());
         //Replacing V with original value
         Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("V", _stats[0].ToString());
         Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[1].ToString());

@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private int _roomHealUp = 0; //Damage healed per room, flat
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
+    private float _dmgMod = 0; //extra damage modification added on
 
     //bonus dmg in percentage striking from behind
     public int BehindBuff
@@ -397,7 +398,7 @@ public class PlayerController : MonoBehaviour
     public (int[] intStats, float[] floatStats, int[] upStats) SaveStats()
     {
         int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
-        float[] floatStats = new[] { _dashCD, movementSpeed };
+        float[] floatStats = new[] { _dashCD, movementSpeed, _dmgMod };
         int[] upStats = new[] { _dashUp, _behindUp, _decFirstUp, _roomHealUp, _darkUp, _killHealUp };
         return (intStats, floatStats, upStats);
     }
@@ -420,6 +421,9 @@ public class PlayerController : MonoBehaviour
         //saves float info
         _dashCD = floatStats[0];
         movementSpeed = floatStats[1];
+        //adds the damage mod
+        _dmgMod = floatStats[2];
+        _damageable.DmgMod += _dmgMod;
         
         //saves upgrade info
         _dashUp = upStats[0];
@@ -434,7 +438,11 @@ public class PlayerController : MonoBehaviour
     //adds darkness
     public void AddDarkness(int amount)
     {
+        //add by multiplier
+        amount += Convert.ToInt32(amount * _darkUp / 100f);
         _darknessCount += amount;
+        //floating text
+        CharacterEvents.CharacterDropped.Invoke(gameObject, amount);
     }
     
     //upgrades stats
@@ -443,23 +451,28 @@ public class PlayerController : MonoBehaviour
         switch (upgrade)
         {
             case 0: //reduce dash cd
-                _dashUp += 10;
+                _dashUp += UpgradeInts.dasherIncr;
                 _dashCD -= 0.03f;
                 break;
             case 1: //increase backstab dmg
-                _behindUp += 5;
+                _behindUp += UpgradeInts.assasinIncr;
                 break;
             case 2: //first damage reduced
-                _decFirstUp += 5;
+                _decFirstUp += UpgradeInts.vanguardIncr;
                 break;
             case 3: //heal per room
-                _roomHealUp += 5;
+                _roomHealUp += UpgradeInts.undeadIncr;
                 break;
             case 4: //increased darkness
-                _darkUp += 10;
+                //increases damage taken
+                if (_darkUp == 0)
+                {
+                    _dmgMod += 0.5f;
+                }
+                _darkUp += UpgradeInts.gamblerIncr;
                 break;
             case 5: //kill to heal
-                _killHealUp += 2;
+                _killHealUp += UpgradeInts.slayerIncr;
                 break;
         }
     }
@@ -505,4 +518,15 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    
+    //reduce first damage
+    public void Vanguard()
+    {
+        if (_decFirstUp > 0)
+        {
+            _damageable.Vanguard(_decFirstUp / 100f);
+        }
+    }
+    
+
 }

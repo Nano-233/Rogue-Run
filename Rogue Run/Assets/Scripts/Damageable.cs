@@ -17,6 +17,9 @@ public class Damageable : MonoBehaviour
     private float _timeSinceHit = 0; //time since hit
     public float _invincibilityTime = 0.5f; //invincible after hit
     private int _dropMultiplier = 1; //multiplies drops
+    private float _dmgMod = 1; //damage modifier
+    private float _vanguardBuff = 0; //damage reduction from vangaurd
+    private bool _hasVangaurd = false; //if the player is benefiting from vanguard
 
     private bool _isAlive = true;
 
@@ -92,7 +95,7 @@ public class Damageable : MonoBehaviour
         }
     }
     
-    //returns multiplier
+    //returns drop multiplier
     public int Multiplier
     {
         get
@@ -104,6 +107,20 @@ public class Damageable : MonoBehaviour
             _dropMultiplier = value;
         }
     }
+    
+    //returns damage mod
+    public float DmgMod
+    {
+        get
+        {
+            return _dmgMod;
+        }
+        set
+        {
+            _dmgMod = value;
+        }
+    }
+    
 
     private void Awake()
     {
@@ -141,6 +158,7 @@ public class Damageable : MonoBehaviour
     //hits the player
     public bool Hit(int damage, Vector2 knockback)
     {
+        damage = Convert.ToInt32(damage * _dmgMod);
         if (IsAlive && !_isInvincible)
         {
             if (Health - damage < 0)
@@ -159,6 +177,12 @@ public class Damageable : MonoBehaviour
             //floating text call
             CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
             
+            //if has vanguard and got hit, revert.
+            if (_hasVangaurd)
+            {
+                _hasVangaurd = false;
+                _dmgMod += _vanguardBuff;
+            }
             return true;
         }
 
@@ -178,6 +202,17 @@ public class Damageable : MonoBehaviour
             {
                 CharacterEvents.CharacterHealed.Invoke(gameObject, healing);
             }
+        }
+    }
+    
+    //activates vanguard
+    public void Vanguard(float buff)
+    {
+        if (!_hasVangaurd)
+        {
+            _hasVangaurd = true;
+            _vanguardBuff = buff;
+            _dmgMod -= _vanguardBuff;
         }
     }
 

@@ -9,8 +9,9 @@ public class SceneController : MonoBehaviour
 
     public static SceneController instance;
 
-    //field for player controller
+    //field for player
     private PlayerController _playerController;
+    private GameObject _player;
     
     //field for all data
     private int[] _intStats;
@@ -32,8 +33,8 @@ public class SceneController : MonoBehaviour
 
     public void NextScene(int id)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        _playerController = player.GetComponent<PlayerController>(); //finds the player
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>(); //finds the player
         EndRoom();
         SaveStats(); //save all needed stats
 
@@ -62,9 +63,10 @@ public class SceneController : MonoBehaviour
         yield return new WaitForEndOfFrame();
         
         //reload player
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        _playerController = player.GetComponent<PlayerController>(); //finds the player
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>(); //finds the player
         LoadStats(); //save all needed stats
+        StartRoom();
     }
 
     //save the stats locally
@@ -83,10 +85,16 @@ public class SceneController : MonoBehaviour
         _playerController.LoadStats(_intStats, _floatStats, _upStats);
     }
     
-    //action to player
+    //action to player when ending scene
     private void EndRoom()
     {
         //heal if upgrade
         _playerController.RoomHeal();
+    }
+    
+    //action to player when new scene
+    private void StartRoom()
+    {
+        _playerController.Vanguard();
     }
 }
