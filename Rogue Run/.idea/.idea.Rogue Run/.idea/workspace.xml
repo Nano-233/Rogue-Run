@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b1e3ce-1128-47e1-bc09-2fc578b4b3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ancestor 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ancestor 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" afterDir="false" />
@@ -170,6 +170,7 @@
       <workItem from="1719117287682" duration="58000" />
       <workItem from="1719117524301" duration="1738000" />
       <workItem from="1719124506403" duration="5237000" />
+      <workItem from="1719130299440" duration="25000" />
     </task>
     <servers />
   </component>

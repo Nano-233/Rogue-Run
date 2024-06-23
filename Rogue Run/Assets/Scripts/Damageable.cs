@@ -20,7 +20,6 @@ public class Damageable : MonoBehaviour
     private float _dmgMod = 1; //damage modifier
     private float _vanguardBuff = 0; //damage reduction from vangaurd
     private bool _hasVangaurd = false; //if the player is benefiting from vanguard
-    private float _tempDmgMod = 0; //additional temporary damage modifications.
 
     private bool _isAlive = true;
     private bool _isPlayer = false;
