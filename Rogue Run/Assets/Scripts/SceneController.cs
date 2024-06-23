@@ -16,7 +16,8 @@ public class SceneController : MonoBehaviour
     //field for all data
     private int[] _intStats;
     private float[] _floatStats;
-    private int[] _upStats;
+    private int[] _permUpStats;
+    private int[] _tempUpStats;
 
     private void Awake()
     {
@@ -75,14 +76,15 @@ public class SceneController : MonoBehaviour
         var data = _playerController.SaveStats();
         _intStats = data.intStats;
         _floatStats = data.floatStats;
-        _upStats = data.upStats;
+        _permUpStats = data.permUpStats;
+        _tempUpStats = data.tempUpStats;
 
     }
 
     //load the stats to the player
     private void LoadStats()
     {
-        _playerController.LoadStats(_intStats, _floatStats, _upStats);
+        _playerController.LoadStats(_intStats, _floatStats, _permUpStats, _tempUpStats);
     }
     
     //action to player when ending scene
@@ -95,6 +97,7 @@ public class SceneController : MonoBehaviour
     //action to player when new scene
     private void StartRoom()
     {
+        //activate vanguard
         _playerController.Vanguard();
     }
 }

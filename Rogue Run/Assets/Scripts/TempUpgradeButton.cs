@@ -1,18 +1,18 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Upgrade_button : MonoBehaviour
+public class TempUpgradeButton : MonoBehaviour
 {
-    [SerializeField] private PermUpgrades permUpgradesScript;
+    [SerializeField] private TempUpgrades tempUpgradesScript;
 
     //upgrade
     public void Upgrade()
     {
         int upgradeChosen = Int32.Parse(gameObject.transform.GetChild(0).name);
-        permUpgradesScript.UpgradeChosen(upgradeChosen);
-        permUpgradesScript.ButtonsSet();
+        tempUpgradesScript.UpgradeChosen(upgradeChosen);
+        tempUpgradesScript.Hide();
     }
 }

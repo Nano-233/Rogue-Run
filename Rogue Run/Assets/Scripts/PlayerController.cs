@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     //currency
     private int _darknessCount = 10000; //Count of currency
     
-    //upgrades
+    //permanent upgrades
     private int _dashUp = 0; //decreased dash cd, in %
     private int _behindUp = 0; //Increased damage to enemies from behind, in %
     private int _decFirstUp = 0; //Decreased first damage taken per room, %
@@ -47,6 +47,24 @@ public class PlayerController : MonoBehaviour
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
     private float _dmgMod = 0; //extra damage modification added on
+    private float _tempDmgMod = 0; //damage to be reduced (in %)
+    
+    //temp upgrades
+    private int _safeDashUp = 0; //decreased hurt while dashing, %
+    private int _antiTrapUp = 0; //decreased hurt by traps, %
+    private int _meatyUp = 0; //decrease hurt
+    private int _vigilantUp = 0; //decrease hurt upon kill, seconds
+    private int _gliderUp = 0; //increase dmg in air, %
+    private int _beastUp = 0; //increase dmg, %
+    private int _rampageUp = 0; //increase dmg upon kill, s
+    private int _surferUp = 0; //increase MS after dash, flat
+    private int _gravitonUp = 0; //decrease MS of enemies after dash, s
+    private int _swiftyUp = 0; //increase dodge chance, %
+    private int _immortalUp = 0; //revives at 50% hp
+    
+    //boolean of buffs
+    private bool _vigilantActive = false;
+    private bool _rampageActive = false;
 
     //bonus dmg in percentage striking from behind
     public int BehindBuff
@@ -167,10 +185,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>(); //gets the animator
         _touchingDirections = GetComponent<TouchingDirections>(); //wall detection
         _damageable = GetComponent<Damageable>(); //damageable component
+        _damageable.SetPlayer(this);
         _trail = GetComponent<TrailRenderer>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
-
-        //TODO GET STATS FROM STAT MANAGER
     }
 
     // Start is called before the first frame update
@@ -395,17 +412,22 @@ public class PlayerController : MonoBehaviour
     }
     
     //saves stats whenever new scene
-    public (int[] intStats, float[] floatStats, int[] upStats) SaveStats()
+    public (int[] intStats, float[] floatStats, int[] permUpStats, int[] tempUpStats) SaveStats()
     {
         int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
         float[] floatStats = new[] { _dashCD, movementSpeed, _dmgMod };
-        int[] upStats = new[] { _dashUp, _behindUp, _decFirstUp, _roomHealUp, _darkUp, _killHealUp };
-        return (intStats, floatStats, upStats);
+        int[] permUpStats = new[] { _dashUp, _behindUp, _decFirstUp, _roomHealUp, _darkUp, _killHealUp };
+        int[] tempUpStats = new[]
+        {
+            _safeDashUp, _antiTrapUp, _meatyUp, _vigilantUp, _gliderUp, _beastUp, _rampageUp,
+            _surferUp, _gravitonUp, _swiftyUp, _immortalUp
+        };
+        return (intStats, floatStats, permUpStats, tempUpStats);
     }
 
 
     //loads stats whenever new scene
-    public void LoadStats(int[] intStats, float[] floatStats, int[] upStats)
+    public void LoadStats(int[] intStats, float[] floatStats, int[] permUpStats, int[] tempUpStats)
     {
         //saves int info
         _maxDash = intStats[0];
@@ -425,13 +447,26 @@ public class PlayerController : MonoBehaviour
         _dmgMod = floatStats[2];
         _damageable.DmgMod += _dmgMod;
         
-        //saves upgrade info
-        _dashUp = upStats[0];
-        _behindUp = upStats[1];
-        _decFirstUp = upStats[2];
-        _roomHealUp = upStats[3];
-        _darkUp= upStats[4];
-        _killHealUp = upStats[5];
+        //saves perm upgrade info
+        _dashUp = permUpStats[0];
+        _behindUp = permUpStats[1];
+        _decFirstUp = permUpStats[2];
+        _roomHealUp = permUpStats[3];
+        _darkUp= permUpStats[4];
+        _killHealUp = permUpStats[5];
+        
+        //saves temp upgrade info
+        _safeDashUp = tempUpStats[0];
+        _antiTrapUp = tempUpStats[1];
+        _meatyUp = tempUpStats[2];
+        _vigilantUp = tempUpStats[3];
+        _gliderUp = tempUpStats[4];
+        _beastUp = tempUpStats[5];
+        _rampageUp = tempUpStats[6];
+        _surferUp = tempUpStats[7];
+        _gravitonUp = tempUpStats[8];
+        _swiftyUp = tempUpStats[9];
+        _immortalUp = tempUpStats[10];
 
     }
 
@@ -498,6 +533,84 @@ public class PlayerController : MonoBehaviour
         return 0;
     }
     
+    //upgrades temp stats
+    public void TempUpgrade(int upgrade)
+    {
+        switch (upgrade)
+        {
+            case 0: //reduce dmg in dash
+                _safeDashUp += UpgradeInts.safeDashIncr;
+                break;
+            case 1: //reduce trap dmg taken
+                _antiTrapUp += UpgradeInts.antiTrapIncr;
+                break;
+            case 2: //reduce dmg taken
+                _meatyUp += UpgradeInts.meatyIncr;
+                break;
+            case 3: //reduce dmg taken after kill, seconds
+                _vigilantUp += UpgradeInts.vigilantIncr;
+                break;
+            case 4: //increase dmg dealt midair
+                _gliderUp += UpgradeInts.gliderIncr;
+                break;
+            case 5: //deal more damage
+                _beastUp += UpgradeInts.beastIncr;
+                break;
+            case 6: //deal more after kill
+                _rampageUp += UpgradeInts.rampageIncr;
+                break;
+            case 7: //increase MS after dash
+                _surferUp += UpgradeInts.surferIncr;
+                break;
+            case 8: //decrease MS of enemies after dash
+                _gravitonUp += UpgradeInts.gravitonIncr;
+                break;
+            case 9: //dodge chance
+                _swiftyUp += UpgradeInts.swiftyIncr;
+                break;
+            case 10: //revive
+                _immortalUp += UpgradeInts.immortalIncr;
+                break;
+            case 11: //heal 50% HP
+                _damageable.Heal(_damageable.MaxHealth/2);
+                break;
+        }
+    }
+    
+    //Check levels of upgrades
+    public int GetTempUpgrade(int upgrade)
+    {
+        switch (upgrade)
+        {
+            case 0:
+                return _safeDashUp;
+            case 1: 
+                return _antiTrapUp;
+            case 2: 
+                return _meatyUp;
+            case 3: 
+                return _vigilantUp;
+            case 4: 
+                return _gliderUp;
+            case 5: 
+                return _beastUp;
+            case 6: 
+                return _rampageUp;
+            case 7: 
+                return _surferUp;
+            case 8: 
+                return _gravitonUp;
+            case 9: 
+                return _swiftyUp;
+            case 10: 
+                return _immortalUp;
+            case 11:
+                return 0;
+        }
+        return 0;
+    }
+    
+    
     //Heal after each room
     public void RoomHeal()
     {
@@ -528,5 +641,31 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    
+    //disables the refill for a bit
+    public IEnumerator ActivateVigilant()
+    {
+        _vigilantActive = true;
+        //Wait for x seconds
+        yield return new WaitForSeconds(_vigilantUp);
+        _vigilantActive = false;
+    }
+
+    //calculates the temporary damage taken mods
+    public float CalcTempMod()
+    {
+        _tempDmgMod = _meatyUp;
+        if (Dashing)
+        {
+            _tempDmgMod += _safeDashUp;
+        }
+
+        if (_vigilantActive)
+        {
+            _tempDmgMod += 50;
+        }
+
+        return _tempDmgMod / 100f;
+    }
 
 }

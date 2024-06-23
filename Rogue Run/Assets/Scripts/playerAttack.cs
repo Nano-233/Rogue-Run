@@ -80,17 +80,22 @@ public class PlayerAttack : MonoBehaviour
             //if killed, drop loot
             if (!damageable.IsAlive)
             {
-                //randomly gain darkness according to multiplier
-                int gain = Random.Range(0, damageable.Multiplier);
-                if (gain > 0)
-                {
-                    _playerController.AddDarkness(gain);
-                }
-                
-                //heal if upgrade
-                _playerController.KillHeal();
+                EnemyKilled(damageable);
+                StartCoroutine(_playerController.ActivateVigilant());
             }
         }
-        
+    }
+
+    private void EnemyKilled(Damageable damageable)
+    {
+        //randomly gain darkness according to multiplier
+        int gain = Random.Range(0, damageable.Multiplier);
+        if (gain > 0)
+        {
+            _playerController.AddDarkness(gain);
+        }
+                
+        //heal if upgrade
+        _playerController.KillHeal();
     }
 }

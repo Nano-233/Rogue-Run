@@ -20,10 +20,14 @@ public class Damageable : MonoBehaviour
     private float _dmgMod = 1; //damage modifier
     private float _vanguardBuff = 0; //damage reduction from vangaurd
     private bool _hasVangaurd = false; //if the player is benefiting from vanguard
+    private float _tempDmgMod = 0; //additional temporary damage modifications.
 
     private bool _isAlive = true;
+    private bool _isPlayer = false;
 
     private Animator _animator;
+
+    private PlayerController _playerController;
 
     public float InvincibleTime
     {
@@ -34,6 +38,18 @@ public class Damageable : MonoBehaviour
         set
         {
             _invincibilityTime = value;
+        }
+    }
+    
+    public bool IsPlayer
+    {
+        get
+        {
+            return _isPlayer;
+        }
+        set
+        {
+            _isPlayer = value;
         }
     }
     
@@ -158,7 +174,11 @@ public class Damageable : MonoBehaviour
     //hits the player
     public bool Hit(int damage, Vector2 knockback)
     {
-        damage = Convert.ToInt32(damage * _dmgMod);
+        if (IsPlayer)
+        {
+            //perm dmg modifier minus the temporary damage reduced
+            damage = Convert.ToInt32(damage * (_dmgMod - _playerController.CalcTempMod()));
+        }
         if (IsAlive && !_isInvincible)
         {
             if (Health - damage < 0)
@@ -167,7 +187,14 @@ public class Damageable : MonoBehaviour
             }
             else
             {
-                Health -= damage;
+                if (damage > 0)
+                {
+                    Health -= damage;
+                }
+                else
+                {
+                    Health -= 0;
+                }
             }
             _isInvincible = true;
 
@@ -178,7 +205,7 @@ public class Damageable : MonoBehaviour
             CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
             
             //if has vanguard and got hit, revert.
-            if (_hasVangaurd)
+            if (_hasVangaurd && IsPlayer)
             {
                 _hasVangaurd = false;
                 _dmgMod += _vanguardBuff;
@@ -214,6 +241,12 @@ public class Damageable : MonoBehaviour
             _vanguardBuff = buff;
             _dmgMod -= _vanguardBuff;
         }
+    }
+
+    public void SetPlayer(PlayerController playerController)
+    {
+        _playerController = playerController;
+        IsPlayer = true;
     }
 
 }

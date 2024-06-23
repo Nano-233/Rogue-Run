@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class PermUpgrades : MonoBehaviour
 {
@@ -65,23 +64,7 @@ public class PermUpgrades : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             _stats[i] = _playerController.GetPermUpgrade(i);
-            
-            //gets the flat levels
-            switch (i)
-            {
-                //assassin, undead
-                case 1: case 3:
-                    _levels[i] = _stats[i] / UpgradeInts.assasinIncr;
-                    break;
-                //slayer
-                case 5:
-                    _levels[i] = _stats[i] / UpgradeInts.slayerIncr;
-                    break;
-                //dasher, vanguard, gambler
-                default:
-                    _levels[i] = _stats[i] / UpgradeInts.dasherIncr;
-                    break;
-            }
+            _levels[i] = _stats[i] / UpgradeInts.permArr[i];
         }
 
         // Setting text
@@ -265,11 +248,10 @@ public class PermUpgrades : MonoBehaviour
     }
     
 
-    public class Upgrade
+    private class Upgrade
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int[] Level { get; set; }
     }
 }
 
