@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
     private float _dmgMod = 0; //extra damage modification added on
-    private float _tempDmgMod = 0; //damage to be reduced (in %)
     
     //temp upgrades
     private int _safeDashUp = 0; //decreased hurt while dashing, %
@@ -649,19 +648,34 @@ public class PlayerController : MonoBehaviour
     }
     
     
-    //disables the refill for a bit
+    //activates countdown for vigilant
     public IEnumerator ActivateVigilant()
     {
-        _vigilantActive = true;
-        //Wait for x seconds
-        yield return new WaitForSeconds(_vigilantUp);
-        _vigilantActive = false;
+        if (_vigilantUp > 0)
+        {
+            _vigilantActive = true;
+            //Wait for x seconds
+            yield return new WaitForSeconds(_vigilantUp);
+            _vigilantActive = false;
+        }
+    }
+    
+    //activates countdown for rampage
+    public IEnumerator ActivateRampage()
+    {
+        if (_rampageUp > 0)
+        {
+            _rampageActive= true;
+            //Wait for x seconds
+            yield return new WaitForSeconds(_rampageUp);
+            _rampageActive = false;
+        }
     }
 
     //calculates the temporary damage taken mods
     public float CalcTempMod()
     {
-        _tempDmgMod = _solidUp;
+        float _tempDmgMod = _solidUp;
         if (Dashing)
         {
             _tempDmgMod += _safeDashUp;
@@ -673,6 +687,23 @@ public class PlayerController : MonoBehaviour
         }
 
         return _tempDmgMod / 100f;
+    }
+
+    //calculates the temporary damage dealt mods
+    public float CalcTempDmg()
+    {
+        float _tempDmgMod = _beastUp;
+        if (!_touchingDirections.IsGrounded)
+        {
+            _tempDmgMod += _gliderUp;
+        }
+
+        if (_rampageActive)
+        {
+            _tempDmgMod += 10;
+        }
+
+        return _tempDmgMod;
     }
 
 }

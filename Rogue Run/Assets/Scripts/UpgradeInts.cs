@@ -26,7 +26,7 @@ internal class UpgradeInts
     internal static int swiftyIncr = 5; //%
     internal static int healIncr = 1;
     internal static int immortalIncr = 1; //flat lives
-    internal static int solidIncr = 4; //%
+    internal static int solidIncr = 5; //%
 
     internal static int[] tempArr = new[]
     {
