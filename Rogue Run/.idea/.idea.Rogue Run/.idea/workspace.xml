@@ -6,17 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="99b1e3ce-1128-47e1-bc09-2fc578b4b3ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ancestor 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ancestor 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/DialogueBox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/DialogueBox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Upgrades.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Upgrades.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,6 +173,8 @@
       <workItem from="1719010633486" duration="7374000" />
       <workItem from="1719096819760" duration="6815000" />
       <workItem from="1719117287682" duration="58000" />
+      <workItem from="1719117524301" duration="1738000" />
+      <workItem from="1719124506403" duration="2398000" />
     </task>
     <servers />
   </component>

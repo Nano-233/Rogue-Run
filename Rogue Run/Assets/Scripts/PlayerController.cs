@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     //temp upgrades
     private int _safeDashUp = 0; //decreased hurt while dashing, %
     private int _antiTrapUp = 0; //decreased hurt by traps, %
-    private int _meatyUp = 0; //decrease hurt
+    private int _meatyUp = 0; //increase max HP
     private int _vigilantUp = 0; //decrease hurt upon kill, seconds
     private int _gliderUp = 0; //increase dmg in air, %
     private int _beastUp = 0; //increase dmg, %
@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
     private int _gravitonUp = 0; //decrease MS of enemies after dash, s
     private int _swiftyUp = 0; //increase dodge chance, %
     private int _immortalUp = 0; //revives at 50% hp
+    private int _solidUp = 0; //decrease hurt, %
     
     //boolean of buffs
     private bool _vigilantActive = false;
@@ -544,8 +545,9 @@ public class PlayerController : MonoBehaviour
             case 1: //reduce trap dmg taken
                 _antiTrapUp += UpgradeInts.antiTrapIncr;
                 break;
-            case 2: //reduce dmg taken
+            case 2: //increase max HP
                 _meatyUp += UpgradeInts.meatyIncr;
+                _damageable.MaxHealth += 25;
                 break;
             case 3: //reduce dmg taken after kill, seconds
                 _vigilantUp += UpgradeInts.vigilantIncr;
@@ -569,10 +571,13 @@ public class PlayerController : MonoBehaviour
                 _swiftyUp += UpgradeInts.swiftyIncr;
                 break;
             case 10: //revive
-                _immortalUp += UpgradeInts.immortalIncr;
+                _damageable.Heal(_damageable.MaxHealth/2);
                 break;
             case 11: //heal 50% HP
-                _damageable.Heal(_damageable.MaxHealth/2);
+                _immortalUp += UpgradeInts.immortalIncr;
+                break;
+            case 12: //decrease dmg taken
+                _solidUp += UpgradeInts.solidIncr;
                 break;
         }
     }
@@ -603,9 +608,11 @@ public class PlayerController : MonoBehaviour
             case 9: 
                 return _swiftyUp;
             case 10: 
-                return _immortalUp;
-            case 11:
                 return 0;
+            case 11:
+                return _immortalUp;
+            case 12:
+                return _solidUp;
         }
         return 0;
     }
@@ -654,7 +661,7 @@ public class PlayerController : MonoBehaviour
     //calculates the temporary damage taken mods
     public float CalcTempMod()
     {
-        _tempDmgMod = _meatyUp;
+        _tempDmgMod = _solidUp;
         if (Dashing)
         {
             _tempDmgMod += _safeDashUp;

@@ -31,7 +31,7 @@ public class PermUpgrades : MonoBehaviour
         new Upgrade { Name = "Slayer", Description = "You have a X% chance to gain 5HP after each enemy killed.  \n Currently V% \n\n Z"},
     };
 
-    private void Awake()
+    private void OnEnable()
     {
         //gets the player component
         _player = GameObject.FindGameObjectWithTag("Player");
