@@ -67,6 +67,24 @@ public class PlayerController : MonoBehaviour
     private bool _vigilantActive = false;
     private bool _rampageActive = false;
 
+    //lives remaining
+    public int LivesRemaining
+    {
+        get
+        {
+            return _immortalUp;
+        }
+    }
+    
+    //dodge chance
+    public int DodgeChance
+    {
+        get
+        {
+            return _swiftyUp;
+        }
+    }
+    
     //bonus dmg in percentage striking from behind
     public int BehindBuff
     {
@@ -208,7 +226,20 @@ public class PlayerController : MonoBehaviour
 
         if (!_damageable.IsAlive)
         {
-            SceneController.instance.NextScene(0);
+            //if has respawn, respawn with 10% hp
+            if (_immortalUp > 0)
+            {
+                _damageable.Health = _damageable.MaxHealth / 10;
+                _immortalUp--;
+                SceneController.instance.ReloadScene();
+            }
+            else
+            {
+                //TODO play a fade effect
+                
+                //go back to spawn
+                SceneController.instance.NextScene(0);
+            }
         }
         
         float inputX = Input.GetAxisRaw("Horizontal");//horizontal input

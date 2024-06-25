@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class Damageable : MonoBehaviour
 {
@@ -166,7 +167,6 @@ public class Damageable : MonoBehaviour
             _timeSinceHit += Time.deltaTime; //add the time increment.
         }
 
-        //Hit(30, Vector2.zero);
 
     }
     
@@ -177,6 +177,17 @@ public class Damageable : MonoBehaviour
         {
             //perm dmg modifier minus the temporary damage reduced
             damage = Convert.ToInt32(damage * (_dmgMod - _playerController.CalcTempMod()));
+            //swifty dodge chance
+            if (_playerController.DodgeChance > 0)
+            {
+                int roll = Random.Range(1, 101);
+                if (_playerController.DodgeChance >= roll)
+                {
+                    damage = 0;
+                    //no knockback either
+                    knockback = Vector2.zero;
+                }
+            }
         }
         if (IsAlive && !_isInvincible)
         {

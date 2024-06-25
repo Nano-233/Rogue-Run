@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     //health bar
     public TMP_Text healthText; //text of hp
     public Image healthBar; //green bar of hp
+    public TMP_Text livesText; //text of lives remaining
     private Damageable _damageable; //player's damageable component
     
     //floating text
@@ -56,15 +57,19 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets the correct text
+        healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
+        healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text for hp
+        darknessText.text = _playerController.DarknessCount.ToString();
+        livesText.text = _playerController.LivesRemaining.ToString(); //sets lives remaining
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
-        healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text
+        healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text for hp
         darknessText.text = _playerController.DarknessCount.ToString();
+        livesText.text = _playerController.LivesRemaining.ToString(); //sets lives remaining
     }
 
     //when something takes damage, floating text

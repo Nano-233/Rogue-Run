@@ -32,6 +32,11 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void ReloadScene()
+    {
+        NextScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void NextScene(int id)
     {
         _player = GameObject.FindGameObjectWithTag("Player");

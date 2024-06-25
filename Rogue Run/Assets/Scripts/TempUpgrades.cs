@@ -29,7 +29,7 @@ public class TempUpgrades : MonoBehaviour
         new Upgrade { Name = "Graviton", Description = "Decrease movement speed of nearby enemies after dashing by 40% for X seconds. \n Currently V seconds"},
         new Upgrade { Name = "Swifty", Description = "Gain a X% dodge chance against enemies. \n Currently V%"},
         new Upgrade { Name = "Heal", Description = "Instantly heal 50% of your max health."},
-        new Upgrade { Name = "Immortal", Description = "+1 revive after dying at 50% max health. \n Currently V revives."},
+        new Upgrade { Name = "Immortal", Description = "+1 revive after dying at 10% max health. \n Currently V revives."},
         new Upgrade { Name = "Solid", Description = "Decrease damage taken by X%. \n Currently V%"}
     };
     
@@ -65,14 +65,14 @@ public class TempUpgrades : MonoBehaviour
         {
             availableUpgrades = new List<int>();
             int number;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 do {
                     number = Random.Range(0,_upgrades.Length);
                 } while (availableUpgrades.Contains(number));
                 availableUpgrades.Add(number);
             }
-            //availableUpgrades.Add(8); //testing purposes
+            availableUpgrades.Add(11); //testing purposes
         }
         
         
