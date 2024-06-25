@@ -21,7 +21,7 @@ internal class UpgradeInts
     internal static int gliderIncr = 15; //%
     internal static int beastIncr = 4; //%
     internal static int rampageIncr = 2; //s
-    internal static int surferIncr = 2; //flat MS
+    internal static int surferIncr = 4; //flat MS
     internal static int gravitonIncr = 2; //s
     internal static int swiftyIncr = 5; //%
     internal static int healIncr = 1;

@@ -68,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
         //if behind
         if (Math.Sign(_player.transform.localScale.x) == Math.Sign(collision.transform.localScale.x))
         {
-            bonus += _playerController.BehindBuff / 100;
+            bonus += _playerController.BehindBuff / 100f;
         }
 
         if (damageable != null && playerAnim.GetBool(AnimationStrings.dashing))

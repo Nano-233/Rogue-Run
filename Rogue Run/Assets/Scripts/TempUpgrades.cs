@@ -72,6 +72,7 @@ public class TempUpgrades : MonoBehaviour
                 } while (availableUpgrades.Contains(number));
                 availableUpgrades.Add(number);
             }
+            //availableUpgrades.Add(8); //testing purposes
         }
         
         
@@ -85,7 +86,6 @@ public class TempUpgrades : MonoBehaviour
         {
             _stats[i] = _playerController.GetTempUpgrade(availableUpgrades[i]);
             _levels[i] = _stats[i] / UpgradeInts.tempArr[availableUpgrades[i]];
-            Debug.Log($"Current upgrade index: {i}, upgrade: {availableUpgrades[i]}, stat: {_stats[i]}, level: {_levels[i]}");
         }
 
         // Setting text

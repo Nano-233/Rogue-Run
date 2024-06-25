@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b1e3ce-1128-47e1-bc09-2fc578b4b3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ancestor 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ancestor 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rogue Run/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/OctoEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Enemies/Octo/OctoEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Octo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempTooltips.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgradeButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref" beforeDir="false" afterPath="$PROJECT_DIR$/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +176,10 @@
       <workItem from="1719117524301" duration="1738000" />
       <workItem from="1719124506403" duration="5237000" />
       <workItem from="1719130299440" duration="25000" />
+      <workItem from="1719187171055" duration="2057000" />
+      <workItem from="1719194237798" duration="365000" />
+      <workItem from="1719199471351" duration="1400000" />
+      <workItem from="1719284361117" duration="3593000" />
     </task>
     <servers />
   </component>

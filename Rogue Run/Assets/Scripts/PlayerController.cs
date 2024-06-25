@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private TrailRenderer _trail; //trail
     private TouchingDirections _touchingDirections; //Used for ground checking
     private PlayerAttack _playerAttack; //player's attack info
+    public DetectionZone gravitonZone; //zone of enemies to be effected by graviton
 
     //movement variables
     private int _maxDash = 1; //Number of dashes that can be replenished to
@@ -250,10 +251,36 @@ public class PlayerController : MonoBehaviour
                 if (StopDash) //if the dash should be stopped
                 {
                     _trail.emitting = false; //stop the trail
-                    //keeps a portion of the upwards momentum only
-                    _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
+                    
+                    //if surfer activated
+                    if (_surferUp > 0)
+                    {
+                        //keeps a portion of the upwards momentum only
+                        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed + _surferUp / 10f, _rb.velocity.y * 0.35f);
+                    }
+                    else
+                    {
+                        //keeps a portion of the upwards momentum only
+                        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed, _rb.velocity.y * 0.35f);
+                    }
+
+                    //if graviton activated
+                    if (_gravitonUp > 0 && gravitonZone.detectedColliders.Count > 0)
+                    {
+                        foreach (Collider2D effectedCollider in gravitonZone.detectedColliders)
+                        {
+                            if (effectedCollider.CompareTag("Enemy"))
+                            {
+                                StartCoroutine(effectedCollider.gameObject.GetComponent<IEnemy>()
+                                    .ApplyGraviton(_gravitonUp));
+                            }
+                        }
+                    }
+                    
                     //resets the value of stop dash.
                     _animator.SetBool(AnimationStrings.stopDash, false);
+                    
+                    
                 }
                 else //change the velocity normally
                 {

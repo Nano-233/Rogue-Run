@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
-public class Octo : MonoBehaviour
+public class Octo : MonoBehaviour, IEnemy
 {
 
     public float walkSpeed = 3f; //speed that the octo moves at
@@ -219,7 +219,14 @@ public class Octo : MonoBehaviour
         
     }
 
-   
+    //applies vigilant debuff onto enemy
+    public IEnumerator ApplyGraviton(int seconds)
+    {
+        walkSpeed -= 0.5f * walkSpeed;
+        //Wait for x seconds
+        yield return new WaitForSeconds(seconds);
+        walkSpeed *= 2;
+    }
 
     // Start is called before the first frame update
     void Start()
