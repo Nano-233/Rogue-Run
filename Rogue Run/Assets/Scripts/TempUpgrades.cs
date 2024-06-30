@@ -12,7 +12,8 @@ public class TempUpgrades : MonoBehaviour
 
     //list of UI active upgrades
     private List<int> availableUpgrades;
-    
+
+    private bool firstTime = true;
     
     
     //list of upgrades
@@ -54,7 +55,11 @@ public class TempUpgrades : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         //controller
         _playerController = _player.GetComponent<PlayerController>();
-        ButtonsSet(true);
+        ButtonsSet(firstTime);
+        if (firstTime)
+        {
+            firstTime = !firstTime;
+        }
     }
 
     public void ButtonsSet(bool shuffle)
