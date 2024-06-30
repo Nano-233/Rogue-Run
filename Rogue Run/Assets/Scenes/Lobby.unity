@@ -3152,7 +3152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &675367397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,7 +3433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &843854240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &867145659
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,7 +4122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &1384914099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4269,7 +4269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &1395374724
 GameObject:
   m_ObjectHideFlags: 0
@@ -6672,7 +6672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7020673ecffb6a4eab39876a8a2d102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  permUpgradesscript: {fileID: 1395374727}
+  permUpgradesScript: {fileID: 1395374727}
 --- !u!1 &2024859998
 GameObject:
   m_ObjectHideFlags: 0
