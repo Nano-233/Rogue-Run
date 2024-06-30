@@ -237,8 +237,12 @@ public class PlayerController : MonoBehaviour
             {
                 //TODO play a fade effect
                 
+                //reset upgrades
+                ResetTempUpgrades();
                 //go back to spawn
-                SceneController.instance.NextScene(0);
+                SceneController.instance.NextScene(2);
+                
+               
             }
         }
         
@@ -489,7 +493,11 @@ public class PlayerController : MonoBehaviour
     {
         //saves int info
         _maxDash = intStats[0];
-        _damageable.MaxHealth = intStats[1];
+        
+        //increase max hp based on upgrade
+        _damageable.MaxHealth = 100;
+        _damageable.MaxHealth += _meatyUp;
+        
         _playerAttack.AD = intStats[2];
         //checks if needs respawning
         if (intStats[3] > 0) //if still alive, keep hp
@@ -605,6 +613,7 @@ public class PlayerController : MonoBehaviour
             case 2: //increase max HP
                 _meatyUp += UpgradeInts.meatyIncr;
                 _damageable.MaxHealth += 25;
+                _damageable.Heal(25);
                 break;
             case 3: //reduce dmg taken after kill, seconds
                 _vigilantUp += UpgradeInts.vigilantIncr;
@@ -762,6 +771,13 @@ public class PlayerController : MonoBehaviour
         }
 
         return _tempDmgMod;
+    }
+
+    //reset all temp upgrades
+    private void ResetTempUpgrades()
+    {
+        _safeDashUp = _antiTrapUp = _meatyUp = _vigilantUp = _gliderUp = _beastUp = _rampageUp = _surferUp 
+            = _gravitonUp = _swiftyUp = _immortalUp = _solidUp = 0;
     }
 
 }
