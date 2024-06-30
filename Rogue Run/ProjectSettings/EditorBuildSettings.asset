@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Spawn.unity
     guid: c4a373dbabc692d46993e67be97b2d13
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 488902b88b1ef1c4dba7a0e0c13b4b10
+  - enabled: 1
     path: Assets/Scenes/Ancestor 1.unity
     guid: 5039d13d137f4ac4f8cdaf91854f59af
   - enabled: 1
@@ -20,12 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 2d9fce87292a7a242bd9d9f3055f5105
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Lobby.unity
-    guid: 488902b88b1ef1c4dba7a0e0c13b4b10
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 472ff850b31c2fb418f100e76934aea7
