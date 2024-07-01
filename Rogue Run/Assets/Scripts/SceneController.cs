@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-
     public static SceneController instance;
 
     //field for player
     private PlayerController _playerController;
     private GameObject _player;
-    
+
     //field for all data
     private int[] _intStats;
     private float[] _floatStats;
@@ -46,7 +45,7 @@ public class SceneController : MonoBehaviour
 
         StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
     }
-    
+
     //load scene
     private IEnumerator LoadScene(int id)
     {
@@ -61,13 +60,13 @@ public class SceneController : MonoBehaviour
         {
             asyncLoadLevel = SceneManager.LoadSceneAsync(id, LoadSceneMode.Single);
         }
-        
+
         // Wait until the level finish loading
         while (!asyncLoadLevel.isDone)
             yield return null;
         // Wait a frame so every Awake and Start method is called
         yield return new WaitForEndOfFrame();
-        
+
         //reload player
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>(); //finds the player
@@ -83,7 +82,6 @@ public class SceneController : MonoBehaviour
         _floatStats = data.floatStats;
         _permUpStats = data.permUpStats;
         _tempUpStats = data.tempUpStats;
-
     }
 
     //load the stats to the player
@@ -91,14 +89,14 @@ public class SceneController : MonoBehaviour
     {
         _playerController.LoadStats(_intStats, _floatStats, _permUpStats, _tempUpStats);
     }
-    
+
     //action to player when ending scene
     private void EndRoom()
     {
         //heal if upgrade
         _playerController.RoomHeal();
     }
-    
+
     //action to player when new scene
     private void StartRoom()
     {
