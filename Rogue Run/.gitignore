@@ -27,10 +27,8 @@
 .vs/
 
 # Rider directory
-/.idea
-
+.idea
 /ProjectSettings/RiderScriptEditorPersistedState.asset
-
 *.sln.DotSettings*
 
 # Gradle cache directory
