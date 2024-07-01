@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-
     public int AD = 10;
-    public Vector2 knockBack = Vector2.zero;    
+    public Vector2 knockBack = Vector2.zero;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +21,5 @@ public class Attack : MonoBehaviour
             //hit
             damageable.Hit(AD, deliveredKnockBack);
         }
-        
-        
     }
 }

@@ -6,25 +6,17 @@ using Random = UnityEngine.Random;
 
 public class PlayerAttack : MonoBehaviour
 {
-    
     public int _AD = 100; //attack damage
-    private Vector2 _knockBack = Vector2.zero;  //no knockback from the player
+    private Vector2 _knockBack = Vector2.zero; //no knockback from the player
     private PlayerController _playerController; //player controller component
     private GameObject _player; //player
-    
-    [SerializeField]
-    public Animator playerAnim;
+
+    [SerializeField] public Animator playerAnim;
 
     public int AD
     {
-        get
-        {
-            return _AD;
-        }
-        set
-        {
-            _AD = value;
-        }
+        get { return _AD; }
+        set { _AD = value; }
     }
 
     private void Awake()
@@ -38,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Hit(collision, false);
     }
-    
+
     //if starts from enemy. Invincible takes care of multiple damage.
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -53,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
         {
             _playerController.AddDarkness(gain);
         }
-                
+
         //heal if upgrade
         _playerController.KillHeal();
     }
@@ -64,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         Damageable damageable = collision.GetComponent<Damageable>(); //can use interface (IDamageable)
         //get bonus dmg
         float bonus = _playerController.CalcTempDmg() + 1;
-        
+
         //if behind
         if (Math.Sign(_player.transform.localScale.x) == Math.Sign(collision.transform.localScale.x))
         {
@@ -74,12 +66,12 @@ public class PlayerAttack : MonoBehaviour
         if (damageable != null && playerAnim.GetBool(AnimationStrings.dashing))
         {
             damageable.Hit(Convert.ToInt32(AD * bonus), _knockBack);
-            
+
             //if killed, drop loot
             if (!damageable.IsAlive && exit)
             {
                 EnemyKilled(damageable);
-                
+
                 StartCoroutine(_playerController.ActivateVigilant());
                 StartCoroutine(_playerController.ActivateRampage());
             }

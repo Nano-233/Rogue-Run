@@ -11,10 +11,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" afterDir="false" />
@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TempUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UpgradeInts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/playerAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
@@ -189,6 +190,7 @@
       <workItem from="1719808131440" duration="59000" />
       <workItem from="1719808272430" duration="1108000" />
       <workItem from="1719810086752" duration="44000" />
+      <workItem from="1719810230959" duration="30000" />
     </task>
     <servers />
   </component>
