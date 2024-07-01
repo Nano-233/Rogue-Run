@@ -70,14 +70,14 @@ public class TempUpgrades : MonoBehaviour
         {
             availableUpgrades = new List<int>();
             int number;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 do {
                     number = Random.Range(0,_upgrades.Length);
                 } while (availableUpgrades.Contains(number));
                 availableUpgrades.Add(number);
             }
-            availableUpgrades.Add(11); //testing purposes
+            //availableUpgrades.Add(11); //testing purposes
         }
         
         
