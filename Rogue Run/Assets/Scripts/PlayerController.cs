@@ -14,10 +14,10 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 8f; //speed of player.
     public float jumpImpulse = 10f; //velocity of jump
     private float _dashSpeed = 35f; //current dash speed if should be kept
-    
+
     //inputs
     private Vector2 _moveInput; //gets vector from player input.
-    
+
     //components
     private Rigidbody2D _rb; //Rigidbody2D of player.
     private Animator _animator; //animator of the player sprite
@@ -36,10 +36,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 _dashDir; //direction of dash
     public bool isFacingRight = true; //which way the player is facing
     private bool _canDash = true;
-    
+
     //currency
     private int _darknessCount = 10000; //Count of currency
-    
+
     //permanent upgrades
     private int _dashUp = 0; //decreased dash cd, in %
     private int _behindUp = 0; //Increased damage to enemies from behind, in %
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     private int _darkUp = 0; //Increased darkness gained, %
     private int _killHealUp = 0; //Damaged healed per kill, flat
     private float _dmgMod = 0; //extra damage modification added on
-    
+
     //temp upgrades
     private int _safeDashUp = 0; //decreased hurt while dashing, %
     private int _antiTrapUp = 0; //decreased hurt by traps, %
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     private int _swiftyUp = 0; //increase dodge chance, %
     private int _immortalUp = 0; //revives at 50% hp
     private int _solidUp = 0; //decrease hurt, %
-    
+
     //boolean of buffs
     private bool _vigilantActive = false;
     private bool _rampageActive = false;
@@ -70,49 +70,31 @@ public class PlayerController : MonoBehaviour
     //lives remaining
     public int LivesRemaining
     {
-        get
-        {
-            return _immortalUp;
-        }
+        get { return _immortalUp; }
     }
-    
+
     //dodge chance
     public int DodgeChance
     {
-        get
-        {
-            return _swiftyUp;
-        }
+        get { return _swiftyUp; }
     }
-    
+
     //bonus dmg in percentage striking from behind
     public int BehindBuff
     {
-        get
-        {
-            return _behindUp;
-        }
+        get { return _behindUp; }
     }
-    
+
     public bool CanDash
     {
-        get
-        {
-            return _canDash;
-        }
-        set
-        {
-            _canDash = value;
-        }
+        get { return _canDash; }
+        set { _canDash = value; }
     }
 
     //checks if the player is moving
     public bool IsMoving
     {
-        get
-        {
-            return _isMoving;
-        }
+        get { return _isMoving; }
         private set
         {
             _isMoving = value;
@@ -124,54 +106,37 @@ public class PlayerController : MonoBehaviour
     //checks if the player can move
     public bool CanMove
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.canMove);
-        }
+        get { return _animator.GetBool(AnimationStrings.canMove); }
     }
-    
+
     //checks if the player is dashing
     public bool Dashing
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.dashing);
-        }
+        get { return _animator.GetBool(AnimationStrings.dashing); }
     }
-    
+
     //checks if the player should stop dashing
     public bool StopDash
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.stopDash);
-        }
+        get { return _animator.GetBool(AnimationStrings.stopDash); }
     }
-    
+
     //checks if the player is alive
     public bool IsAlive
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.isAlive);
-        }
+        get { return _animator.GetBool(AnimationStrings.isAlive); }
     }
-    
+
     //checks if the player is spawning
     public bool IsSpawning
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.isSpawning);
-        }
+        get { return _animator.GetBool(AnimationStrings.isSpawning); }
     }
 
     public bool IsFacingRight
     {
-        get
-        {
-            return isFacingRight;
-        } private set
+        get { return isFacingRight; }
+        private set
         {
             //if facing is wrong
             if (isFacingRight != value)
@@ -187,14 +152,8 @@ public class PlayerController : MonoBehaviour
     //gets darkness count
     public int DarknessCount
     {
-        get
-        {
-            return _darknessCount;
-        }
-        set
-        {
-            _darknessCount = value;
-        }
+        get { return _darknessCount; }
+        set { _darknessCount = value; }
     }
 
     private void Awake()
@@ -212,7 +171,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -223,7 +181,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (!_damageable.IsAlive)
         {
             //if has respawn, respawn with 10% hp
@@ -236,23 +193,21 @@ public class PlayerController : MonoBehaviour
             else
             {
                 //TODO play a fade effect
-                
+
                 //reset upgrades
                 ResetTempUpgrades();
                 //go back to spawn
                 SceneController.instance.NextScene(2);
-                
-               
             }
         }
-        
-        float inputX = Input.GetAxisRaw("Horizontal");//horizontal input
-        float inputY = Input.GetAxisRaw("Vertical");//vertical input
-        
-        
+
+        float inputX = Input.GetAxisRaw("Horizontal"); //horizontal input
+        float inputY = Input.GetAxisRaw("Vertical"); //vertical input
+
+
         //finds the direction the dash is going to
         _dashDir = new Vector2(inputX, inputY);
-        
+
         //if the player is not moving, set the direction the player is facing as the dash direction.
         if (_dashDir == Vector2.zero)
         {
@@ -263,7 +218,7 @@ public class PlayerController : MonoBehaviour
         if (!_damageable.IsHit && !IsSpawning)
         {
             //if dashing, dash in the direction the player is facing
-            if (Dashing) 
+            if (Dashing)
             {
                 if (Math.Abs(inputY) > 0)
                 {
@@ -272,7 +227,7 @@ public class PlayerController : MonoBehaviour
                         _rb.velocity = _dashDir.normalized * _dashSpeed / 1.2f;
                     }
                     else
-                    { 
+                    {
                         _rb.velocity = _dashDir.normalized * _dashSpeed / 1.5f;
                     }
                 }
@@ -286,12 +241,13 @@ public class PlayerController : MonoBehaviour
                 if (StopDash) //if the dash should be stopped
                 {
                     _trail.emitting = false; //stop the trail
-                    
+
                     //if surfer activated
                     if (_surferUp > 0)
                     {
                         //keeps a portion of the upwards momentum only
-                        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed + _surferUp / 10f, _rb.velocity.y * 0.35f);
+                        _rb.velocity = new Vector2(_moveInput.x * CurrentMoveSpeed + _surferUp / 10f,
+                            _rb.velocity.y * 0.35f);
                     }
                     else
                     {
@@ -311,11 +267,9 @@ public class PlayerController : MonoBehaviour
                             }
                         }
                     }
-                    
+
                     //resets the value of stop dash.
                     _animator.SetBool(AnimationStrings.stopDash, false);
-                    
-                    
                 }
                 else //change the velocity normally
                 {
@@ -330,11 +284,11 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool(AnimationStrings.dashing, false);
             _animator.SetBool(AnimationStrings.stopDash, true);
         }
-        
-        
+
+
         //sets the y velocity of the animator to check for rising or falling
         _animator.SetFloat(AnimationStrings.yVelocity, _rb.velocity.y);
-        
+
         //replenish dash if is on the ground and not already dashing
         if (_touchingDirections.IsGrounded && !Dashing)
         {
@@ -375,6 +329,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger(AnimationStrings.jumpTrigger);
             _rb.velocity = new Vector2(_rb.velocity.x, jumpImpulse);
         }
+
         if (context.canceled && _rb.velocity.y > 0f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.5f);
@@ -385,7 +340,7 @@ public class PlayerController : MonoBehaviour
     public void OnDash(InputAction.CallbackContext context)
     {
         //if has a dash, not being hit and not spawning
-        if (context.started && _dashCount > 0 && !_damageable.IsHit && !IsSpawning && CanDash) 
+        if (context.started && _dashCount > 0 && !_damageable.IsHit && !IsSpawning && CanDash)
         {
             if (Time.time - _lastDash < _dashCD) //if dash cd not reached yet, cannot dash.
             {
@@ -439,9 +394,9 @@ public class PlayerController : MonoBehaviour
     public void OnHit(int damage, Vector2 knockback)
     {
         //add the knockback
-        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y); 
+        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y);
     }
-    
+
     //change dash count
     public void AddDash(int count, GameObject obj)
     {
@@ -470,13 +425,13 @@ public class PlayerController : MonoBehaviour
         {
             _damageable.Health = 0;
         }
-
     }
-    
+
     //saves stats whenever new scene
     public (int[] intStats, float[] floatStats, int[] permUpStats, int[] tempUpStats) SaveStats()
     {
-        int[] intStats = new[] { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount};
+        int[] intStats = new[]
+            { _maxDash, _damageable.MaxHealth, _playerAttack.AD, _damageable.Health, _darknessCount };
         float[] floatStats = new[] { _dashCD, movementSpeed, _dmgMod };
         int[] permUpStats = new[] { _dashUp, _behindUp, _decFirstUp, _roomHealUp, _darkUp, _killHealUp };
         int[] tempUpStats = new[]
@@ -493,34 +448,35 @@ public class PlayerController : MonoBehaviour
     {
         //saves int info
         _maxDash = intStats[0];
-        
+
         //increase max hp based on upgrade
         _damageable.MaxHealth = 100;
         _damageable.MaxHealth += _meatyUp;
-        
+
         _playerAttack.AD = intStats[2];
         //checks if needs respawning
         if (intStats[3] > 0) //if still alive, keep hp
         {
             _damageable.Health = intStats[3];
         }
+
         _darknessCount = intStats[4];
-        
+
         //saves float info
         _dashCD = floatStats[0];
         movementSpeed = floatStats[1];
         //adds the damage mod
         _dmgMod = floatStats[2];
         _damageable.DmgMod += _dmgMod;
-        
+
         //saves perm upgrade info
         _dashUp = permUpStats[0];
         _behindUp = permUpStats[1];
         _decFirstUp = permUpStats[2];
         _roomHealUp = permUpStats[3];
-        _darkUp= permUpStats[4];
+        _darkUp = permUpStats[4];
         _killHealUp = permUpStats[5];
-        
+
         //saves temp upgrade info
         _safeDashUp = tempUpStats[0];
         _antiTrapUp = tempUpStats[1];
@@ -533,7 +489,6 @@ public class PlayerController : MonoBehaviour
         _gravitonUp = tempUpStats[8];
         _swiftyUp = tempUpStats[9];
         _immortalUp = tempUpStats[10];
-
     }
 
     //adds darkness
@@ -545,7 +500,7 @@ public class PlayerController : MonoBehaviour
         //floating text
         CharacterEvents.CharacterDropped.Invoke(gameObject, amount);
     }
-    
+
     //upgrades stats
     public void PermUpgrade(int upgrade)
     {
@@ -570,6 +525,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _dmgMod += 0.5f;
                 }
+
                 _darkUp += UpgradeInts.gamblerIncr;
                 break;
             case 5: //kill to heal
@@ -577,7 +533,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
+
     //Check levels of upgrades
     public int GetPermUpgrade(int upgrade)
     {
@@ -596,9 +552,10 @@ public class PlayerController : MonoBehaviour
             case 5: //kill to heal
                 return _killHealUp;
         }
+
         return 0;
     }
-    
+
     //upgrades temp stats
     public void TempUpgrade(int upgrade)
     {
@@ -637,7 +594,7 @@ public class PlayerController : MonoBehaviour
                 _swiftyUp += UpgradeInts.swiftyIncr;
                 break;
             case 10: //revive
-                _damageable.Heal(_damageable.MaxHealth/2);
+                _damageable.Heal(_damageable.MaxHealth / 2);
                 break;
             case 11: //heal 50% HP
                 _immortalUp += UpgradeInts.immortalIncr;
@@ -647,7 +604,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
+
     //Check levels of upgrades
     public int GetTempUpgrade(int upgrade)
     {
@@ -655,35 +612,36 @@ public class PlayerController : MonoBehaviour
         {
             case 0:
                 return _safeDashUp;
-            case 1: 
+            case 1:
                 return _antiTrapUp;
-            case 2: 
+            case 2:
                 return _meatyUp;
-            case 3: 
+            case 3:
                 return _vigilantUp;
-            case 4: 
+            case 4:
                 return _gliderUp;
-            case 5: 
+            case 5:
                 return _beastUp;
-            case 6: 
+            case 6:
                 return _rampageUp;
-            case 7: 
+            case 7:
                 return _surferUp;
-            case 8: 
+            case 8:
                 return _gravitonUp;
-            case 9: 
+            case 9:
                 return _swiftyUp;
-            case 10: 
+            case 10:
                 return 0;
             case 11:
                 return _immortalUp;
             case 12:
                 return _solidUp;
         }
+
         return 0;
     }
-    
-    
+
+
     //Heal after each room
     public void RoomHeal()
     {
@@ -692,7 +650,7 @@ public class PlayerController : MonoBehaviour
             _damageable.Heal(_roomHealUp);
         }
     }
-    
+
     //Heal after kill
     public void KillHeal()
     {
@@ -704,7 +662,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+
     //reduce first damage
     public void Vanguard()
     {
@@ -713,8 +671,8 @@ public class PlayerController : MonoBehaviour
             _damageable.Vanguard(_decFirstUp / 100f);
         }
     }
-    
-    
+
+
     //activates countdown for vigilant
     public IEnumerator ActivateVigilant()
     {
@@ -726,13 +684,13 @@ public class PlayerController : MonoBehaviour
             _vigilantActive = false;
         }
     }
-    
+
     //activates countdown for rampage
     public IEnumerator ActivateRampage()
     {
         if (_rampageUp > 0)
         {
-            _rampageActive= true;
+            _rampageActive = true;
             //Wait for x seconds
             yield return new WaitForSeconds(_rampageUp);
             _rampageActive = false;
@@ -776,8 +734,7 @@ public class PlayerController : MonoBehaviour
     //reset all temp upgrades
     private void ResetTempUpgrades()
     {
-        _safeDashUp = _antiTrapUp = _meatyUp = _vigilantUp = _gliderUp = _beastUp = _rampageUp = _surferUp 
+        _safeDashUp = _antiTrapUp = _meatyUp = _vigilantUp = _gliderUp = _beastUp = _rampageUp = _surferUp
             = _gravitonUp = _swiftyUp = _immortalUp = _solidUp = 0;
     }
-
 }

@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-
     public TextMeshProUGUI textComponent; //text display of dialogue
     public string[] lines; //lines of dialogue
     public float textSpeed; //speed of text
 
     private int _index; //index of text in lines
-    
+
     // Start is called before the first frame update
     void Start()
     {
