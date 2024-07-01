@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShowHideUI : MonoBehaviour
 {
     [SerializeField] private GameObject UI;
-    
+
     //player
     private GameObject _player;
     private PlayerController _playerController;
@@ -31,6 +31,7 @@ public class ShowHideUI : MonoBehaviour
             _playerController.CanDash = false;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         //if colliding with a player。

@@ -6,12 +6,12 @@ using UnityEngine;
 public class TouchingDirections : MonoBehaviour
 {
     public ContactFilter2D castFilter; //cast filter to use ray casting to check
-    
+
     public float groundDistance = 0.05f; //max distance between player and floor to be grounded.
     public float wallDistance = 0.2f; //max distance between player and wall to be on wall.
     public float ceilDistance = 0.05f; //max distance between player and ceiling to be on ceiling.
     public float potDistance = 3f; //distance for enemy to jump
-    
+
     private CapsuleCollider2D _touchingCol; //player collider
     private Animator _animator; //player animation
 
@@ -23,81 +23,62 @@ public class TouchingDirections : MonoBehaviour
     //checks which direction the player is facing using localScale.
     private Vector2 WallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
 
-    [SerializeField]
-    private bool _isGrounded = true; //player grounded?
+    [SerializeField] private bool _isGrounded = true; //player grounded?
 
     //Property for if the player is grounded.
 
     public bool IsGrounded
     {
-        get
-        {
-            return _isGrounded;
-        }
+        get { return _isGrounded; }
         private set
         {
             _isGrounded = value;
             _animator.SetBool(AnimationStrings.isGrounded, value);
         }
     }
-    
-    [SerializeField]
-    private bool _isOnWall = true; //player is touching wall?
-    
+
+    [SerializeField] private bool _isOnWall = true; //player is touching wall?
+
     //Property for if the player is on a wall.
     public bool IsOnWall
     {
-        get
-        {
-            return _isOnWall;
-        }
+        get { return _isOnWall; }
         private set
         {
             _isOnWall = value;
             _animator.SetBool(AnimationStrings.isOnWall, value);
         }
     }
-    
-    [SerializeField]
-    private bool _isOnPot = true; //player is front of wall
-    
+
+    [SerializeField] private bool _isOnPot = true; //player is front of wall
+
     //Property for if the player is front of wall.
     public bool IsOnPot
     {
-        get
-        {
-            return _isOnPot;
-        }
-        private set
-        {
-            _isOnPot = value;
-        }
+        get { return _isOnPot; }
+        private set { _isOnPot = value; }
     }
-    
-    [SerializeField]
-    private bool _isOnCeil = true; //player on ceiling?
-    
+
+    [SerializeField] private bool _isOnCeil = true; //player on ceiling?
+
     //Property for if the player is on a ceiling.
     public bool IsOnCeil
     {
-        get
-        {
-            return _isOnCeil;
-        }
+        get { return _isOnCeil; }
         private set
         {
             _isOnCeil = value;
             _animator.SetBool(AnimationStrings.isOnCeil, value);
         }
     }
-    
+
 
     private void Awake()
     {
         _touchingCol = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
-    } 
-    
+    }
+
 
     // Update is called once per frame
     void FixedUpdate()

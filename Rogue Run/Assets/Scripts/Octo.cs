@@ -6,7 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class Octo : MonoBehaviour, IEnemy
 {
-
     public float walkSpeed = 3f; //speed that the octo moves at
     public DetectionZone attackZone; //zone of detection for attack
     public DetectionZone foundZone; //zone of detection to chase player
@@ -24,11 +23,15 @@ public class Octo : MonoBehaviour, IEnemy
     private Vector3 _playerPos; //the target player position
     private Vector2 _walkDirectionVector; //vector of walk
 
-    
-    public enum WalkableDirection {Right, Left} //direction the octo is moving in
+
+    public enum WalkableDirection
+    {
+        Right,
+        Left
+    } //direction the octo is moving in
 
     private WalkableDirection _walkDirection; //direction of walk
-    
+
 
     public WalkableDirection WalkDirection
     {
@@ -49,8 +52,9 @@ public class Octo : MonoBehaviour, IEnemy
                 else if (value == WalkableDirection.Left)
                 {
                     _walkDirectionVector = Vector2.left;
-                }   
+                }
             }
+
             _walkDirection = value;
         }
     }
@@ -58,38 +62,29 @@ public class Octo : MonoBehaviour, IEnemy
     //checks if octo has locked on
     public bool HasTarget
     {
-        get
-        {
-            return hasTarget;
-        }
+        get { return hasTarget; }
         set
         {
             hasTarget = value;
             _animator.SetBool(AnimationStrings.hasTarget, value);
         }
     }
-    
+
     //checks if octo has found a target
     public bool FoundTarget
     {
-        get
-        {
-            return foundTarget;
-        }
+        get { return foundTarget; }
         set
         {
             foundTarget = value;
             _animator.SetBool(AnimationStrings.foundTarget, value);
         }
     }
-    
+
 
     public bool CanMove
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.canMove);
-        }
+        get { return _animator.GetBool(AnimationStrings.canMove); }
     }
 
     private void Awake()
@@ -98,7 +93,7 @@ public class Octo : MonoBehaviour, IEnemy
         _touchingDirections = GetComponent<TouchingDirections>();
         _animator = GetComponent<Animator>();
         _damageable = GetComponent<Damageable>();
-        
+
         //sets initial direction
         _walkDirection = startDirection;
         if (_walkDirection == WalkableDirection.Right)
@@ -113,10 +108,8 @@ public class Octo : MonoBehaviour, IEnemy
         //setups damageable
         _damageable.InvincibleTime = 0.1f;
         _damageable.Multiplier = 5;
-
-
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -129,18 +122,16 @@ public class Octo : MonoBehaviour, IEnemy
 
     private void FixedUpdate()
     {
-        
         //if is on the floor and collided with a wall, turn around
         if (_touchingDirections.IsOnWall && _touchingDirections.IsGrounded || cliffZone.detectedColliders.Count == 0)
         {
             FlipDirection();
         }
-        
-        
+
+
         //makes the octo move
         if (CanMove)
         {
-            
             // TODO: check if anything above, if not and detected in LOS, jump up.
             if (foundTarget)
             {
@@ -150,14 +141,13 @@ public class Octo : MonoBehaviour, IEnemy
                 {
                     _hasLOS = ray.collider.CompareTag("Player");
                 }
-                
+
                 if (_hasLOS)
                 {
                     ChaseFound(); //if can chase after the player
                 }
             }
-            
-           
+
 
             if (!_touchingDirections.IsOnWall) //if walking normally
             {
@@ -168,7 +158,7 @@ public class Octo : MonoBehaviour, IEnemy
                 _rb.velocity = new Vector2(0, _rb.velocity.y);
             }
 
-            if (_rb.velocity.y > 0 && _playerPos.y + 2f < _rb.position.y ) //if already over the wall, stop y momentum
+            if (_rb.velocity.y > 0 && _playerPos.y + 2f < _rb.position.y) //if already over the wall, stop y momentum
             {
                 _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y * 0.2f);
             }
@@ -178,29 +168,28 @@ public class Octo : MonoBehaviour, IEnemy
             //if cannot move, make him stop with a damp.
             _rb.velocity = new Vector2(Mathf.Lerp(_rb.velocity.x, 0, 0.05f), _rb.velocity.y);
         }
-        
     }
 
     //sets the correct direction for chasing
     private void ChaseFound()
     {
-        
         //goes to the direction of the player
-        if ((_playerPos.x > _rb.position.x && transform.localScale.x < 0) || (_playerPos.x < _rb.position.x &&  transform.localScale.x > 0))
+        if ((_playerPos.x > _rb.position.x && transform.localScale.x < 0) ||
+            (_playerPos.x < _rb.position.x && transform.localScale.x > 0))
         {
             FlipDirection();
         }
-        
+
         //jumps if the player is above
         if (_touchingDirections.IsOnPot && _touchingDirections.IsGrounded && _playerPos.y > _rb.position.y + 1f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 8f);
         }
-        else if (_touchingDirections.IsGrounded && _playerPos.x > _rb.position.x -3f && _playerPos.x < _rb.position.x +3f && _playerPos.y > _rb.position.y + 1f)
+        else if (_touchingDirections.IsGrounded && _playerPos.x > _rb.position.x - 3f &&
+                 _playerPos.x < _rb.position.x + 3f && _playerPos.y > _rb.position.y + 1f)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 8f);
         }
-
     }
 
     private void FlipDirection()
@@ -216,7 +205,6 @@ public class Octo : MonoBehaviour, IEnemy
                 WalkDirection = WalkableDirection.Right;
             }
         }
-        
     }
 
     //applies vigilant debuff onto enemy
@@ -231,10 +219,5 @@ public class Octo : MonoBehaviour, IEnemy
     // Start is called before the first frame update
     void Start()
     {
-        
     }
-
-    
-    
-    
 }
