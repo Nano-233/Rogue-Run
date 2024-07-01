@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PermUpgrades.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShowHideUI.cs" afterDir="false" />
@@ -187,6 +188,7 @@
       <workItem from="1719800935587" duration="5557000" />
       <workItem from="1719808131440" duration="59000" />
       <workItem from="1719808272430" duration="1108000" />
+      <workItem from="1719810086752" duration="44000" />
     </task>
     <servers />
   </component>

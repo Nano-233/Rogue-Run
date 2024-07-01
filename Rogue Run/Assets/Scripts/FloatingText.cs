@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class FloatingText : MonoBehaviour
 {
-    private TextMeshProUGUI _textMeshPro;//text object
-    private Vector3 _moveSpeed = new Vector3(0, 75, 0);//speed of text moving up
-    private RectTransform _textTransform;//transform of textbox
-    
-    private float _fadeTime = 1f;//time for the text to fade out
-    private float _elapsedTime = 0;//time elapsed
-    private Color _startColour;//starting colour
-    
+    private TextMeshProUGUI _textMeshPro; //text object
+    private Vector3 _moveSpeed = new Vector3(0, 75, 0); //speed of text moving up
+    private RectTransform _textTransform; //transform of textbox
+
+    private float _fadeTime = 1f; //time for the text to fade out
+    private float _elapsedTime = 0; //time elapsed
+    private Color _startColour; //starting colour
+
 
     private void Awake()
     {
@@ -26,7 +26,6 @@ public class FloatingText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -34,7 +33,7 @@ public class FloatingText : MonoBehaviour
     {
         //moves text up
         _textTransform.position += _moveSpeed * Time.deltaTime;
-        
+
         //fading
         _elapsedTime += Time.deltaTime;
         //as long as fading
