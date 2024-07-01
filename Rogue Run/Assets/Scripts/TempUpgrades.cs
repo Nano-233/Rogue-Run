@@ -15,7 +15,6 @@ public class TempUpgrades : MonoBehaviour
 
     private bool firstTime = true;
     
-    
     //list of upgrades
     Upgrade[] _upgrades = new Upgrade[]
     {
@@ -77,7 +76,7 @@ public class TempUpgrades : MonoBehaviour
                 } while (availableUpgrades.Contains(number));
                 availableUpgrades.Add(number);
             }
-            //availableUpgrades.Add(11); //testing purposes
+            //availableUpgrades.Add(11); testing purposes
         }
         
         

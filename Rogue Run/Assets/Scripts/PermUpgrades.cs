@@ -76,41 +76,6 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_button6.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[5].Name;
 
         
-        // //replaces X with new value
-        //
-        // //Dasher, assassin, vanguard, undead, gambler, slayer
-        // Upgrade_DescriptionText1.text = _levels[0] == 5
-        //     ? _upgrades[0].Description.Replace("X", (_stats[0]).ToString())
-        //     : _upgrades[0].Description.Replace("X", (_stats[0] + UpgradeInts.dasherIncr).ToString());
-        // Upgrade_DescriptionText2.text = _levels[1] == 5
-        //     ? _upgrades[1].Description.Replace("X", (_stats[1]).ToString())
-        //     : _upgrades[1].Description.Replace("X", (_stats[1] + UpgradeInts.assasinIncr).ToString());
-        // Upgrade_DescriptionText3.text = _levels[2] == 5
-        //     ? _upgrades[2].Description.Replace("X", (_stats[2]).ToString())
-        //     : _upgrades[2].Description.Replace("X", (_stats[2] + UpgradeInts.vanguardIncr).ToString());
-        // Upgrade_DescriptionText4.text = _levels[3] == 5
-        //     ? _upgrades[3].Description.Replace("X", (_stats[3]).ToString())
-        //     : _upgrades[3].Description.Replace("X", (_stats[3] + UpgradeInts.undeadIncr).ToString());
-        // Upgrade_DescriptionText5.text = _levels[4] == 5
-        //     ? _upgrades[4].Description.Replace("X", (_stats[4]).ToString())
-        //     : _upgrades[4].Description.Replace("X", (_stats[4] + UpgradeInts.gamblerIncr).ToString());
-        // Upgrade_DescriptionText6.text = _levels[5] == 5
-        //     ? _upgrades[5].Description.Replace("X", (_stats[5]).ToString())
-        //     : _upgrades[5].Description.Replace("X", (_stats[5] + UpgradeInts.slayerIncr).ToString());
-        // //Replacing V with original value
-        // Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("V", _stats[0].ToString());
-        // Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("V", _stats[1].ToString());
-        // Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("V", _stats[2].ToString());
-        // Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("V", _stats[3].ToString());
-        // Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("V", _stats[4].ToString());
-        // Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("V", _stats[5].ToString());
-        // //Replacing Z with colored cost
-        // Upgrade_DescriptionText1.text = Upgrade_DescriptionText1.text.Replace("Z", CostString(0));
-        // Upgrade_DescriptionText2.text = Upgrade_DescriptionText2.text.Replace("Z", CostString(1));
-        // Upgrade_DescriptionText3.text = Upgrade_DescriptionText3.text.Replace("Z", CostString(2));
-        // Upgrade_DescriptionText4.text = Upgrade_DescriptionText4.text.Replace("Z", CostString(3));
-        // Upgrade_DescriptionText5.text = Upgrade_DescriptionText5.text.Replace("Z", CostString(4));
-        // Upgrade_DescriptionText6.text = Upgrade_DescriptionText6.text.Replace("Z", CostString(5));
 
 
         Upgrade_DescriptionText1.text = DescriptionString(_upgrades[0], 0);
