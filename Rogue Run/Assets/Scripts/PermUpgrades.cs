@@ -14,21 +14,39 @@ public class PermUpgrades : MonoBehaviour
     //levels of upgrades
     private int[] _stats = new int[6];
     private int[] _levels = new int[6];
-    
+
     //costs of upgrades
     private int[] _commonCost = new int[] { 50, 100, 200, 300, 500 };
     private int[] _rareCost = new int[] { 100, 200, 300, 500, 1000 };
     private int[] _mythicCost = new int[] { 300, 500, 1000, 1500, 2000 };
-    
+
     //list of upgrades
     private Upgrade[] _upgrades = new Upgrade[]
     {
-        new Upgrade { Name = "Dasher", Description = "Decrease the delay between dashes by X%. \n Currently V% \n\n Z"},
-        new Upgrade { Name = "Assassin", Description = "Increases damage to enemies from behind by X%. \n Currently V% \n\n Z"},
-        new Upgrade { Name = "Vanguard", Description = "Decreases the first instance of damage taken per room by X%. \n Currently V% \n\n Z"},
-        new Upgrade { Name = "Undead", Description = "Heal for XHP after each room.  \n Currently VHP \n\n Z"},
-        new Upgrade { Name = "Gambler", Description = "You earn X% more darkness, but take twice the damage.  \n Currently V% \n\n Z"},
-        new Upgrade { Name = "Slayer", Description = "You have a X% chance to gain 5HP after each enemy killed.  \n Currently V% \n\n Z"},
+        new Upgrade
+        {
+            Name = "Dasher", Description = "Decrease the delay between dashes by X%. \n Currently V% \n\n Z"
+        },
+        new Upgrade
+        {
+            Name = "Assassin", Description = "Increases damage to enemies from behind by X%. \n Currently V% \n\n Z"
+        },
+        new Upgrade
+        {
+            Name = "Vanguard",
+            Description = "Decreases the first instance of damage taken per room by X%. \n Currently V% \n\n Z"
+        },
+        new Upgrade { Name = "Undead", Description = "Heal for XHP after each room.  \n Currently VHP \n\n Z" },
+        new Upgrade
+        {
+            Name = "Gambler",
+            Description = "You earn X% more darkness, but take twice the damage.  \n Currently V% \n\n Z"
+        },
+        new Upgrade
+        {
+            Name = "Slayer",
+            Description = "You have a X% chance to gain 5HP after each enemy killed.  \n Currently V% \n\n Z"
+        },
     };
 
     private void OnEnable()
@@ -56,10 +74,8 @@ public class PermUpgrades : MonoBehaviour
     [SerializeField] private TMP_Text Upgrade_DescriptionText6;
 
 
-
     public void ButtonsSet()
     {
-        
         //gets the current levels
         for (int i = 0; i < 6; i++)
         {
@@ -75,8 +91,6 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_button5.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[4].Name;
         Upgrade_button6.transform.GetChild(0).GetComponent<TMP_Text>().text = _upgrades[5].Name;
 
-        
-
 
         Upgrade_DescriptionText1.text = DescriptionString(_upgrades[0], 0);
         Upgrade_DescriptionText2.text = DescriptionString(_upgrades[1], 1);
@@ -84,8 +98,8 @@ public class PermUpgrades : MonoBehaviour
         Upgrade_DescriptionText4.text = DescriptionString(_upgrades[3], 3);
         Upgrade_DescriptionText5.text = DescriptionString(_upgrades[4], 4);
         Upgrade_DescriptionText6.text = DescriptionString(_upgrades[5], 5);
-        
-        
+
+
         // Setting color of the buttons
         Dictionary<int, Color> rarityColors = new Dictionary<int, Color>();
         rarityColors.Add(0, new Color(1, 1, 1, 1));
@@ -94,42 +108,44 @@ public class PermUpgrades : MonoBehaviour
         rarityColors.Add(3, new Color(0.3f, 0f, 0.5f, 1));
         rarityColors.Add(4, new Color(1f, 1f, 0f, 1));
         rarityColors.Add(5, new Color(1f, 0.5f, 0.2f, 1));
-        
 
-        
+
         //sets colors, disable if needed
         Upgrade_button1.GetComponent<Image>().color = rarityColors[_levels[0]];
         if (_levels[0] == 5)
         {
             Upgrade_button1.interactable = false;
         }
+
         Upgrade_button2.GetComponent<Image>().color = rarityColors[_levels[1]];
         if (_levels[1] == 5)
         {
             Upgrade_button2.interactable = false;
         }
+
         Upgrade_button3.GetComponent<Image>().color = rarityColors[_levels[2]];
         if (_levels[2] == 5)
         {
             Upgrade_button3.interactable = false;
         }
+
         Upgrade_button4.GetComponent<Image>().color = rarityColors[_levels[3]];
         if (_levels[3] == 5)
         {
             Upgrade_button4.interactable = false;
         }
+
         Upgrade_button5.GetComponent<Image>().color = rarityColors[_levels[4]];
         if (_levels[4] == 5)
         {
             Upgrade_button5.interactable = false;
         }
+
         Upgrade_button6.GetComponent<Image>().color = rarityColors[_levels[5]];
         if (_levels[5] == 5)
         {
             Upgrade_button6.interactable = false;
         }
-        
-
     }
 
     // UPGRADES
@@ -173,6 +189,7 @@ public class PermUpgrades : MonoBehaviour
         {
             return "<color=\"purple\"> Maxed";
         }
+
         String str;
         //common upgrades
         if (upgrade <= 2)
@@ -219,15 +236,15 @@ public class PermUpgrades : MonoBehaviour
 
         return "";
     }
-    
+
 
     private class Upgrade
     {
         public string Name { get; set; }
         public string Description { get; set; }
     }
-    
-    
+
+
     //builds the string for the description box of upgrades
     private string DescriptionString(Upgrade upgrade, int i)
     {
@@ -243,13 +260,10 @@ public class PermUpgrades : MonoBehaviour
 
 
         str = str.Replace("V", _stats[i].ToString());
-  
+
         str = str.Replace("Z", CostString(i));
 
 
         return str;
     }
-
 }
-
-

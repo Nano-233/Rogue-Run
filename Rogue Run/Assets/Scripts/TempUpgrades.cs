@@ -14,25 +14,40 @@ public class TempUpgrades : MonoBehaviour
     private List<int> availableUpgrades;
 
     private bool firstTime = true;
-    
+
     //list of upgrades
     Upgrade[] _upgrades = new Upgrade[]
     {
-        new Upgrade { Name = "SafeDash", Description = "Decrease damage taken while dashing by X%. \n Currently V%"},
-        new Upgrade { Name = "AntiTrap", Description = "Decrease damage dealt by traps by X%. \n Currently V%"},
-        new Upgrade { Name = "Meaty", Description = "Increase max health by XHP. \n Currently VHP"},
-        new Upgrade { Name = "Vigilant", Description = "Decrease the delay between dashes by X%. \n Currently V%"},
-        new Upgrade { Name = "Glider", Description = "Increase damage dealt midair by X%. \n Currently V%"},
-        new Upgrade { Name = "Beast", Description = "Increase damage dealt by X%. \n Currently V%"},
-        new Upgrade { Name = "Rampage", Description = "Increase damage dealt after a kill by 40% for X seconds. \n Currently V seconds"},
-        new Upgrade { Name = "Surfer", Description = "Increase move speed by X% briefly after a dash. \n Currently V%"},
-        new Upgrade { Name = "Graviton", Description = "Decrease movement speed of nearby enemies after dashing by 40% for X seconds. \n Currently V seconds"},
-        new Upgrade { Name = "Swifty", Description = "Gain a X% dodge chance against enemies. \n Currently V%"},
-        new Upgrade { Name = "Heal", Description = "Instantly heal 50% of your max health."},
-        new Upgrade { Name = "Immortal", Description = "+1 revive after dying at 10% max health. \n Currently V revives."},
-        new Upgrade { Name = "Solid", Description = "Decrease damage taken by X%. \n Currently V%"}
+        new Upgrade { Name = "SafeDash", Description = "Decrease damage taken while dashing by X%. \n Currently V%" },
+        new Upgrade { Name = "AntiTrap", Description = "Decrease damage dealt by traps by X%. \n Currently V%" },
+        new Upgrade { Name = "Meaty", Description = "Increase max health by XHP. \n Currently VHP" },
+        new Upgrade { Name = "Vigilant", Description = "Decrease the delay between dashes by X%. \n Currently V%" },
+        new Upgrade { Name = "Glider", Description = "Increase damage dealt midair by X%. \n Currently V%" },
+        new Upgrade { Name = "Beast", Description = "Increase damage dealt by X%. \n Currently V%" },
+        new Upgrade
+        {
+            Name = "Rampage",
+            Description = "Increase damage dealt after a kill by 40% for X seconds. \n Currently V seconds"
+        },
+        new Upgrade
+        {
+            Name = "Surfer", Description = "Increase move speed by X% briefly after a dash. \n Currently V%"
+        },
+        new Upgrade
+        {
+            Name = "Graviton",
+            Description =
+                "Decrease movement speed of nearby enemies after dashing by 40% for X seconds. \n Currently V seconds"
+        },
+        new Upgrade { Name = "Swifty", Description = "Gain a X% dodge chance against enemies. \n Currently V%" },
+        new Upgrade { Name = "Heal", Description = "Instantly heal 50% of your max health." },
+        new Upgrade
+        {
+            Name = "Immortal", Description = "+1 revive after dying at 10% max health. \n Currently V revives."
+        },
+        new Upgrade { Name = "Solid", Description = "Decrease damage taken by X%. \n Currently V%" }
     };
-    
+
     //levels of upgrades
     private int[] _stats = new int[3];
     private int[] _levels = new int[3];
@@ -45,7 +60,6 @@ public class TempUpgrades : MonoBehaviour
     [SerializeField] private TMP_Text Upgrade_DescriptionText1;
     [SerializeField] private TMP_Text Upgrade_DescriptionText2;
     [SerializeField] private TMP_Text Upgrade_DescriptionText3;
-
 
 
     public void OnEnable()
@@ -63,7 +77,6 @@ public class TempUpgrades : MonoBehaviour
 
     public void ButtonsSet(bool shuffle)
     {
-        
         //randomizing the upgrades shown
         if (shuffle)
         {
@@ -71,20 +84,21 @@ public class TempUpgrades : MonoBehaviour
             int number;
             for (int i = 0; i < 3; i++)
             {
-                do {
-                    number = Random.Range(0,_upgrades.Length);
+                do
+                {
+                    number = Random.Range(0, _upgrades.Length);
                 } while (availableUpgrades.Contains(number));
+
                 availableUpgrades.Add(number);
             }
             //availableUpgrades.Add(11); testing purposes
         }
-        
-        
+
 
         Upgrade Upgrade_1 = _upgrades[availableUpgrades[0]];
         Upgrade Upgrade_2 = _upgrades[availableUpgrades[1]];
         Upgrade Upgrade_3 = _upgrades[availableUpgrades[2]];
-        
+
         //gets the current levels
         for (int i = 0; i < 3; i++)
         {
@@ -118,11 +132,13 @@ public class TempUpgrades : MonoBehaviour
         {
             Upgrade_button1.interactable = false;
         }
+
         Upgrade_button2.GetComponent<Image>().color = rarityColors[_levels[1]];
         if (_levels[1] == 5)
         {
             Upgrade_button2.interactable = false;
         }
+
         Upgrade_button3.GetComponent<Image>().color = rarityColors[_levels[2]];
         if (_levels[2] == 5)
         {
