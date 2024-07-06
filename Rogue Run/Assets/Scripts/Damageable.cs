@@ -8,11 +8,9 @@ using Random = UnityEngine.Random;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit; //damage and knockback
-    
-    [SerializeField]
-    private int _maxHealth = 100; //max hp
-    [SerializeField]
-    private int _health = 100; //current hp
+
+    [SerializeField] private int _maxHealth = 100; //max hp
+    [SerializeField] private int _health = 100; //current hp
 
     private bool _isInvincible; //checks if character invincible
     private float _timeSinceHit = 0; //time since hit
@@ -31,34 +29,19 @@ public class Damageable : MonoBehaviour
 
     public float InvincibleTime
     {
-        get
-        {
-            return _invincibilityTime;
-        }
-        set
-        {
-            _invincibilityTime = value;
-        }
+        get { return _invincibilityTime; }
+        set { _invincibilityTime = value; }
     }
-    
+
     public bool IsPlayer
     {
-        get
-        {
-            return _isPlayer;
-        }
-        set
-        {
-            _isPlayer = value;
-        }
+        get { return _isPlayer; }
+        set { _isPlayer = value; }
     }
-    
+
     public bool IsHit
     {
-        get
-        {
-            return _animator.GetBool(AnimationStrings.isHit);
-        }
+        get { return _animator.GetBool(AnimationStrings.isHit); }
         private set
         {
             //sometimes dies in the middle of setting.
@@ -71,23 +54,14 @@ public class Damageable : MonoBehaviour
 
     public int MaxHealth
     {
-        get
-        {
-            return _maxHealth;
-        }
-        set
-        {
-            _maxHealth = value;
-        }
+        get { return _maxHealth; }
+        set { _maxHealth = value; }
     }
 
 
     public int Health
     {
-        get
-        {
-            return _health;
-        }
+        get { return _health; }
         set
         {
             _health = value;
@@ -97,46 +71,31 @@ public class Damageable : MonoBehaviour
             }
         }
     }
-    
+
     public bool IsAlive
     {
-        get
-        {
-            return _isAlive;
-        }
+        get { return _isAlive; }
         set
         {
             _isAlive = value;
             _animator.SetBool(AnimationStrings.isAlive, value);
         }
     }
-    
+
     //returns drop multiplier
     public int Multiplier
     {
-        get
-        {
-            return _dropMultiplier;
-        }
-        set
-        {
-            _dropMultiplier = value;
-        }
+        get { return _dropMultiplier; }
+        set { _dropMultiplier = value; }
     }
-    
+
     //returns damage mod
     public float DmgMod
     {
-        get
-        {
-            return _dmgMod;
-        }
-        set
-        {
-            _dmgMod = value;
-        }
+        get { return _dmgMod; }
+        set { _dmgMod = value; }
     }
-    
+
 
     private void Awake()
     {
@@ -144,11 +103,9 @@ public class Damageable : MonoBehaviour
     }
 
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -166,10 +123,8 @@ public class Damageable : MonoBehaviour
 
             _timeSinceHit += Time.deltaTime; //add the time increment.
         }
-
-
     }
-    
+
     //hits the player
     public bool Hit(int damage, Vector2 knockback)
     {
@@ -189,6 +144,7 @@ public class Damageable : MonoBehaviour
                 }
             }
         }
+
         if (IsAlive && !_isInvincible)
         {
             if (Health - damage < 0)
@@ -206,6 +162,7 @@ public class Damageable : MonoBehaviour
                     Health -= 0;
                 }
             }
+
             _isInvincible = true;
 
             //notify other components damageable was hit and handle knockback.
@@ -213,19 +170,20 @@ public class Damageable : MonoBehaviour
             damageableHit.Invoke(damage, knockback);
             //floating text call
             CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
-            
+
             //if has vanguard and got hit, revert.
             if (_hasVangaurd && IsPlayer)
             {
                 _hasVangaurd = false;
                 _dmgMod += _vanguardBuff;
             }
+
             return true;
         }
 
         return false;
     }
-    
+
     //heals the player
     public void Heal(int healing)
     {
@@ -241,7 +199,7 @@ public class Damageable : MonoBehaviour
             }
         }
     }
-    
+
     //activates vanguard
     public void Vanguard(float buff)
     {
@@ -259,5 +217,12 @@ public class Damageable : MonoBehaviour
         IsPlayer = true;
     }
 
-
+    //kill self
+    public void KillSelf()
+    {
+        if (IsAlive)
+        {
+            Hit(MaxHealth, Vector2.zero);
+        }
+    }
 }

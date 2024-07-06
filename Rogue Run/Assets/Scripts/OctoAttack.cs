@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class OctoAttack : MonoBehaviour
 {
     public int AD = 10;
     public Vector2 knockBack = Vector2.zero;
@@ -22,4 +22,5 @@ public class Attack : MonoBehaviour
             damageable.Hit(AD, deliveredKnockBack);
         }
     }
+
 }
