@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour
     private bool _vigilantActive = false;
     private bool _rampageActive = false;
 
+    //boolean of player status
+    private bool _firstDeath = true;
+
     //lives remaining
     public int LivesRemaining
     {
@@ -107,6 +110,7 @@ public class PlayerController : MonoBehaviour
     public bool CanMove
     {
         get { return _animator.GetBool(AnimationStrings.canMove); }
+        set { _animator.SetBool(AnimationStrings.canMove, value); }
     }
 
     //checks if the player is dashing
@@ -190,10 +194,10 @@ public class PlayerController : MonoBehaviour
                 _immortalUp--;
                 SceneController.instance.ReloadScene();
             }
-            else
+            else if (_firstDeath)
             {
-                //TODO play a fade effect
-
+                //make sure only calls onces
+                _firstDeath = false;
                 //reset upgrades
                 ResetTempUpgrades();
                 //go back to spawn
@@ -346,6 +350,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+
             _dashCount--; //reduce a dash count
             _trail.emitting = true;
             _lastDash = Time.time; //reset the cd
@@ -735,5 +740,14 @@ public class PlayerController : MonoBehaviour
     {
         _safeDashUp = _antiTrapUp = _meatyUp = _vigilantUp = _gliderUp = _beastUp = _rampageUp = _surferUp
             = _gravitonUp = _swiftyUp = _immortalUp = _solidUp = 0;
+    }
+
+    //enter stasis
+    public void Stasis()
+    {
+        if (IsAlive)
+        {
+            Destroy(gameObject);
+        }
     }
 }

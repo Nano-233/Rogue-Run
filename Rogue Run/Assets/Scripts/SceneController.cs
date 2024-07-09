@@ -8,6 +8,9 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
 
+    //field for fade animation
+    public Animator fadeAnimator;
+
     //field for player
     private PlayerController _playerController;
     private GameObject _player;
@@ -42,13 +45,20 @@ public class SceneController : MonoBehaviour
         _playerController = _player.GetComponent<PlayerController>(); //finds the player
         EndRoom();
         SaveStats(); //save all needed stats
-
+        //fade out
+        fadeAnimator.SetTrigger("FadeOut");
         StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
     }
+
 
     //load scene
     private IEnumerator LoadScene(int id)
     {
+        //puts player into stasis
+        _playerController.Stasis();
+        //Wait for 1 seconds for the animation to finish
+        yield return new WaitForSeconds(0.8f);
+
         AsyncOperation asyncLoadLevel;
         // Start loading the scene
         if (id == -1)
@@ -60,6 +70,8 @@ public class SceneController : MonoBehaviour
         {
             asyncLoadLevel = SceneManager.LoadSceneAsync(id, LoadSceneMode.Single);
         }
+
+        fadeAnimator.SetTrigger("FadeIn");
 
         // Wait until the level finish loading
         while (!asyncLoadLevel.isDone)
