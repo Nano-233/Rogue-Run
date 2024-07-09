@@ -107,7 +107,7 @@ public class Exploder : MonoBehaviour, IEnemy
 
         //setups damageable
         _damageable.InvincibleTime = 0.1f;
-        _damageable.Multiplier = 5;
+        _damageable.Multiplier = 10;
     }
 
     // Update is called once per frame

@@ -346,11 +346,10 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-
+            _dashCount--; //reduce a dash count
             _trail.emitting = true;
             _lastDash = Time.time; //reset the cd
             _animator.SetTrigger(AnimationStrings.dashTrigger);
-            _dashCount--; //reduce a dash count
         }
     }
 

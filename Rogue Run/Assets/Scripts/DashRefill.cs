@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class DashRefill : MonoBehaviour
 {
     
-    public UnityEvent<int, GameObject> addDash; //damage and knockback
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +13,7 @@ public class DashRefill : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //add 1 dash
-            addDash.Invoke(1, gameObject);
+            collision.gameObject.GetComponent<PlayerController>().AddDash(1, gameObject);
         }
     }
 }
