@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class ParallaxEffect : MonoBehaviour
 {
-
     public Camera cam;
     public Transform followTarget;
-    
+
     //start pos of parallax object 
     private Vector2 _startingPosition;
-    
+
     //start Z value of object
     private float _startingZ;
 
@@ -26,7 +25,7 @@ public class ParallaxEffect : MonoBehaviour
 
     //Further away -> faster it will move
     private float ParallaxFactor => Mathf.Abs(ZDistanceFromTarget) / ClippingPlane;
-    
+
     // Start is called before the first frame update
     void Start()
     {
