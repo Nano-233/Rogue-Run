@@ -9,22 +9,22 @@ public class UIController : MonoBehaviour
 {
     //canvas
     public Canvas canvas;
-    
+
     //player
     private GameObject _player;
     private PlayerController _playerController;
-    
+
     //health bar
     public TMP_Text healthText; //text of hp
     public Image healthBar; //green bar of hp
     public TMP_Text livesText; //text of lives remaining
     private Damageable _damageable; //player's damageable component
-    
+
     //floating text
     public GameObject damageTextPrefab; //damage text
     public GameObject healTextPrefab; //healing text
     public GameObject dropTextPrefab; //drop text
-    
+
     //currencies
     public TMP_Text darknessText; //text of darkness count
 
@@ -85,7 +85,7 @@ public class UIController : MonoBehaviour
         damage *= -1;
         tmpText.text = damage.ToString();
     }
-    
+
     //when something heals, floating text
     public void CharacterHeals(GameObject character, int heal)
     {
@@ -98,7 +98,7 @@ public class UIController : MonoBehaviour
         //sets text
         tmpText.text = heal.ToString();
     }
-    
+
     //when picks up darkness, floating text
     public void CharacterDrops(GameObject character, int amount)
     {
