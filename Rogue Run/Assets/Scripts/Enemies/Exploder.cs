@@ -59,6 +59,16 @@ public class Exploder : MonoBehaviour, IEnemy
         }
     }
 
+    public bool HasLOS
+    {
+        get { return _hasLOS; }
+        set
+        {
+            _hasLOS = value;
+            _animator.SetBool(AnimationStrings.hasLOS, value);
+        }
+    }
+
     //checks if octo has locked on
     public bool HasTarget
     {
@@ -114,7 +124,7 @@ public class Exploder : MonoBehaviour, IEnemy
     void Update()
     {
         //checks if either a target is locked for attack or if is in range of chase
-        HasTarget = attackZone.detectedColliders.Count > 0;
+        HasTarget = attackZone.detectedColliders.Count > 0 && HasLOS;
         foundTarget = foundZone.detectedColliders.Count > 0;
 
         _playerPos = foundZone.playerPos;
@@ -139,10 +149,10 @@ public class Exploder : MonoBehaviour, IEnemy
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, _playerPos - transform.position, 30f);
                 if (!(ray.collider is null))
                 {
-                    _hasLOS = ray.collider.CompareTag("Player");
+                    HasLOS = ray.collider.CompareTag("Player");
                 }
 
-                if (_hasLOS)
+                if (HasLOS)
                 {
                     ChaseFound(); //if can chase after the player
                 }

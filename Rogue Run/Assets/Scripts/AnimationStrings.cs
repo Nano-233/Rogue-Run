@@ -20,4 +20,5 @@ internal class AnimationStrings
     internal static string jumpTrigger = "jump";
     internal static string dashTrigger = "dash";
     internal static string activated = "activated"; //trap activation
+    internal static string hasLOS = "hasLOS";
 }

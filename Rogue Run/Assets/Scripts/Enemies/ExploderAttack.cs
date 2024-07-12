@@ -32,7 +32,7 @@ public class ExploderAttack : MonoBehaviour
     public IEnumerator StartFuse(Damageable damageable)
     {
         //Wait for 2 seconds
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.7f);
 
         //explodes
         Vector2 deliveredKnockBack =
@@ -43,6 +43,8 @@ public class ExploderAttack : MonoBehaviour
 
         //hit
         damageable.Hit(AD, deliveredKnockBack);
-        _selfDamageable.KillSelf();
+        //_selfDamageable.KillSelf();
+        //destroys
+        Destroy(transform.parent.gameObject);
     }
 }
