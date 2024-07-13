@@ -750,4 +750,15 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //does trap damage
+    public void DealTrapDamage(int damage)
+    {
+        if (_antiTrapUp > 0)
+        {
+            damage = Convert.ToInt32(damage * ((100 - _antiTrapUp) / 100f));
+        }
+
+        _damageable.Hit(damage, Vector2.zero);
+    }
 }

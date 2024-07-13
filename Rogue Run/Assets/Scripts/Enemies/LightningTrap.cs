@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LightningTrap : MonoBehaviour
+public class LightningTrap : MonoBehaviour, ITrap
 {
     [SerializeField] private float activationDelay; //time before trap sets
     [SerializeField] private float activateTime; //time the trap stays active for
@@ -16,7 +16,7 @@ public class LightningTrap : MonoBehaviour
     private bool _triggered; //if the trap has been triggered
     private bool _activated; //if the trap has been set off
 
-    private Damageable _playerDamageable; //player's health component
+    private PlayerController _playerController; //controller
 
     private void Awake()
     {
@@ -34,13 +34,13 @@ public class LightningTrap : MonoBehaviour
                 StartCoroutine(Activate());
             }
 
-            _playerDamageable = collision.GetComponent<Damageable>();
+            _playerController = collision.GetComponent<PlayerController>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _playerDamageable = null;
+        _playerController = null;
     }
 
     private IEnumerator Activate()
@@ -67,7 +67,12 @@ public class LightningTrap : MonoBehaviour
 
     private void Update()
     {
-        if (_activated && !(_playerDamageable is null))
-            _playerDamageable.Hit(AD, Vector2.zero);
+        if (_activated && !(_playerController is null))
+            DealTrapDamage(AD);
+    }
+
+    public void DealTrapDamage(int damage)
+    {
+        _playerController.DealTrapDamage(damage);
     }
 }
