@@ -41,10 +41,13 @@ public class ExploderAttack : MonoBehaviour
                 : new Vector2(-knockBack.x, knockBack.y);
 
 
-        //hit
-        damageable.Hit(AD, deliveredKnockBack);
-        //_selfDamageable.KillSelf();
-        //destroys
-        Destroy(transform.parent.gameObject);
+        if (transform.parent.GetComponent<Damageable>().IsAlive)
+        {
+            //hit if still alive
+            damageable.Hit(AD, deliveredKnockBack);
+            
+            //destroys
+            Destroy(transform.parent.gameObject);
+        }
     }
 }
