@@ -29,7 +29,7 @@ public class ExploderAttack : MonoBehaviour
     }
 
     //starts the exploding fus
-    public IEnumerator StartFuse(Damageable damageable)
+    private IEnumerator StartFuse(Damageable damageable)
     {
         //Wait for 2 seconds
         yield return new WaitForSeconds(1.7f);
@@ -45,7 +45,7 @@ public class ExploderAttack : MonoBehaviour
         {
             //hit if still alive
             damageable.Hit(AD, deliveredKnockBack);
-            
+
             //destroys
             Destroy(transform.parent.gameObject);
         }
