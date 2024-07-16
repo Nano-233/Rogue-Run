@@ -97,7 +97,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -0.25703716, y: 0.6964934}
-  - {x: -0.26128578, y: -1.0042467}
+  - {x: -0.23887062, y: -1.7888817}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -114,3 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e79929c92586684c91138bb0c326061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextSceneId: -1

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9443bb4299b8a7478b3535fa02cc28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDelay: 2
+  activationDelay: 1.5
   activateTime: 2
   AD: 20
 --- !u!95 &1178534387654277538
