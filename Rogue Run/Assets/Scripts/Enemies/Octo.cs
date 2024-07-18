@@ -215,6 +215,13 @@ public class Octo : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(seconds);
         walkSpeed *= 2;
     }
+    
+    //when hit.
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        //add the knockback
+        _rb.velocity = new Vector2(knockback.x * -transform.localScale.x, _rb.velocity.y * 0.2f + knockback.y);
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -226,6 +226,12 @@ public class Exploder : MonoBehaviour, IEnemy
         walkSpeed *= 2;
     }
 
+    
+    //when hit.
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        //exploder dies on spot
+    }
 
     // Start is called before the first frame update
     void Start()

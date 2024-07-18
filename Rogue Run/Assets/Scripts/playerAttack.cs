@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class PlayerAttack : MonoBehaviour
 {
     public int _AD = 100; //attack damage
-    private Vector2 _knockBack = Vector2.zero; //no knockback from the player
+    private Vector2 _knockBack = new Vector2(10,2); //no knockback from the player
     private PlayerController _playerController; //player controller component
     private GameObject _player; //player
 
