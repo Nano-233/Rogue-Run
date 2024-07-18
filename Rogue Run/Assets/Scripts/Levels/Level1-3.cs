@@ -73,7 +73,7 @@ public class Level3 : MonoBehaviour
             {
                 GameObject temp = Instantiate(trapObj[pointer], trapTransforms[trapSpawnCount].position,
                     Quaternion.identity,
-                    enemies.transform);
+                    traps.transform);
                 trapSpawnCount++;
 
                 //if turret, randomize facing direction
