@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class SceneController : MonoBehaviour
 {
@@ -21,6 +23,13 @@ public class SceneController : MonoBehaviour
     private int[] _permUpStats;
     private int[] _tempUpStats;
 
+    //number of next room
+    private int _nextRoom;
+    
+    //pool of rooms to draw from
+    private List<int> _chapter1 = new List<int>{3,5,7,9};
+    private List<int> _chapter2 = new List<int>{13,15};
+    
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +59,13 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
     }
 
+    //resets pool of levels
+    public void ResetPool()
+    {
+        _chapter1 = new List<int>{3,5,7,9};
+        _chapter2 = new List<int>{13,15};
+    }
+
 
     //load scene
     private IEnumerator LoadScene(int id)
@@ -61,10 +77,19 @@ public class SceneController : MonoBehaviour
 
         AsyncOperation asyncLoadLevel;
         // Start loading the scene
-        if (id == -1)
+        
+        if (id == -1)//next scene id
         {
             asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1,
                 LoadSceneMode.Single);
+        }
+        else if (id == -2) //pool next level in 1-
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync(GetNextRoom(1), LoadSceneMode.Single);
+        }
+        else if (id == -3) //pool next level in 2-
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync(GetNextRoom(2), LoadSceneMode.Single);
         }
         else
         {
@@ -114,5 +139,36 @@ public class SceneController : MonoBehaviour
     {
         //activate vanguard
         _playerController.Vanguard();
+    }
+
+    
+    //gets the next room number by randomizing
+    private int GetNextRoom(int index)
+    {
+        //pool from chapter 1
+        if (index == 1)
+        {
+            //load boss fight
+            if (_chapter1.Count == 0)
+            {
+                return 11;
+            }
+            //gets index, return scene number, remove from pool
+            int sceneNum = Random.Range(0, _chapter1.Count);
+            int scene = _chapter1[sceneNum];
+            _chapter1.RemoveAt(sceneNum);
+            return scene;
+        }
+        //pool from chapter 2
+        if (index == 2)
+        {
+            //gets index, return scene number, remove from pool
+            int sceneNum = Random.Range(0, _chapter2.Count);
+            int scene = _chapter2[sceneNum];
+            _chapter2.RemoveAt(sceneNum);
+            return scene;
+        }
+
+        return 0;
     }
 }

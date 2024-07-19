@@ -15,9 +15,13 @@ public class ParallaxEffect : MonoBehaviour
     private float _startingZ;
 
     //distance of camera moved from start
-    private Vector2 CamMoveSinceStart => (Vector2)cam.transform.position - _startingPosition;
+    private Vector2 CamMoveSinceStart => followTarget != null
+        ? (Vector2)cam.transform.position - _startingPosition
+        : cam.transform.position;
 
-    private float ZDistanceFromTarget => transform.position.z - followTarget.transform.position.z;
+    private float ZDistanceFromTarget => followTarget != null
+        ? transform.position.z - followTarget.transform.position.z
+        : transform.position.z;
 
     //checks if in front or behind the player
     private float ClippingPlane =>
@@ -36,6 +40,11 @@ public class ParallaxEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (followTarget == null)
+        {
+            Destroy(this);
+        }
+
         Vector2 newPosition = _startingPosition + CamMoveSinceStart * ParallaxFactor;
 
         transform.position = new Vector3(newPosition.x, newPosition.y, _startingZ);

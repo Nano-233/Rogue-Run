@@ -200,7 +200,11 @@ public class PlayerController : MonoBehaviour
                 _firstDeath = false;
                 //reset upgrades
                 ResetTempUpgrades();
+                //stop any motion
+                _rb.velocity = Vector2.zero;
+                CanDash = false;
                 //go back to spawn
+                SceneController.instance.ResetPool();
                 SceneController.instance.NextScene(2);
             }
         }
