@@ -9,6 +9,7 @@ public class ExploderAttack : MonoBehaviour
     public int AD = 50;
     public Vector2 knockBack = Vector2.zero;
     private Damageable _selfDamageable;
+    private bool _isInsideBlast;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class ExploderAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _isInsideBlast = true;
         //check if can hit
         Damageable damageable = collision.GetComponent<Damageable>(); //can use interface (IDamageable)
 
@@ -26,6 +28,11 @@ public class ExploderAttack : MonoBehaviour
             //starts the fuse
             StartCoroutine(StartFuse(damageable));
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        _isInsideBlast = false;
     }
 
     //starts the exploding fus
@@ -43,8 +50,12 @@ public class ExploderAttack : MonoBehaviour
 
         if (transform.parent.GetComponent<Damageable>().IsAlive)
         {
-            //hit if still alive
-            damageable.Hit(AD, deliveredKnockBack);
+            if (_isInsideBlast)
+            {
+                //hit if still alive and inside blast radius
+                damageable.Hit(AD, deliveredKnockBack);
+            }
+            
 
             //destroys
             Destroy(transform.parent.gameObject);

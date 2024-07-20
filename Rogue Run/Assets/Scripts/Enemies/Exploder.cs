@@ -18,6 +18,7 @@ public class Exploder : MonoBehaviour, IEnemy
     private TouchingDirections _touchingDirections; //using touchingdirections to check walls.
     private Animator _animator; //animator of the exploder
     private Damageable _damageable; //damageable obj of Exploder.
+    private EnemyHealthBar _healthBar; //healthbar of exploder
 
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
@@ -103,6 +104,7 @@ public class Exploder : MonoBehaviour, IEnemy
         _touchingDirections = GetComponent<TouchingDirections>();
         _animator = GetComponent<Animator>();
         _damageable = GetComponent<Damageable>();
+        _healthBar = GetComponentInChildren<EnemyHealthBar>();
 
         //sets initial direction
         _walkDirection = startDirection;
@@ -230,11 +232,16 @@ public class Exploder : MonoBehaviour, IEnemy
     //when hit.
     public void OnHit(int damage, Vector2 knockback)
     {
-        //exploder dies on spot
+        //add the knockback
+        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y);
+        //apply the healthbar update
+        _healthBar.UpdateHp(_damageable.Health, _damageable.MaxHealth);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //set hp bar
+        _healthBar.UpdateHp(_damageable.Health, _damageable.MaxHealth);
     }
 }
