@@ -18,6 +18,7 @@ public class Octo : MonoBehaviour, IEnemy
     private TouchingDirections _touchingDirections; //using touchigndirections to check walls.
     private Animator _animator; //animator of the octo
     private Damageable _damageable; //damageable obj of Octo.
+    private EnemyHealthBar _healthBar; //healthbar of octo
 
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
@@ -93,6 +94,7 @@ public class Octo : MonoBehaviour, IEnemy
         _touchingDirections = GetComponent<TouchingDirections>();
         _animator = GetComponent<Animator>();
         _damageable = GetComponent<Damageable>();
+        _healthBar = GetComponentInChildren<EnemyHealthBar>();
 
         //sets initial direction
         _walkDirection = startDirection;
@@ -215,16 +217,20 @@ public class Octo : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(seconds);
         walkSpeed *= 2;
     }
-    
+
     //when hit.
     public void OnHit(int damage, Vector2 knockback)
     {
         //add the knockback
-        _rb.velocity = new Vector2(knockback.x * -transform.localScale.x, _rb.velocity.y * 0.2f + knockback.y);
+        _rb.velocity = new Vector2(knockback.x, _rb.velocity.y * 0.2f + knockback.y);
+        //apply the healthbar update
+        _healthBar.UpdateHp(_damageable.Health, _damageable.MaxHealth);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //set hp bar
+        _healthBar.UpdateHp(_damageable.Health, _damageable.MaxHealth);
     }
 }

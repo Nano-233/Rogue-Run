@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class PlayerAttack : MonoBehaviour
 {
     public int _AD = 100; //attack damage
-    private Vector2 _knockBack = new Vector2(10,2); //no knockback from the player
+    private Vector2 _knockBack = new Vector2(10, 2); //knockback from the player
     private PlayerController _playerController; //player controller component
     private GameObject _player; //player
 
@@ -63,9 +63,11 @@ public class PlayerAttack : MonoBehaviour
             bonus += _playerController.BehindBuff / 100f;
         }
 
+
         if (damageable != null && playerAnim.GetBool(AnimationStrings.dashing))
         {
-            damageable.Hit(Convert.ToInt32(AD * bonus), _knockBack);
+            damageable.Hit(Convert.ToInt32(AD * bonus),
+                new Vector2(_knockBack.x * transform.parent.transform.localScale.x, _knockBack.y));
 
             //if killed, drop loot
             if (!damageable.IsAlive && exit)
