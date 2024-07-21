@@ -203,6 +203,9 @@ public class PlayerController : MonoBehaviour
                 //stop any motion
                 _rb.velocity = Vector2.zero;
                 CanDash = false;
+                _trail.emitting = false; //stop the trail
+                _animator.SetBool(AnimationStrings.dashing, false);
+                _animator.SetBool(AnimationStrings.stopDash, true);
                 //go back to spawn
                 SceneController.instance.ResetPool();
                 SceneController.instance.NextScene(2);

@@ -8,14 +8,7 @@ public class ExploderAttack : MonoBehaviour
 {
     public int AD = 50;
     public Vector2 knockBack = Vector2.zero;
-    private Damageable _selfDamageable;
     private bool _isInsideBlast;
-
-    private void Awake()
-    {
-        //gets the exploder script
-        _selfDamageable = GetComponentInParent<Damageable>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,7 +48,7 @@ public class ExploderAttack : MonoBehaviour
                 //hit if still alive and inside blast radius
                 damageable.Hit(AD, deliveredKnockBack);
             }
-            
+
 
             //destroys
             Destroy(transform.parent.gameObject);
