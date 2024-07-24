@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.iOS;
 using UnityEngine;
 
 public class Randomizer : MonoBehaviour
@@ -19,8 +18,14 @@ public class Randomizer : MonoBehaviour
 
     public int groundCount;
     public int groundTypes;
+    
+    //setups for flying enemies
+    public GameObject flyer;
+    public int flyerCount;
 
-
+    public int flyCount;
+    public int flyTypes;
+    
     //setups for traps
     public GameObject lightning;
     public int lightningCount;
@@ -37,7 +42,9 @@ public class Randomizer : MonoBehaviour
 
     //array of positions to spawn traps in
     [SerializeField] private List<Transform> trapPos;
-
+    
+    //array of positions to spawn flying enemies in
+    [SerializeField] private List<Transform> flyPos;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +92,24 @@ public class Randomizer : MonoBehaviour
                             temp.transform.localScale.y)
                         : temp.transform.localScale; //changes localscale randomly;
                 }
+            }
+        }
+        
+        //randomizes the spawns by taking random positions
+        Transform[] flyTransforms = flyPos.OrderBy(x => Random.value).Take(flyCount).ToArray();
+
+
+        int[] flyCounts = new[] { flyerCount };
+        GameObject[] flyObj = new[] { flyer };
+        int flySpawnCount = 0;
+        //spawn all of the required fly enemies randomly
+        for (int pointer = 0; pointer < flyTypes; pointer++)
+        {
+            for (int i = 0; i < flyCounts[pointer]; i++)
+            {
+                Instantiate(flyObj[pointer], flyTransforms[flySpawnCount].position, Quaternion.identity,
+                    enemies.transform);
+                flySpawnCount++;
             }
         }
     }
