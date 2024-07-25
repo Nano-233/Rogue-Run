@@ -20,8 +20,10 @@ public class BossTouchingDirections : MonoBehaviour
     private RaycastHit2D[] _ceilHits = new RaycastHit2D[5];
     private RaycastHit2D[] _potHits = new RaycastHit2D[5]; //potential walls
 
+    public bool oopoFace = false;
+    
     //checks which direction the player is facing using localScale.
-    private Vector2 WallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
+    private Vector2 WallCheckDirection => gameObject.transform.localScale.x > 0 ? oopoFace? Vector2.left : Vector2.right : oopoFace? Vector2.right : Vector2.left;
 
     [SerializeField] private bool _isGrounded = true; //player grounded?
 

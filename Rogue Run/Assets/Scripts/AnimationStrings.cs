@@ -22,4 +22,5 @@ internal class AnimationStrings
     internal static string activated = "activated"; //trap activation
     internal static string hasLOS = "hasLOS";
     internal static string isSafe = "isSafe";
+    internal static string teleport = "teleport";
 }

@@ -127,7 +127,7 @@ public class Exploder : MonoBehaviour, IEnemy
     {
         //checks if either a target is locked for attack or if is in range of chase
         HasTarget = attackZone.detectedColliders.Count > 0 && HasLOS;
-        foundTarget = foundZone.detectedColliders.Count > 0;
+        FoundTarget = foundZone.detectedColliders.Count > 0;
 
         _playerPos = foundZone.playerPos;
     }
@@ -145,7 +145,7 @@ public class Exploder : MonoBehaviour, IEnemy
         if (CanMove)
         {
             // TODO: check if anything above, if not and detected in LOS, jump up.
-            if (foundTarget)
+            if (FoundTarget)
             {
                 //checks for player LOS
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, _playerPos - transform.position, 30f);
