@@ -70,6 +70,12 @@ public class PlayerController : MonoBehaviour
     //boolean of player status
     private bool _firstDeath = true;
 
+    //checkpoint position
+    private Vector2[] _checkpointPos = new[]
+        { new Vector2(-80, -1), new Vector2(-90, -15), new Vector2(-70, -10), new Vector2(-53.6f, -1.5f) };
+
+    private int _checkpointNo = 0;
+
     //lives remaining
     public int LivesRemaining
     {
@@ -434,7 +440,7 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
-            _damageable.Health = 0;
+            _damageable.Hit(_damageable.MaxHealth, Vector2.zero);
         }
     }
 
@@ -767,5 +773,23 @@ public class PlayerController : MonoBehaviour
         }
 
         _damageable.Hit(damage, Vector2.zero);
+    }
+
+    //set respawn
+    public void SetTutorialSpawn(int spawn)
+    {
+        if (spawn == _checkpointNo)
+        {
+            _checkpointNo--;
+        }
+        else
+        {
+            _checkpointNo++;
+        }
+    }
+
+    public void SpawnAtCheckpoint()
+    {
+        transform.position = _checkpointPos[_checkpointNo];
     }
 }

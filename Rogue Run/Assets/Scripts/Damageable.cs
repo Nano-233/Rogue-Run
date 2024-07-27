@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Damageable : MonoBehaviour
@@ -176,6 +177,13 @@ public class Damageable : MonoBehaviour
             {
                 _hasVangaurd = false;
                 _dmgMod += _vanguardBuff;
+            }
+
+            if (IsPlayer && SceneManager.GetActiveScene().buildIndex == 1 && Health <= 0)
+            {
+                IsAlive = true;
+                Heal(MaxHealth);
+                _playerController.SpawnAtCheckpoint();
             }
 
             return true;

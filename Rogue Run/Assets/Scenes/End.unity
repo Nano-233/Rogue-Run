@@ -3487,6 +3487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08229743da0c054abb4e6c126afdb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeAnimator: {fileID: 0}
 --- !u!4 &1634490272
 Transform:
   m_ObjectHideFlags: 0
@@ -3971,7 +3972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8083267710565054713, guid: 4444fc5a0531f3a44bfd0b2a2c4aec58, type: 3}
       propertyPath: NextSceneId
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8880136662798273546, guid: 4444fc5a0531f3a44bfd0b2a2c4aec58, type: 3}
       propertyPath: m_LocalPosition.x
