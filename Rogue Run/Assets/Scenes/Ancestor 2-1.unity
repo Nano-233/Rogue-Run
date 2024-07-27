@@ -3330,11 +3330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[0]
-      value: You've seen him...
+      value: How's the world out there?
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[1]
-      value: Take another blessing....
+      value: Are you the only one?
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[2]

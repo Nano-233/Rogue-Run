@@ -3326,7 +3326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[0]
@@ -3334,11 +3334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[1]
-      value: Take another blessing....
+      value: Here's a blessing....
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[2]
-      value: Go over there..... unleash your inner darkness...
+      value: How I once treasured them...
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[3]

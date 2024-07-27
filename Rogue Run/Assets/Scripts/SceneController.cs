@@ -24,11 +24,11 @@ public class SceneController : MonoBehaviour
 
     //number of next room
     private int _nextRoom;
-    
+
     //pool of rooms to draw from
-    private List<int> _chapter1 = new List<int>{3,5,7,9};
-    private List<int> _chapter2 = new List<int>{13,15};
-    
+    private List<int> _chapter1 = new List<int> { 3, 5, 7, 9 };
+    private List<int> _chapter2 = new List<int> { 13, 15 };
+
     private void Awake()
     {
         if (instance == null)
@@ -61,8 +61,8 @@ public class SceneController : MonoBehaviour
     //resets pool of levels
     public void ResetPool()
     {
-        _chapter1 = new List<int>{3,5,7,9};
-        _chapter2 = new List<int>{13,15};
+        _chapter1 = new List<int> { 3, 5, 7, 9 };
+        _chapter2 = new List<int> { 13, 15 };
     }
 
 
@@ -76,8 +76,8 @@ public class SceneController : MonoBehaviour
 
         AsyncOperation asyncLoadLevel;
         // Start loading the scene
-        
-        if (id == -1)//next scene id
+
+        if (id == -1) //next scene id
         {
             asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1,
                 LoadSceneMode.Single);
@@ -140,7 +140,7 @@ public class SceneController : MonoBehaviour
         _playerController.Vanguard();
     }
 
-    
+
     //gets the next room number by randomizing
     private int GetNextRoom(int index)
     {
@@ -152,12 +152,14 @@ public class SceneController : MonoBehaviour
             {
                 return 11;
             }
+
             //gets index, return scene number, remove from pool
             int sceneNum = Random.Range(0, _chapter1.Count);
             int scene = _chapter1[sceneNum];
             _chapter1.RemoveAt(sceneNum);
             return scene;
         }
+
         //pool from chapter 2
         if (index == 2)
         {

@@ -3326,23 +3326,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[0]
-      value: You've seen him...
+      value: Oh a creature!
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[1]
-      value: Take another blessing....
+      value: Finally! talk to me !!!
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[2]
-      value: Go over there..... unleash your inner darkness...
+      value: im so bored
       objectReference: {fileID: 0}
     - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: lines.Array.data[3]
-      value: Perhaps you will be the one....
+      value: im so bored
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
+      propertyPath: lines.Array.data[4]
+      value: im so bored
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: im so bored
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
+      propertyPath: lines.Array.data[6]
+      value: ok fine. there's your blressing
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331869813156641497, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
+      propertyPath: lines.Array.data[7]
+      value: im so bored....
       objectReference: {fileID: 0}
     - target: {fileID: 7127786912482382847, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: m_Name
