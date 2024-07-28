@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     private int _surferUp = 0; //increase MS after dash, flat
     private int _gravitonUp = 0; //decrease MS of enemies after dash, s
     private int _swiftyUp = 0; //increase dodge chance, %
-    private int _immortalUp = 0; //revives at 50% hp
+    private int _immortalUp = 0; //revives at 10% hp
     private int _solidUp = 0; //decrease hurt, %
 
     //boolean of buffs
@@ -503,7 +503,7 @@ public class PlayerController : MonoBehaviour
         _gravitonUp = tempUpStats[8];
         _swiftyUp = tempUpStats[9];
         _immortalUp = tempUpStats[10];
-        
+
         //increase max hp based on upgrade
         _damageable.MaxHealth = 100;
         _damageable.MaxHealth += _meatyUp;
@@ -792,5 +792,15 @@ public class PlayerController : MonoBehaviour
     public void SpawnAtCheckpoint()
     {
         transform.position = _checkpointPos[_checkpointNo];
+    }
+
+    public void TestInput()
+    {
+        if (Input.GetKey(KeyCode.Comma) && Input.GetKey(KeyCode.Q))
+        {
+            _damageable.InvincibleTime = 100000;
+            _damageable.Hit(1, Vector2.zero);
+            _immortalUp += 3;
+        }
     }
 }
