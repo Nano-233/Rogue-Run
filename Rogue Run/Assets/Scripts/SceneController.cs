@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
 
     //pool of rooms to draw from
     private List<int> _chapter1 = new List<int> { 3, 5, 7, 9 };
-    private List<int> _chapter2 = new List<int> { 13, 15 };
+    private List<int> _chapter2 = new List<int> { 13, 15, 17 };
 
     private void Awake()
     {

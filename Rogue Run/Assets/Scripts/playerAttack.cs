@@ -45,10 +45,6 @@ public class PlayerAttack : MonoBehaviour
         {
             _playerController.AddDarkness(gain);
         }
-        else
-        {
-            Debug.Log("bruh");
-        }
 
         //heal if upgrade
         _playerController.KillHeal();
