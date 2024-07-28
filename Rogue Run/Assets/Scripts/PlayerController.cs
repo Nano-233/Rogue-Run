@@ -416,7 +416,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //change dash count
-    public void AddDash(int count, GameObject obj)
+    public bool AddDash(int count, GameObject obj)
     {
         //if no overflow
         if (_dashCount < _maxDash)
@@ -424,7 +424,10 @@ public class PlayerController : MonoBehaviour
             //add dash, disable
             _dashCount += count;
             StartCoroutine(DashUsed(obj));
+            return true;
         }
+
+        return false;
     }
 
     //disables the refill for a bit
@@ -803,6 +806,7 @@ public class PlayerController : MonoBehaviour
             _damageable.InvincibleTime = 100000;
             _damageable.Hit(1, Vector2.zero);
             _immortalUp += 3;
+            _darknessCount += 10000;
         }
     }
 }
