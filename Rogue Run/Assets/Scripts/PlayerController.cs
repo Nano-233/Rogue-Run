@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         if (!_damageable.IsAlive)
         {
             //if has respawn, respawn with 10% hp
-            if (_immortalUp > 0)
+            if (_immortalUp > 0 && _firstDeath)
             {
                 _damageable.Health = _damageable.MaxHealth / 10;
                 _immortalUp--;
@@ -441,7 +441,9 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
+            _damageable.InvincibleTime = 0;
             _damageable.Hit(_damageable.MaxHealth, Vector2.zero);
+            _damageable.InvincibleTime = 0.5f;
         }
     }
 

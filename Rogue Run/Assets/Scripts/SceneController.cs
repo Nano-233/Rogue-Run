@@ -102,7 +102,7 @@ public class SceneController : MonoBehaviour
             yield return null;
         // Wait a frame so every Awake and Start method is called
         yield return new WaitForEndOfFrame();
-
+        yield return new WaitForEndOfFrame();
         //reload player
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>(); //finds the player

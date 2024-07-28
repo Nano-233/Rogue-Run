@@ -20,62 +20,11 @@ MonoBehaviour:
     height: 869.3334
   m_ShowMode: 4
   m_Title: Build Settings
-  m_RootView: {fileID: 4}
+  m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 694.6667
-    width: 728.6666
-    height: 124.666626
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 13}
-  - {fileID: 2}
-  m_Position:
-    serializedVersion: 2
-    x: 978
-    y: 0
-    width: 728.6666
-    height: 819.3333
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
-  vertical: 1
-  controlID: 3063
---- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,9 +37,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+  - {fileID: 3}
   - {fileID: 5}
-  - {fileID: 7}
-  - {fileID: 6}
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -103,7 +52,7 @@ MonoBehaviour:
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &5
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &6
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +95,56 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 6}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1706.6666
+    height: 819.3333
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 3606
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 10}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1100.6666
+    height: 819.3333
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 3531
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,17 +159,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 8}
-  - {fileID: 3}
+  - {fileID: 9}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 30
-    width: 1706.6666
-    height: 819.3333
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
+    y: 0
+    width: 1100.6666
+    height: 559.3333
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 103
+  controlID: 3532
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,74 +179,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 9}
-  - {fileID: 12}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 978
-    height: 819.3333
-  m_MinSize: {x: 200, y: 100}
-  m_MaxSize: {x: 16192, y: 16192}
-  vertical: 1
-  controlID: 49
---- !u!114 &9
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 10}
-  - {fileID: 11}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 978
-    height: 491.33334
-  m_MinSize: {x: 200, y: 50}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 50
---- !u!114 &10
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneHierarchyWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 234
-    height: 491.33334
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 17}
+    width: 192
+    height: 559.3333
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &11
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,23 +211,23 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 234
+    x: 192
     y: 0
-    width: 744
-    height: 491.33334
+    width: 908.6666
+    height: 559.3333
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 18}
   - {fileID: 16}
+  - {fileID: 14}
+  - {fileID: 17}
+  - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
-  - {fileID: 21}
-  - {fileID: 22}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &12
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,19 +243,44 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 491.33334
-    width: 978
-    height: 327.99997
+    y: 559.3333
+    width: 1100.6666
+    height: 260
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 23}
+  m_ActualView: {fileID: 21}
   m_Panes:
+  - {fileID: 21}
+  - {fileID: 22}
   - {fileID: 23}
-  - {fileID: 24}
-  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &13
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Position:
+    serializedVersion: 2
+    x: 1100.6666
+    y: 0
+    width: 606
+    height: 819.3333
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 3607
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,19 +297,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 728.6666
-    height: 694.6667
+    width: 606
+    height: 652
   m_MinSize: {x: 641, y: 601}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 28}
+  m_ActualView: {fileID: 27}
   m_Panes:
+  - {fileID: 24}
   - {fileID: 25}
   - {fileID: 26}
   - {fileID: 27}
-  - {fileID: 28}
   m_Selected: 3
   m_LastSelected: 0
---- !u!114 &14
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,550 +318,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animator
-    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
+  m_Children: []
+  m_Position:
     serializedVersion: 2
     x: 0
-    y: 564
-    width: 977
-    height: 306.99997
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_ViewTransforms:
-    m_KeySerializationHelper:
-    - {fileID: 8300695991222944953, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
-    - {fileID: 8300695991222944953, guid: 5c8cc03314e4a4e4f9354249fa5e1e1c, type: 2}
-    - {fileID: -5142485109310739836, guid: 5c8cc03314e4a4e4f9354249fa5e1e1c, type: 2}
-    - {fileID: -5142485109310739836, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
-    m_ValueSerializationHelper:
-    - e00: 0.81473684
-      e01: 0
-      e02: 0
-      e03: -25.736847
-      e10: 0
-      e11: 0.81473684
-      e12: 0
-      e13: 76.96842
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.81473684
-      e01: 0
-      e02: 0
-      e03: -25.736847
-      e10: 0
-      e11: 0.81473684
-      e12: 0
-      e13: 76.96842
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.81473684
-      e01: 0
-      e02: 0
-      e03: -25.736847
-      e10: 0
-      e11: 0.81473684
-      e12: 0
-      e13: 56.6
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    - e00: 0.81473684
-      e01: 0
-      e02: 0
-      e03: -25.736847
-      e10: 0
-      e11: 0.81473684
-      e12: 0
-      e13: 56.6
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-  m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
-  m_BreadCrumbs:
-  - m_Target: {fileID: 8300695991222944953, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
-  stateMachineGraph: {fileID: 0}
-  stateMachineGraphGUI: {fileID: 0}
-  blendTreeGraph: {fileID: 0}
-  blendTreeGraphGUI: {fileID: 0}
-  m_AutoLiveLink: 1
-  m_MiniTool: 0
-  m_LockTracker:
-    m_IsLocked: 0
-  m_CurrentEditor: 0
-  m_LayerEditor:
-    m_SelectedLayerIndex: 0
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Test Runner
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 978
-    y: 767.3334
-    width: 727.6666
-    height: 103.666626
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_Spl:
-    ID: 3241
-    splitterInitialOffset: 203.33334
-    currentActiveSplitter: -1
-    realSizes:
-    - 32
-    - 32
-    relativeSizes:
-    - 0.5474861
-    - 0.45251387
-    minSizes:
-    - 32
-    - 32
-    maxSizes:
-    - 0
-    - 0
-    lastTotalSize: 54
-    splitSize: 6
-    xOffset: 0
-    m_Version: 1
-    oldRealSizes: 
-    oldMinSizes: 
-    oldMaxSizes: 
-    oldSplitSize: 0
-  m_TestTypeToolbarIndex: 1
-  m_PlayModeTestListGUI:
-    m_Window: {fileID: 15}
-    m_NewResultList:
-    - id: 1008
-      uniqueId: '[Rogue Run][suite]'
-      name: Rogue Run
-      fullName: Rogue Run
-      resultStatus: 2
-      duration: 0.0592918
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 
-      parentUniqueId: 
-    - id: 1004
-      uniqueId: '[PlayMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll][suite]'
-      name: PlayMode.dll
-      fullName: D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll
-      resultStatus: 2
-      duration: 0.0491778
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[Rogue Run][suite]'
-    - id: 1001
-      uniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
-      name: PlayerTest
-      fullName: PlayerTest
-      resultStatus: 2
-      duration: 0.0459719
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1004
-      parentUniqueId: '[PlayMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll][suite]'
-    - id: 1015
-      uniqueId: PlayMode.dll/PlayerTest/[PlayMode][PlayerTest.PlayerHealthComponentAuto]
-      name: PlayerHealthComponentAuto
-      fullName: PlayerTest.PlayerHealthComponentAuto
-      resultStatus: 2
-      duration: 0.0248226
-      messages: 'UnityEngine.MissingComponentException : There is no ''Animator''
-        attached to the "New Game Object" game object, but a script is trying to
-        access it.
-
-        You probably need to add a Animator to the game object
-        "New Game Object". Or your script needs to check if the component is attached
-        before using it.'
-      output: 
-      stacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
-        at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
-        [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
-        (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
-        Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
-        damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
-        Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentAuto>d__1.MoveNext
-        () [0x00063] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:36
-        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
-        in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1013
-      parentUniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
-    - id: 1014
-      uniqueId: PlayMode.dll/PlayerTest/[PlayMode][PlayerTest.PlayerHealthComponentManual]
-      name: PlayerHealthComponentManual
-      fullName: PlayerTest.PlayerHealthComponentManual
-      resultStatus: 2
-      duration: 0.0066338
-      messages: 'UnityEngine.MissingComponentException : There is no ''Animator''
-        attached to the "New Game Object" game object, but a script is trying to
-        access it.
-
-        You probably need to add a Animator to the game object
-        "New Game Object". Or your script needs to check if the component is attached
-        before using it.'
-      output: 
-      stacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
-        at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
-        [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
-        (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
-        Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
-        damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
-        Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
-        () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
-        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
-        in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1013
-      parentUniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
-    m_ResultText: "PlayerHealthComponentManual (0.007s)\n---\nUnityEngine.MissingComponentException
-      : There is no 'Animator' attached to the \"New Game Object\" game object, but
-      a script is trying to access it.\nYou probably need to add a Animator to the
-      game object \"New Game Object\". Or your script needs to check if the component
-      is attached before using it.\n---\nat (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
-      at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
-      [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
-      (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
-      Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
-      damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
-      Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
-      () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
-      in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46"
-    m_ResultStacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
-      at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
-      [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
-      (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
-      Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
-      damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
-      Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
-      () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
-      in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
-    m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9ee34fb8
-      m_LastClickedID: -1202723938
-      m_ExpandedIDs: b9cf50e1b09ca85e0d980577ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
-      m_SearchString: 
-      selectedCategoryMask: 0
-      availableCategories:
-      - Uncategorized
-    m_SelectedOption: 0
-  m_EditModeTestListGUI:
-    m_Window: {fileID: 15}
-    m_NewResultList:
-    - id: 1000
-      uniqueId: '[Rogue Run][suite]'
-      name: Rogue Run
-      fullName: Rogue Run
-      resultStatus: 2
-      duration: 0.0703932
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 
-      parentUniqueId: 
-    - id: 1004
-      uniqueId: '[EditMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll][suite]'
-      name: EditMode.dll
-      fullName: D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll
-      resultStatus: 2
-      duration: 0.0220519
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[Rogue Run][suite]'
-    - id: 1001
-      uniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-      name: PlayerEditTests
-      fullName: PlayerEditTests
-      resultStatus: 2
-      duration: 0.0207582
-      messages: One or more child tests had errors
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1003
-      parentUniqueId: '[EditMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll][suite]'
-    - id: 1004
-      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.AddDarknessAuto]
-      name: AddDarknessAuto
-      fullName: PlayerEditTests.AddDarknessAuto
-      resultStatus: 2
-      duration: 0.0076157
-      messages: 'System.NullReferenceException : Object reference not set to an instance
-        of an object'
-      output: 
-      stacktrace: "  at PlayerController.AddDarkness (System.Int32 amount) [0x00026]
-        in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:512
-        \r\n  at PlayerEditTests.AddDarknessAuto () [0x00026] in D:\\Projects\\Github\\Rogue
-        Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46
-        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
-        System.Globalization.CultureInfo culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-    - id: 1003
-      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.AddDarknessManual]
-      name: AddDarknessManual
-      fullName: PlayerEditTests.AddDarknessManual
-      resultStatus: 2
-      duration: 0.0007205
-      messages: 'System.NullReferenceException : Object reference not set to an instance
-        of an object'
-      output: 
-      stacktrace: "  at PlayerController.AddDarkness (System.Int32 amount) [0x00026]
-        in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:512
-        \r\n  at PlayerEditTests.AddDarknessManual () [0x00011] in D:\\Projects\\Github\\Rogue
-        Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:31
-        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
-        System.Globalization.CultureInfo culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-    - id: 1006
-      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.InitiateHealth]
-      name: InitiateHealth
-      fullName: PlayerEditTests.InitiateHealth
-      resultStatus: 1
-      duration: 0.0009606
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-    - id: 1004
-      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.MoveSpeed]
-      name: MoveSpeed
-      fullName: PlayerEditTests.MoveSpeed
-      resultStatus: 2
-      duration: 0.0050035
-      messages: "  Expected: greater than 8.0f\r\n  But was:  0.0f\r\n"
-      output: 
-      stacktrace: 'at PlayerEditTests.MoveSpeed () [0x0000b] in D:\Projects\Github\Rogue
-        Run\Rogue-Run\Rogue Run\Assets\Tests\EditMode\PlayerEditTests.cs:58
-
-'
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-    - id: 1002
-      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.SetDarkness]
-      name: SetDarkness
-      fullName: PlayerEditTests.SetDarkness
-      resultStatus: 1
-      duration: 0.0004525
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
-    m_ResultText: "AddDarknessAuto (0.008s)\n---\nSystem.NullReferenceException :
-      Object reference not set to an instance of an object\n---\nat PlayerController.AddDarkness
-      (System.Int32 amount) [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
-      Run\\Assets\\Scripts\\PlayerController.cs:512 \r\n  at PlayerEditTests.AddDarknessAuto
-      () [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46
-      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0"
-    m_ResultStacktrace: "  at PlayerController.AddDarkness (System.Int32 amount)
-      [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:512
-      \r\n  at PlayerEditTests.AddDarknessAuto () [0x00026] in D:\\Projects\\Github\\Rogue
-      Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46 \r\n 
-      at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
-    m_TestListState:
-      scrollPos: {x: 0, y: 1}
-      m_SelectedIDs: 99851105
-      m_LastClickedID: 85034393
-      m_ExpandedIDs: cdca22b8b9cf50e1abd29ce3ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
-      m_SearchString: 
-      selectedCategoryMask: 0
-      availableCategories:
-      - Uncategorized
---- !u!114 &16
+    y: 652
+    width: 606
+    height: 167.33331
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 28}
+  m_Panes:
+  - {fileID: 28}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -907,10 +355,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 234
+    x: 192
     y: 72.66667
-    width: 742
-    height: 470.33334
+    width: 906.6666
+    height: 538.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -963,10 +411,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 742
-      height: 449.33334
-    m_Scale: {x: 0.5796875, y: 0.5796875}
-    m_Translation: {x: 371, y: 224.66667}
+      width: 906.6666
+      height: 517.3333
+    m_Scale: {x: 0.7083333, y: 0.7083333}
+    m_Translation: {x: 453.3333, y: 258.66666}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -974,18 +422,18 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -640
-      y: -387.56516
+      y: -365.17645
       width: 1280
-      height: 775.1303
+      height: 730.3529
     m_MinimalGUI: 1
-  m_defaultScale: 0.5796875
-  m_LastWindowPixelSize: {x: 1113, y: 705.5}
+  m_defaultScale: 0.7083333
+  m_LastWindowPixelSize: {x: 1360, y: 807.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &17
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1007,8 +455,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 72.66667
-    width: 233
-    height: 470.33334
+    width: 191
+    height: 538.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1024,23 +472,23 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d06ffdff7670fdff6274fdff5875fdffc076fdff9077fdfff878fdffb479fdff1c7bfdffea7bfdff527dfdff687efdffd07ffdff7e80fdffe681fdff8c82fdfff483fdff9a84fdff0886fdffc686fdffb287fdff0e89fdffe489fdffe48bfdffc88efdffda8efdff3c8ffdff4094fdff5294fdffaa94fdffd099fdffe299fdff3a9afdfff29dfdff049efdff5c9efdff52a3fdff64a3fdff3ca4fdff4ca9fdff5ea9fdff36aafdff3eacfdff50acfdff28adfdff44b0fdff56b0fdff04b1fdfff6b2fdff08b3fdffbcb3fdffc4b5fdffd6b5fdffdab5fdff22b7fdff34b7fdff14b8fdff92bdfdffa4bdfdfff2bdfdff90c0fdff22c2fdff34c2fdffe0c2fdffc6c5fdff1cc6fdff2ec6fdff68c6fdff84cbfdff74cdfdffb6d1fdff72d8fdff0cdcfdffc8ddfdff28e0fdffa8e1fdff12e3fdffbce4fdff0ae6fdff6ce7fdff26e9fdffcaebfdff0aeffdff82f1fdffacf3fdffbaf5fdff14f8fdfffefafdff9203feff3804feff2a08feff2609feff920afeff660bfeffd20cfeff920dfefffe0efeffd00ffeff3e11feff6212feffce13feff8014feffec15feff9616feff0218feffac18feff1e1afeffe01afeffea1bfeff4c1dfeff281efeff0a25feffde26feff6a3dfeffda3efeff5640feffb641feff3446feffb84afeff6a4ffeffba54feff1856feff1cadfeff26adfeff5abbfeffaacffeffaed1feff1cd3feffbed3feff66d6feff66d9feff08dafeffacdcfeff9edffeff40e0feffeae2feffece6feff8ee7feff34eafeffbaeefeff5ceffeff02f2feff66f7feff24fbfeff92fefeff4600ffff0602ffffb603ffffbc05ffffe8a6ffff34a8fffffeaeffffb0b0ffff52b2ffff10b4ffffb4b7ffff52b9fffffabaffff98c5ffff82cdffff26ceffff16d2ffff12d3ffff7ed4ffff52d5ffffbed6ffff7ed7ffffead8ffffbcd9ffff2adbffff4edcffffbaddffff6cdeffffd8dfffff82e0ffffeee1ffff98e2ffff0ae4ffffcce4ffffd6e5ffff24e7ffff00e8ffff28f3ffffa2f4ffff2ef6ffffeaf7fffff6fafffffc8e000014920000e89200007c110100ba110100f4110100f8110100323a0100004f010034590100ac5b0100545d0100085f010020630100e26a0100
+      m_ExpandedIDs: a2c7fdff48c8fdff34ccfdff2acdfdff92cefdff62cffdffcad0fdff86d1fdffeed2fdffbcd3fdff24d5fdff3ad6fdffa2d7fdff52d8fdffbad9fdff60dafdffc8dbfdff6edcfdffdcddfdff9adefdff86dffdffe2e0fdffb8e1fdff7000feffd801feff2a4dfeff384ffeff1657feffbc57feffb25bfeffb25cfeff225efefffa5efeff6a60feff2e61feff9e62feff7463feffe664feff0666feff7667feff2c68feff9c69feff4a6afeffba6bfeff686cfeffde6dfeffa46efeff9a6ffeff0071feffde71feff7676feff7278feffd683feff78befefff0befeffe6c2feffe6c3feff56c5feff2ec6feff9ec7feff62c8feffd2c9feffa8cafeff1accfeff3acdfeffaacefeff60cffeffd0d0feff7ed1feffeed2feff9cd3feff12d5feffd8d5feffced6feff34d8feff12d9feffdedbfeff2e24ffffe631ffff4e34ffff0a6efffff470ffff189fffff50a1ffff5ca3ffff90a5ffffaea7ffff56aaffff12f4ffffe4faffff16b500005cb800006eb80000da550100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Text (TMP)
-        m_OriginalName: Text (TMP)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -150876
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 10}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1048,7 +496,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &18
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1068,10 +516,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 234
+    x: 192
     y: 72.66667
-    width: 742
-    height: 470.33334
+    width: 906.6666
+    height: 538.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1443,9 +891,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -38.345062, y: 7.155442, z: -0.08957596}
+    m_Target: {x: -47.476322, y: 24.442959, z: -0.7458188}
     speed: 2
-    m_Value: {x: -39.032288, y: 7.0558295, z: -0.08288474}
+    m_Value: {x: -47.476322, y: 24.442959, z: -0.7458188}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1495,9 +943,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.538346
+    m_Target: 81.16268
     speed: 2
-    m_Value: 14.869231
+    m_Value: 81.16268
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1522,7 +970,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &19
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1556,7 +1004,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &20
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1590,7 +1038,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &21
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1610,10 +1058,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 274.6667
+    x: 234
     y: 72.66667
-    width: 874
-    height: 533
+    width: 742
+    height: 470.33334
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1624,7 +1072,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &22
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1644,10 +1092,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 274.6667
+    x: 192
     y: 72.66667
-    width: 874
-    height: 533
+    width: 906.6666
+    height: 538.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1665,8 +1113,8 @@ MonoBehaviour:
   m_SearchText: 
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: eb925b96
-    m_LastClickedID: -1772383509
+    m_SelectedIDs: 7f0eae07
+    m_LastClickedID: 128847487
     m_ExpandedIDs: 53336be200000000c53aba5a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1685,7 +1133,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
---- !u!114 &23
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1706,9 +1154,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 564
-    width: 977
-    height: 306.99997
+    y: 632
+    width: 1099.6666
+    height: 239
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1744,10 +1192,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 63}
-    m_SelectedIDs: 8a8e0000
-    m_LastClickedID: 36490
-    m_ExpandedIDs: 00000000dc840000de840000e0840000e2840000e4840000e6840000e8840000ea840000ec840000ee840000f0840000f2840000f4840000f8840000fa840000fc840000fe8400000085000032f6000000ca9a3b
+    scrollPos: {x: 0, y: 101}
+    m_SelectedIDs: b08d0000
+    m_LastClickedID: 36272
+    m_ExpandedIDs: 000000001484000016840000188400001a8400001c8400001e84000020840000228400002484000026840000288400002a8400002c8400002e8400003084000032840000aa8d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1775,7 +1223,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc840000de840000e0840000e2840000e4840000e6840000e8840000ea840000ec840000ee840000f0840000f2840000f4840000f6840000f8840000fa840000fc840000fe84000000850000
+    m_ExpandedIDs: 000000001484000016840000188400001a8400001c8400001e84000020840000228400002484000026840000288400002a8400002c8400002e840000308400003284000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1806,20 +1254,20 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000aa6100001c6a0000eea50000000000006aa80000e0a70000667a000010840000c0c80000fe7f000036b50000529e000008ac00007091000008ef0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Ancestor 1-3
-      m_OriginalName: Ancestor 1-3
+      m_Name: Spawn
+      m_OriginalName: Spawn
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 36514
+      m_UserData: 36326
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1827,11 +1275,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 60}
+    m_ScrollPosition: {x: 0, y: 208}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &24
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1852,9 +1300,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 564
-    width: 977
-    height: 306.99997
+    y: 632
+    width: 1099.6666
+    height: 239
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1865,7 +1313,162 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &25
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 632
+    width: 1099.6666
+    height: 239
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: 8300695991222944953, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
+    - {fileID: 8300695991222944953, guid: 5c8cc03314e4a4e4f9354249fa5e1e1c, type: 2}
+    - {fileID: -5142485109310739836, guid: 5c8cc03314e4a4e4f9354249fa5e1e1c, type: 2}
+    - {fileID: -5142485109310739836, guid: 2308089514d586148a3c310974e1fcbc, type: 2}
+    - {fileID: 8300695991222944953, guid: c7d6174e3c6b83643b20f353df4975ed, type: 2}
+    - {fileID: -7934254239164976215, guid: b4cdb8b7704f4fa4c9ed1b4d219fefe5, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.5886474
+      e01: 0
+      e02: 0
+      e03: 20.81012
+      e10: 0
+      e11: 0.5886474
+      e12: 0
+      e13: 74.849686
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7083333
+      e01: 0
+      e02: 0
+      e03: 89.79166
+      e10: 0
+      e11: 0.7083333
+      e12: 0
+      e13: 50.416668
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.81473684
+      e01: 0
+      e02: 0
+      e03: -25.736847
+      e10: 0
+      e11: 0.81473684
+      e12: 0
+      e13: 56.6
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.81473684
+      e01: 0
+      e02: 0
+      e03: -25.736847
+      e10: 0
+      e11: 0.81473684
+      e12: 0
+      e13: 56.6
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7083333
+      e01: 0
+      e02: 0
+      e03: 89.79166
+      e10: 0
+      e11: 0.7083333
+      e12: 0
+      e13: 50.416668
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: b4cdb8b7704f4fa4c9ed1b4d219fefe5, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -7934254239164976215, guid: b4cdb8b7704f4fa4c9ed1b4d219fefe5, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1885,10 +1488,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 978
+    x: 1100.6667
     y: 72.66667
-    width: 727.6666
-    height: 673.6667
+    width: 605
+    height: 631
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1912,7 +1515,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &26
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1932,10 +1535,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 978
+    x: 1100.6667
     y: 72.66667
-    width: 727.6666
-    height: 673.6667
+    width: 605
+    height: 631
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1948,8 +1551,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 94074
---- !u!114 &27
+  m_LastSelectedObjectID: 87824
+--- !u!114 &26
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1969,10 +1572,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 978
+    x: 1100.6667
     y: 72.66667
-    width: 727.6666
-    height: 673.6667
+    width: 605
+    height: 631
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1983,7 +1586,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &28
+--- !u!114 &27
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2003,10 +1606,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 978
+    x: 1100.6667
     y: 72.66667
-    width: 727.6666
-    height: 673.6667
+    width: 605
+    height: 631
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2018,9 +1621,9 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_TreeViewState:
-    scrollPos: {x: 0, y: 130}
-    m_SelectedIDs: bcf26115
-    m_LastClickedID: 358740668
+    scrollPos: {x: 0, y: 172}
+    m_SelectedIDs: 55b13f54
+    m_LastClickedID: 1413460309
     m_ExpandedIDs: ffffffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2039,3 +1642,434 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
+--- !u!114 &28
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1100.6667
+    y: 724.6667
+    width: 605
+    height: 146.33331
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 3654
+    splitterInitialOffset: 203.33334
+    currentActiveSplitter: -1
+    realSizes:
+    - 41.333332
+    - 34.666668
+    relativeSizes:
+    - 0.5474861
+    - 0.45251387
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 76
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 28}
+    m_NewResultList:
+    - id: 1008
+      uniqueId: '[Rogue Run][suite]'
+      name: Rogue Run
+      fullName: Rogue Run
+      resultStatus: 2
+      duration: 0.0592918
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[PlayMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll][suite]'
+      name: PlayMode.dll
+      fullName: D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll
+      resultStatus: 2
+      duration: 0.0491778
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Rogue Run][suite]'
+    - id: 1001
+      uniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
+      name: PlayerTest
+      fullName: PlayerTest
+      resultStatus: 2
+      duration: 0.0459719
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[PlayMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1015
+      uniqueId: PlayMode.dll/PlayerTest/[PlayMode][PlayerTest.PlayerHealthComponentAuto]
+      name: PlayerHealthComponentAuto
+      fullName: PlayerTest.PlayerHealthComponentAuto
+      resultStatus: 2
+      duration: 0.0248226
+      messages: 'UnityEngine.MissingComponentException : There is no ''Animator''
+        attached to the "New Game Object" game object, but a script is trying to
+        access it.
+
+        You probably need to add a Animator to the game object
+        "New Game Object". Or your script needs to check if the component is attached
+        before using it.'
+      output: 
+      stacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
+        at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
+        [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
+        (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
+        Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
+        damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
+        Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentAuto>d__1.MoveNext
+        () [0x00063] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:36
+        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+        in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1013
+      parentUniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
+    - id: 1014
+      uniqueId: PlayMode.dll/PlayerTest/[PlayMode][PlayerTest.PlayerHealthComponentManual]
+      name: PlayerHealthComponentManual
+      fullName: PlayerTest.PlayerHealthComponentManual
+      resultStatus: 2
+      duration: 0.0066338
+      messages: 'UnityEngine.MissingComponentException : There is no ''Animator''
+        attached to the "New Game Object" game object, but a script is trying to
+        access it.
+
+        You probably need to add a Animator to the game object
+        "New Game Object". Or your script needs to check if the component is attached
+        before using it.'
+      output: 
+      stacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
+        at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
+        [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
+        (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
+        Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
+        damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
+        Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
+        () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
+        \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+        in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1013
+      parentUniqueId: PlayMode.dll/[PlayMode][PlayerTest][suite]
+    m_ResultText: "PlayerHealthComponentManual (0.007s)\n---\nUnityEngine.MissingComponentException
+      : There is no 'Animator' attached to the \"New Game Object\" game object, but
+      a script is trying to access it.\nYou probably need to add a Animator to the
+      game object \"New Game Object\". Or your script needs to check if the component
+      is attached before using it.\n---\nat (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
+      at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
+      [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
+      (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
+      Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
+      damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
+      Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
+      () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
+      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+      in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46"
+    m_ResultStacktrace: "  at (wrapper managed-to-native) UnityEngine.Animator.SetBoolString(UnityEngine.Animator,string,bool)\r\n 
+      at UnityEngine.Animator.SetBool (System.String name, System.Boolean value)
+      [0x00001] in <0f2ae8ab9582468aba74e46ff923b57a>:0 \r\n  at Damageable.set_IsHit
+      (System.Boolean value) [0x00008] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
+      Run\\Assets\\Scripts\\Damageable.cs:50 \r\n  at Damageable.Hit (System.Int32
+      damage, UnityEngine.Vector2 knockback) [0x000a4] in D:\\Projects\\Github\\Rogue
+      Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\Damageable.cs:169 \r\n  at PlayerTest+<PlayerHealthComponentManual>d__0.MoveNext
+      () [0x0004c] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\PlayMode\\PlayerTest.cs:19
+      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a]
+      in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 9ee34fb8
+      m_LastClickedID: -1202723938
+      m_ExpandedIDs: b9cf50e1b09ca85e0d980577ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 28}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Rogue Run][suite]'
+      name: Rogue Run
+      fullName: Rogue Run
+      resultStatus: 2
+      duration: 0.5254519
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[EditMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll][suite]'
+      name: EditMode.dll
+      fullName: D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll
+      resultStatus: 2
+      duration: 0.1676247
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Rogue Run][suite]'
+    - id: 1001
+      uniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+      name: PlayerEditTests
+      fullName: PlayerEditTests
+      resultStatus: 2
+      duration: 0.1611592
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1003
+      parentUniqueId: '[EditMode][D:/Projects/Github/Rogue Run/Rogue-Run/Rogue Run/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1004
+      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.AddDarknessAuto]
+      name: AddDarknessAuto
+      fullName: PlayerEditTests.AddDarknessAuto
+      resultStatus: 2
+      duration: 0.0225881
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 
+      stacktrace: "  at PlayerController.AddDarkness (System.Int32 amount) [0x00026]
+        in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:519
+        \r\n  at PlayerEditTests.AddDarknessAuto () [0x00026] in D:\\Projects\\Github\\Rogue
+        Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+    - id: 1003
+      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.AddDarknessManual]
+      name: AddDarknessManual
+      fullName: PlayerEditTests.AddDarknessManual
+      resultStatus: 2
+      duration: 0.0024261
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
+      output: 
+      stacktrace: "  at PlayerController.AddDarkness (System.Int32 amount) [0x00026]
+        in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:519
+        \r\n  at PlayerEditTests.AddDarknessManual () [0x00011] in D:\\Projects\\Github\\Rogue
+        Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:31
+        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
+        System.Globalization.CultureInfo culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+    - id: 1006
+      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.InitiateHealth]
+      name: InitiateHealth
+      fullName: PlayerEditTests.InitiateHealth
+      resultStatus: 1
+      duration: 0.0521199
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+    - id: 1004
+      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.MoveSpeed]
+      name: MoveSpeed
+      fullName: PlayerEditTests.MoveSpeed
+      resultStatus: 2
+      duration: 0.0131952
+      messages: "  Expected: greater than 8.0f\r\n  But was:  0.0f\r\n"
+      output: 
+      stacktrace: 'at PlayerEditTests.MoveSpeed () [0x0000b] in D:\Projects\Github\Rogue
+        Run\Rogue-Run\Rogue Run\Assets\Tests\EditMode\PlayerEditTests.cs:58
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+    - id: 1002
+      uniqueId: EditMode.dll/PlayerEditTests/[EditMode][PlayerEditTests.SetDarkness]
+      name: SetDarkness
+      fullName: PlayerEditTests.SetDarkness
+      resultStatus: 1
+      duration: 0.0011609
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerEditTests][suite]
+    m_ResultText: "AddDarknessAuto (0.023s)\n---\nSystem.NullReferenceException :
+      Object reference not set to an instance of an object\n---\nat PlayerController.AddDarkness
+      (System.Int32 amount) [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue
+      Run\\Assets\\Scripts\\PlayerController.cs:519 \r\n  at PlayerEditTests.AddDarknessAuto
+      () [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46
+      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0"
+    m_ResultStacktrace: "  at PlayerController.AddDarkness (System.Int32 amount)
+      [0x00026] in D:\\Projects\\Github\\Rogue Run\\Rogue-Run\\Rogue Run\\Assets\\Scripts\\PlayerController.cs:519
+      \r\n  at PlayerEditTests.AddDarknessAuto () [0x00026] in D:\\Projects\\Github\\Rogue
+      Run\\Rogue-Run\\Rogue Run\\Assets\\Tests\\EditMode\\PlayerEditTests.cs:46 \r\n 
+      at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
+      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
+      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
+      culture) [0x0006a] in <4b234520e36749be9cf6b053d911690f>:0 "
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 99851105
+      m_LastClickedID: 85034393
+      m_ExpandedIDs: cdca22b8b9cf50e1abd29ce3ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized

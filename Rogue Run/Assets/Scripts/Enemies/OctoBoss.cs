@@ -111,7 +111,7 @@ public class OctoBoss : MonoBehaviour, IEnemy
         }
 
         //setups damageable
-        _damageable.InvincibleTime = 0.1f;
+        _damageable.InvincibleTime = 0.5f;
         _damageable.Multiplier = 200;
     }
 
@@ -230,7 +230,7 @@ public class OctoBoss : MonoBehaviour, IEnemy
     private IEnumerator Death()
     {
         //Wait
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         SceneController.instance.NextScene(12);
     }
 
