@@ -21,7 +21,7 @@ public class TempUpgrades : MonoBehaviour
         new Upgrade { Name = "SafeDash", Description = "Decrease damage taken while dashing by X%. \n Currently V%" },
         new Upgrade { Name = "AntiTrap", Description = "Decrease damage dealt by traps by X%. \n Currently V%" },
         new Upgrade { Name = "Meaty", Description = "Increase max health by XHP. \n Currently VHP" },
-        new Upgrade { Name = "Vigilant", Description = "Decrease the delay between dashes by X%. \n Currently V%" },
+        new Upgrade { Name = "Vigilant", Description = "Reduce damage taken after a kill by 50% for X seconds. \n Currently V%" },
         new Upgrade { Name = "Glider", Description = "Increase damage dealt midair by X%. \n Currently V%" },
         new Upgrade { Name = "Beast", Description = "Increase damage dealt by X%. \n Currently V%" },
         new Upgrade

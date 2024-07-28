@@ -57,7 +57,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
+        healthBar.fillAmount = (float) _damageable.Health / (float) _damageable.MaxHealth; //sets green hp bar
         healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text for hp
         darknessText.text = _playerController.DarknessCount.ToString();
         livesText.text = _playerController.LivesRemaining.ToString(); //sets lives remaining
@@ -66,7 +66,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = _damageable.Health / 100f; //sets green hp bar
+        healthBar.fillAmount = (float) _damageable.Health / (float) _damageable.MaxHealth; //sets green hp bar
         healthText.text = _damageable.Health + "/" + _damageable.MaxHealth; //sets text for hp
         darknessText.text = _playerController.DarknessCount.ToString();
         livesText.text = _playerController.LivesRemaining.ToString(); //sets lives remaining

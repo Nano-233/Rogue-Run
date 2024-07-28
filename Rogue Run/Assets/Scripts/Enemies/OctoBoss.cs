@@ -24,6 +24,7 @@ public class OctoBoss : MonoBehaviour, IEnemy
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
     private Vector2 _walkDirectionVector; //vector of walk
+    private bool _firstDeath;
 
 
     public enum WalkableDirection
@@ -111,15 +112,16 @@ public class OctoBoss : MonoBehaviour, IEnemy
 
         //setups damageable
         _damageable.InvincibleTime = 0.1f;
-        _damageable.Multiplier = 5;
+        _damageable.Multiplier = 200;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_damageable.IsAlive)
+        if (!_damageable.IsAlive && !_firstDeath)
         {
-            SceneController.instance.NextScene(-1);
+            _firstDeath = !_firstDeath;
+            SceneController.instance.NextScene(12);
         }
 
         //checks if either a target is locked for attack or if is in range of chase

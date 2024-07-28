@@ -62,7 +62,7 @@ public class SceneController : MonoBehaviour
     public void ResetPool()
     {
         _chapter1 = new List<int> { 3, 5, 7, 9 };
-        _chapter2 = new List<int> { 13, 15 };
+        _chapter2 = new List<int> { 13, 15, 17 };
     }
 
 
@@ -163,6 +163,13 @@ public class SceneController : MonoBehaviour
         //pool from chapter 2
         if (index == 2)
         {
+            
+            //load boss fight
+            if (_chapter2.Count == 0)
+            {
+                return 19;
+            }
+            
             //gets index, return scene number, remove from pool
             int sceneNum = Random.Range(0, _chapter2.Count);
             int scene = _chapter2[sceneNum];

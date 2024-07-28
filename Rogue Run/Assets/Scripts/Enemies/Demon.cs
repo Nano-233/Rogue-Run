@@ -22,6 +22,7 @@ public class Demon : MonoBehaviour, IEnemy
 
     private bool _hasLOS; //checks if the player is in line of sight
     private Vector3 _playerPos; //the target player position
+    private bool _firstDeath;
 
     public bool CanTP;
 
@@ -69,14 +70,15 @@ public class Demon : MonoBehaviour, IEnemy
 
         //setups damageable
         _damageable.InvincibleTime = 2f;
-        _damageable.Multiplier = 400;
+        _damageable.Multiplier = 1000;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_damageable.IsAlive)
+        if (!_damageable.IsAlive && !_firstDeath)
         {
+            _firstDeath = !_firstDeath;
             SceneController.instance.NextScene(-1);
         }
 

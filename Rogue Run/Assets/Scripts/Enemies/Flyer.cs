@@ -49,7 +49,7 @@ public class Flyer : MonoBehaviour, IEnemy
 
         //setups damageable
         _damageable.InvincibleTime = 0.1f;
-        _damageable.Multiplier = 50;
+        _damageable.Multiplier = 100;
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }

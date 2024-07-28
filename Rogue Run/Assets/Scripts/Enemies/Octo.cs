@@ -109,7 +109,7 @@ public class Octo : MonoBehaviour, IEnemy
 
         //setups damageable
         _damageable.InvincibleTime = 0.1f;
-        _damageable.Multiplier = 5;
+        _damageable.Multiplier = 20;
     }
 
     // Update is called once per frame

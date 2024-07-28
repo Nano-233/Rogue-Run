@@ -198,6 +198,7 @@ public class PlayerController : MonoBehaviour
             {
                 _damageable.Health = _damageable.MaxHealth / 10;
                 _immortalUp--;
+                _firstDeath = false;
                 SceneController.instance.ReloadScene();
             }
             else if (_firstDeath)
@@ -466,10 +467,6 @@ public class PlayerController : MonoBehaviour
         //saves int info
         _maxDash = intStats[0];
 
-        //increase max hp based on upgrade
-        _damageable.MaxHealth = 100;
-        _damageable.MaxHealth += _meatyUp;
-
         _playerAttack.AD = intStats[2];
         //checks if needs respawning
         if (intStats[3] > 0) //if still alive, keep hp
@@ -506,6 +503,10 @@ public class PlayerController : MonoBehaviour
         _gravitonUp = tempUpStats[8];
         _swiftyUp = tempUpStats[9];
         _immortalUp = tempUpStats[10];
+        
+        //increase max hp based on upgrade
+        _damageable.MaxHealth = 100;
+        _damageable.MaxHealth += _meatyUp;
     }
 
     //adds darkness
@@ -745,7 +746,7 @@ public class PlayerController : MonoBehaviour
             _tempDmgMod += 10;
         }
 
-        return _tempDmgMod;
+        return _tempDmgMod / 100f;
     }
 
     //reset all temp upgrades
