@@ -121,7 +121,7 @@ public class OctoBoss : MonoBehaviour, IEnemy
         if (!_damageable.IsAlive && !_firstDeath)
         {
             _firstDeath = !_firstDeath;
-            SceneController.instance.NextScene(12);
+            StartCoroutine(Death());
         }
 
         //checks if either a target is locked for attack or if is in range of chase
@@ -225,6 +225,13 @@ public class OctoBoss : MonoBehaviour, IEnemy
         //Wait for x seconds
         yield return new WaitForSeconds(seconds);
         walkSpeed *= 2;
+    }
+
+    private IEnumerator Death()
+    {
+        //Wait
+        yield return new WaitForSeconds(2);
+        SceneController.instance.NextScene(12);
     }
 
 

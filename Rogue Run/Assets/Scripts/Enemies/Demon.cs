@@ -79,7 +79,7 @@ public class Demon : MonoBehaviour, IEnemy
         if (!_damageable.IsAlive && !_firstDeath)
         {
             _firstDeath = !_firstDeath;
-            SceneController.instance.NextScene(-1);
+            StartCoroutine(Death());
         }
 
         //checks if either a target is locked for attack or if is in range of chase
@@ -189,6 +189,15 @@ public class Demon : MonoBehaviour, IEnemy
         _spriteRenderer.material.color = new Color(1, 1, 1, 1);
     }
 
+    
+    private IEnumerator Death()
+    {
+        //Wait
+        yield return new WaitForSeconds(2);
+        SceneController.instance.NextScene(12);
+    }
+    
+    
     // Start is called before the first frame update
     void Start()
     {
