@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Spawn.unity
-    guid: c4a373dbabc692d46993e67be97b2d13
+    path: Assets/Scenes/Menu.unity
+    guid: 701d609675ba5674c86939a6fb8e042d
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
@@ -68,7 +68,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ancestor End.unity
     guid: 97e74a3928a601f40879cf1e5d4fce24
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 701d609675ba5674c86939a6fb8e042d
   m_configObjects: {}
