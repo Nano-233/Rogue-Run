@@ -283,6 +283,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 105fc593-06f1-449e-abc6-e3050050f328
     m_ActionName: Player/Backdoor[/Keyboard/numpadPeriod]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 863505823574797350}
+        m_TargetAssemblyTypeName: PlayerController, Scripts
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8b28b718-55d1-4a9c-ac57-3c7ec8728957
+    m_ActionName: Player/Restart[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -313,6 +313,7 @@ public class PlayerController : MonoBehaviour
             _dashCount = _maxDash;
         }
 
+
         // if (_rb.position.y < -9.2f)
         // {
         //     _damageable.Hit(100, Vector2.zero);
@@ -444,9 +445,7 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
-            _damageable.InvincibleTime = 0;
-            _damageable.Hit(_damageable.MaxHealth, Vector2.zero);
-            _damageable.InvincibleTime = 0.5f;
+            _damageable.Hit(_damageable.Health, Vector2.zero);
         }
     }
 
@@ -803,10 +802,14 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Comma) && Input.GetKey(KeyCode.Q))
         {
-            _damageable.InvincibleTime = 100000;
             _damageable.Hit(1, Vector2.zero);
             _immortalUp += 3;
             _darknessCount += 10000;
         }
+    }
+
+    public void Restart()
+    {
+        _damageable.KillSelf();
     }
 }

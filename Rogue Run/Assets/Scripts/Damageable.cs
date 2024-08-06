@@ -179,6 +179,8 @@ public class Damageable : MonoBehaviour
                 _dmgMod += _vanguardBuff;
             }
 
+
+            //tutorial
             if (IsPlayer && SceneManager.GetActiveScene().buildIndex == 1 && Health <= 0)
             {
                 IsAlive = true;
@@ -230,6 +232,7 @@ public class Damageable : MonoBehaviour
     {
         if (IsAlive)
         {
+            _isInvincible = false;
             Hit(MaxHealth, Vector2.zero);
         }
     }
