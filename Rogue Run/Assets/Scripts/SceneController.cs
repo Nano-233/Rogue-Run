@@ -22,8 +22,10 @@ public class SceneController : MonoBehaviour
     private int[] _permUpStats;
     private int[] _tempUpStats;
 
-    //number of next room
-    private int _nextRoom;
+    //scene numbers
+    private int _lastBoss = 19;
+    private int _firstBoss = 11;
+    private int _secondBoss = 19;
 
     //pool of rooms to draw from
     private List<int> _chapter1 = new List<int> { 3, 5, 7, 9 };
@@ -69,6 +71,14 @@ public class SceneController : MonoBehaviour
     //load scene
     private IEnumerator LoadScene(int id)
     {
+        //checks current scene and saves
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        //if entering final room, stop timer
+        if (currentIndex == _lastBoss)
+        {
+            GetComponentInChildren<Timer>().TimerStarted = false;
+        }
+
         //puts player into stasis
         _playerController.Stasis();
         //Wait for 1 seconds for the animation to finish
@@ -108,6 +118,11 @@ public class SceneController : MonoBehaviour
         _playerController = _player.GetComponent<PlayerController>(); //finds the player
         LoadStats(); //save all needed stats
         StartRoom();
+        //start speedrun timer if starts
+        if (currentIndex == 0)
+        {
+            GetComponentInChildren<Timer>().TimerStarted = true;
+        }
     }
 
     //save the stats locally
@@ -150,7 +165,7 @@ public class SceneController : MonoBehaviour
             //load boss fight
             if (_chapter1.Count == 0)
             {
-                return 11;
+                return _firstBoss;
             }
 
             //gets index, return scene number, remove from pool
@@ -163,13 +178,12 @@ public class SceneController : MonoBehaviour
         //pool from chapter 2
         if (index == 2)
         {
-            
             //load boss fight
             if (_chapter2.Count == 0)
             {
-                return 19;
+                return _secondBoss;
             }
-            
+
             //gets index, return scene number, remove from pool
             int sceneNum = Random.Range(0, _chapter2.Count);
             int scene = _chapter2[sceneNum];
