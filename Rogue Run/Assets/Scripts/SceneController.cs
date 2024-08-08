@@ -10,7 +10,8 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private TMP_Text seed;
     private int _seed;
-    
+
+    public Timer timer;
     public TMP_Text[] permText;
     public TMP_Text[] tempText;
     public GameObject displayPanel;
@@ -27,8 +28,8 @@ public class SceneController : MonoBehaviour
     //field for all data
     private int[] _intStats;
     private float[] _floatStats;
-    private int[] _permUpStats;
-    private int[] _tempUpStats;
+    private int[] _permUpStats = new int[6];
+    private int[] _tempUpStats = new int[12];
 
     //scene numbers
     private int _lastBoss = 19;
@@ -76,6 +77,18 @@ public class SceneController : MonoBehaviour
         fadeAnimator.SetTrigger("FadeOut");
         StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
     }
+    
+    public void Continue(int id)
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = _player.GetComponent<PlayerController>(); //finds the player
+        EndRoom();
+        SaveStats(); //save all needed stats
+        LoadPref();
+        //fade out
+        fadeAnimator.SetTrigger("FadeOut");
+        StartCoroutine(LoadScene(id)); //make sure the second player component is only after scene loads
+    }
 
     //resets pool of levels
     public void ResetPool()
@@ -93,7 +106,7 @@ public class SceneController : MonoBehaviour
         //if entering final room, stop timer
         if (currentIndex == _lastBoss)
         {
-            GetComponentInChildren<Timer>().TimerStarted = false;
+            timer.TimerStarted = false;
         }
 
         //puts player into stasis
@@ -138,7 +151,7 @@ public class SceneController : MonoBehaviour
         //if restarted
         if (id == 0)
         {
-            GetComponentInChildren<Timer>().ResetTimer();
+            timer.ResetTimer();
             seed.text = "";
         }
         else
@@ -149,9 +162,9 @@ public class SceneController : MonoBehaviour
         
         
         //start speedrun timer if starts
-        if (currentIndex == 0 && id != 1)
+        if (currentIndex == 0 && id != 1 && !timer.TimerStarted)
         {
-            GetComponentInChildren<Timer>().TimerStarted = true;
+            timer.TimerStarted = true;
             seed.text = "Seed: " + _seed;
         }
     }
@@ -258,5 +271,42 @@ public class SceneController : MonoBehaviour
             displayPanel.SetActive(false);
         }
         
+    }
+
+    public void LoadPref()
+    {
+        for (int i = 0; i < _permUpStats.Length; i++)
+        {
+            _permUpStats[i] = PlayerPrefs.GetInt("perm_" + i);
+        }
+        for (int i = 0; i < _tempUpStats.Length; i++)
+        {
+            _tempUpStats[i] = PlayerPrefs.GetInt("temp_" + i);
+        }
+        timer.ElapsedTime = PlayerPrefs.GetFloat("Timer");
+        SetSeed(PlayerPrefs.GetInt("Seed"));
+        _intStats[4] = PlayerPrefs.GetInt("Money");
+        _playerController.DarknessCount = PlayerPrefs.GetInt("Money");
+
+    }
+
+    public void SavePref()
+    {
+        for (int i = 0; i < _permUpStats.Length; i++)
+        {
+            PlayerPrefs.SetInt("perm_" + i, _permUpStats[i]);
+        }
+        for (int i = 0; i < _tempUpStats.Length; i++)
+        {
+            PlayerPrefs.SetInt("temp_" + i, _tempUpStats[i]);
+        }
+        PlayerPrefs.SetFloat("Timer", timer.ElapsedTime);
+        PlayerPrefs.SetInt("Seed", _seed);
+        PlayerPrefs.SetInt("Money", _playerController.DarknessCount);
+    }
+
+    public void PauseTimer(float time)
+    {
+        StartCoroutine(timer.Pause(time));
     }
 }

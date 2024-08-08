@@ -9,6 +9,16 @@ using Random = UnityEngine.Random;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject continueButton;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("Seed"))
+        {
+            continueButton.SetActive(true);
+        }
+    }
+
     public void PlayButtonPressed()
     {
         if (GetComponentInChildren<TMP_InputField>().text != "")
@@ -24,6 +34,11 @@ public class ButtonController : MonoBehaviour
         SceneController.instance.NextScene(2);
     }
 
+    public void ContinuePressed()
+    {
+        SceneController.instance.Continue(2);
+    }
+
     public void TutorialButtonPressed()
     {
         SceneController.instance.NextScene(1);
@@ -32,5 +47,11 @@ public class ButtonController : MonoBehaviour
     public void ExitPressed()
     {
         Application.Quit();
+    }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+        continueButton.SetActive(false);
     }
 }

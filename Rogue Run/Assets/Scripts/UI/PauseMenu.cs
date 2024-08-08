@@ -10,6 +10,8 @@ public class PauseMenu: MonoBehaviour
     public void Home()
     {
         Time.timeScale = 1;
+        SceneController.instance.PauseTimer(1f);
+        SceneController.instance.SavePref();
         SceneController.instance.ResetPool();
         SceneController.instance.NextScene(0);
     }
