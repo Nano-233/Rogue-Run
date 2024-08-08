@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] private TMP_Text seed;
+    private int _seed;
+
     public static SceneController instance;
 
     //field for fade animation
@@ -119,9 +123,10 @@ public class SceneController : MonoBehaviour
         LoadStats(); //save all needed stats
         StartRoom();
         //start speedrun timer if starts
-        if (currentIndex == 0)
+        if (currentIndex == 0 && id != 1)
         {
             GetComponentInChildren<Timer>().TimerStarted = true;
+            seed.text = "Seed: " + _seed;
         }
     }
 
@@ -192,5 +197,11 @@ public class SceneController : MonoBehaviour
         }
 
         return 0;
+    }
+
+    public void SetSeed(int seed)
+    {
+        Random.InitState(seed);
+        _seed = seed;
     }
 }

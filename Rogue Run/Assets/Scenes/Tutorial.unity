@@ -21798,6 +21798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
+    - target: {fileID: 8083267710565054713, guid: 4444fc5a0531f3a44bfd0b2a2c4aec58, type: 3}
+      propertyPath: NextSceneId
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8880136662798273546, guid: 4444fc5a0531f3a44bfd0b2a2c4aec58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -65.18
