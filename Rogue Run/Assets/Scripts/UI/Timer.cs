@@ -26,4 +26,11 @@ public class Timer : MonoBehaviour
             timerText.text = display.ToString(@"mm\:ss\:ff");
         }
     }
+
+    public void ResetTimer()
+    {
+        _elapsedTime = 0;
+        _start = false;
+        timerText.text = "";
+    }
 }

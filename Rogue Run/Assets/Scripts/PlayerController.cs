@@ -445,6 +445,7 @@ public class PlayerController : MonoBehaviour
         //die when touch smth bad, 12 is groundhurt
         if (other.gameObject.layer == 12)
         {
+            _damageable.RemoveInvincibility();
             _damageable.Hit(_damageable.Health, Vector2.zero);
         }
     }

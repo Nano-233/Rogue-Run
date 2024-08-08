@@ -117,11 +117,24 @@ public class SceneController : MonoBehaviour
         // Wait a frame so every Awake and Start method is called
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
+        
         //reload player
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>(); //finds the player
-        LoadStats(); //save all needed stats
+        
+        //if restarted
+        if (id == 0)
+        {
+            GetComponentInChildren<Timer>().ResetTimer();
+            seed.text = "";
+        }
+        else
+        {
+            LoadStats(); //save all needed stats
+        }
         StartRoom();
+        
+        
         //start speedrun timer if starts
         if (currentIndex == 0 && id != 1)
         {
@@ -159,7 +172,12 @@ public class SceneController : MonoBehaviour
         //activate vanguard
         _playerController.Vanguard();
     }
-
+    
+    //resets everything
+    private void ResetAll()
+    {
+        
+    }
 
     //gets the next room number by randomizing
     private int GetNextRoom(int index)

@@ -236,4 +236,13 @@ public class Damageable : MonoBehaviour
             Hit(MaxHealth, Vector2.zero);
         }
     }
+
+    //removes invincibility
+    public void RemoveInvincibility()
+    {
+        if (IsAlive)
+        {
+            _isInvincible = false;
+        }
+    }
 }
