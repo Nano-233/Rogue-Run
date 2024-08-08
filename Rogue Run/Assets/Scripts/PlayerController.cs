@@ -460,7 +460,7 @@ public class PlayerController : MonoBehaviour
         int[] tempUpStats = new[]
         {
             _safeDashUp, _antiTrapUp, _meatyUp, _vigilantUp, _gliderUp, _beastUp, _rampageUp,
-            _surferUp, _gravitonUp, _swiftyUp, _immortalUp
+            _surferUp, _gravitonUp, _swiftyUp, _immortalUp, _solidUp
         };
         return (intStats, floatStats, permUpStats, tempUpStats);
     }
@@ -508,6 +508,7 @@ public class PlayerController : MonoBehaviour
         _gravitonUp = tempUpStats[8];
         _swiftyUp = tempUpStats[9];
         _immortalUp = tempUpStats[10];
+        _solidUp = tempUpStats[11];
 
         //increase max hp based on upgrade
         _damageable.MaxHealth = 100;

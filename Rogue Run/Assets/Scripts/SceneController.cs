@@ -10,6 +10,10 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private TMP_Text seed;
     private int _seed;
+    
+    public TMP_Text[] permText;
+    public TMP_Text[] tempText;
+    public GameObject displayPanel;
 
     public static SceneController instance;
 
@@ -41,10 +45,19 @@ public class SceneController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown("o"))
+        {
+            UpdateUpgradeDisplay();
         }
     }
 
@@ -173,11 +186,6 @@ public class SceneController : MonoBehaviour
         _playerController.Vanguard();
     }
     
-    //resets everything
-    private void ResetAll()
-    {
-        
-    }
 
     //gets the next room number by randomizing
     private int GetNextRoom(int index)
@@ -221,5 +229,34 @@ public class SceneController : MonoBehaviour
     {
         Random.InitState(seed);
         _seed = seed;
+    }
+    
+    public void UpdateUpgradeDisplay()
+    {
+        if (!displayPanel.activeSelf)
+        {
+            if (SceneManager.GetActiveScene().buildIndex % 2 != 0 && SceneManager.GetActiveScene().buildIndex > 1)
+            {
+                displayPanel.SetActive(true);
+                //sets the correct text
+                for (int i = 0; i < permText.Length; i++)
+                {
+                    permText[i].text = permText[i].text.Remove(permText[i].text.Length - 1);
+                    permText[i].text += _permUpStats[i] / UpgradeInts.permArr[i];
+                }
+
+                for (int i = 0; i < _tempUpStats.Length; i++)
+                {
+                    tempText[i].text = tempText[i].text.Remove(tempText[i].text.Length - 1);
+                    tempText[i].text += _tempUpStats[i] / UpgradeInts.tempArr12[i];
+                }
+
+            }
+        }
+        else
+        {
+            displayPanel.SetActive(false);
+        }
+        
     }
 }

@@ -33,4 +33,10 @@ internal class UpgradeInts
         safeDashIncr, antiTrapIncr, meatyIncr, vigilantIncr, gliderIncr, beastIncr, rampageIncr, surferIncr,
         gravitonIncr, swiftyIncr, healIncr, immortalIncr, solidIncr
     };
+    
+    internal static int[] tempArr12 = new[]
+    {
+        safeDashIncr, antiTrapIncr, meatyIncr, vigilantIncr, gliderIncr, beastIncr, rampageIncr, surferIncr,
+        gravitonIncr, swiftyIncr, healIncr, immortalIncr, solidIncr
+    };
 }

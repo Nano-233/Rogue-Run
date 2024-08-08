@@ -27,8 +27,6 @@ public class ShowHideUI : MonoBehaviour
         {
             //show upgrade UI
             UI.SetActive(true);
-            //disable dash so player can click
-            _playerController.CanDash = false;
         }
     }
 
@@ -39,8 +37,6 @@ public class ShowHideUI : MonoBehaviour
         {
             //remove UI
             UI.SetActive(false);
-            //reenable dashing
-            _playerController.CanDash = true;
         }
     }
 }
