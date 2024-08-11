@@ -423,7 +423,7 @@ public class PlayerController : MonoBehaviour
         if (_dashCount < _maxDash)
         {
             //add dash, disable
-            _dashCount += count;
+            _dashCount = count;
             StartCoroutine(DashUsed(obj));
             return true;
         }

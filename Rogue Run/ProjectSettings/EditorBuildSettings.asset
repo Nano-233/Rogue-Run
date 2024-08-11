@@ -63,6 +63,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Ancestor 2-3.unity
     guid: 55aeb524c4add3f4ea0bc9dba1c18e32
   - enabled: 1
+    path: Assets/Scenes/Level 2-4.unity
+    guid: c6484bdd9e885544a8e8ce2ddf39c119
+  - enabled: 1
+    path: Assets/Scenes/Ancestor 2-4.unity
+    guid: 89adca5d8f7b55c4482d12c80caddf79
+  - enabled: 1
     path: Assets/Scenes/Level 2-Boss.unity
     guid: 1cb74104f0dd2db44be76296ee9dbbfb
   - enabled: 1

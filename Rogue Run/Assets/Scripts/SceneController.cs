@@ -32,13 +32,13 @@ public class SceneController : MonoBehaviour
     private int[] _tempUpStats = new int[12];
 
     //scene numbers
-    private int _lastBoss = 19;
+    private int _lastBoss = 21;
     private int _firstBoss = 11;
-    private int _secondBoss = 19;
+    private int _secondBoss = 21;
 
     //pool of rooms to draw from
     private List<int> _chapter1 = new List<int> { 3, 5, 7, 9 };
-    private List<int> _chapter2 = new List<int> { 13, 15, 17 };
+    private List<int> _chapter2 = new List<int> { 13, 15, 17, 19 };
 
     private void Awake()
     {
@@ -94,7 +94,7 @@ public class SceneController : MonoBehaviour
     public void ResetPool()
     {
         _chapter1 = new List<int> { 3, 5, 7, 9 };
-        _chapter2 = new List<int> { 13, 15, 17 };
+        _chapter2 = new List<int> { 13, 15, 17, 19 };
     }
 
 
