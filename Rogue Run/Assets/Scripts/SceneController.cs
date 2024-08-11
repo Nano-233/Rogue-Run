@@ -11,6 +11,8 @@ public class SceneController : MonoBehaviour
     [SerializeField] private TMP_Text seed;
     private int _seed;
 
+    public bool introPlayed;
+
     public Timer timer;
     public TMP_Text[] permText;
     public TMP_Text[] tempText;

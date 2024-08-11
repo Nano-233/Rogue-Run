@@ -10,12 +10,14 @@ using Random = UnityEngine.Random;
 public class ButtonController : MonoBehaviour
 {
     public GameObject continueButton;
+    public GameObject deleteButton;
 
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Seed"))
         {
             continueButton.SetActive(true);
+            deleteButton.SetActive(true);
         }
     }
 
@@ -53,5 +55,6 @@ public class ButtonController : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         continueButton.SetActive(false);
+        deleteButton.SetActive(false);
     }
 }

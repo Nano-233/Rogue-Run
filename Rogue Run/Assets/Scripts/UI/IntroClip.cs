@@ -17,7 +17,15 @@ public class IntroClip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _startColor = img.color;
+        if (SceneController.instance.introPlayed)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _startColor = img.color;
+            SceneController.instance.introPlayed = true;
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +51,6 @@ public class IntroClip : MonoBehaviour
     private IEnumerator Fade()
     {
         yield return new WaitForSeconds(1);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
