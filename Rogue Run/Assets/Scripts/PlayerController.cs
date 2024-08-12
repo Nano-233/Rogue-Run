@@ -810,6 +810,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StopControls(bool stop)
+    {
+        GetComponent<PlayerInput>().enabled = stop;
+    }
+
     public void Restart()
     {
         _damageable.KillSelf();

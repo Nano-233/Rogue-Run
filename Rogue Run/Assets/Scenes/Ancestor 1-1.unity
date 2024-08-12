@@ -2369,6 +2369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeGuideStand
       objectReference: {fileID: 0}
+    - target: {fileID: 950976918164031549, guid: 9d3febb5222ea2c4fbe7933771b50e4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440665731677668053, guid: 9d3febb5222ea2c4fbe7933771b50e4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -50.77
@@ -3438,7 +3442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7127786912482382847, guid: 753fcb0f19569354c93161b8b629d17d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
