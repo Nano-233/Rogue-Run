@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
 
     private PlayerController _controller;
 
+    private AudioSource _source;
     private bool _fade;
     private int _index; //index of text in lines
     private Color _startColor; //of avatar
@@ -33,12 +34,14 @@ public class Dialogue : MonoBehaviour
         StartDialogue();
         _startColor = avatar.color;
         _controller.StopControls(false);
+        AudioSource.PlayClipAtPoint(_source.clip, new Vector3(-50, 0, 0), _source.volume);
     }
 
     private void Awake()
     {
         _controller = FindObjectOfType<PlayerController>();
         _thisImage = GetComponent<Image>();
+        _source = GetComponent<AudioSource>();
         og = _thisImage.color;
     }
 
@@ -124,6 +127,7 @@ public class Dialogue : MonoBehaviour
     
     private IEnumerator Fade()
     {
+        AudioSource.PlayClipAtPoint(_source.clip, new Vector3(-50, 0, 0), _source.volume);
         _fadeStarted = true;
         yield return new WaitForSeconds(1);
         _controller.StopControls(true);
