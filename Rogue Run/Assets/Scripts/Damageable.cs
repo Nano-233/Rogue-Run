@@ -193,6 +193,74 @@ public class Damageable : MonoBehaviour
 
         return false;
     }
+    
+    //hits the player
+    public bool Hit(int damage, Vector2 knockback, bool raw)
+    {
+        if (IsPlayer && !raw)
+        {
+            //perm dmg modifier minus the temporary damage reduced
+            damage = Convert.ToInt32(damage * (_dmgMod - _playerController.CalcTempMod()));
+            //swifty dodge chance
+            if (_playerController.DodgeChance > 0)
+            {
+                int roll = Random.Range(1, 101);
+                if (_playerController.DodgeChance >= roll)
+                {
+                    damage = 0;
+                    //no knockback either
+                    knockback = Vector2.zero;
+                }
+            }
+        }
+
+        if (IsAlive && !_isInvincible)
+        {
+            if (Health - damage < 0)
+            {
+                Health = 0;
+            }
+            else
+            {
+                if (damage > 0)
+                {
+                    Health -= damage;
+                }
+                else
+                {
+                    Health -= 0;
+                }
+            }
+
+            _isInvincible = true;
+
+            //notify other components damageable was hit and handle knockback.
+            IsHit = true;
+            damageableHit.Invoke(damage, knockback);
+            //floating text call
+            CharacterEvents.CharacterDamaged.Invoke(gameObject, damage);
+
+            //if has vanguard and got hit, revert.
+            if (_hasVangaurd && IsPlayer)
+            {
+                _hasVangaurd = false;
+                _dmgMod += _vanguardBuff;
+            }
+
+
+            //tutorial
+            if (IsPlayer && SceneManager.GetActiveScene().buildIndex == 1 && Health <= 0)
+            {
+                IsAlive = true;
+                Heal(MaxHealth);
+                _playerController.SpawnAtCheckpoint();
+            }
+
+            return true;
+        }
+
+        return false;
+    }
 
     //heals the player
     public void Heal(int healing)
@@ -233,7 +301,7 @@ public class Damageable : MonoBehaviour
         if (IsAlive)
         {
             _isInvincible = false;
-            Hit(MaxHealth, Vector2.zero);
+            Hit(Health, Vector2.zero, true);
         }
     }
 

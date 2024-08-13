@@ -446,7 +446,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == 12)
         {
             _damageable.RemoveInvincibility();
-            _damageable.Hit(_damageable.Health, Vector2.zero);
+            _damageable.KillSelf();
         }
     }
 

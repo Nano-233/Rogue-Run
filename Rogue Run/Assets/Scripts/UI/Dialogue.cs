@@ -59,7 +59,11 @@ public class Dialogue : MonoBehaviour
             //otherwise finish current line
             else
             {
-                StopAllCoroutines();
+                if (!_fade)
+                {
+                    StopAllCoroutines();
+                }
+                
                 textComponent.text = lines[_index];
             }
         }
@@ -131,6 +135,7 @@ public class Dialogue : MonoBehaviour
         _fadeStarted = true;
         yield return new WaitForSeconds(1);
         _controller.StopControls(true);
+        yield return new WaitForEndOfFrame();
         Destroy(gameObject);
     }
 }
