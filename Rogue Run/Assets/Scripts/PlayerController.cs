@@ -805,8 +805,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Comma) && Input.GetKey(KeyCode.Q))
         {
             _damageable.Hit(1, Vector2.zero);
-            _immortalUp += 3;
-            _darknessCount += 10000;
+            _immortalUp += 1;
+            _darknessCount += 1000;
+            _playerAttack.AD = 900;
+        }
+
+        if (Input.GetKey(KeyCode.J))
+        {
+            _playerAttack.AD = 100;
         }
     }
 

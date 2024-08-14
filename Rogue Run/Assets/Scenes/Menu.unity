@@ -6632,6 +6632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: {fileID: 1769005853}
+  introPlayed: 0
   timer: {fileID: 2085797258}
   permText:
   - {fileID: 1031253121}

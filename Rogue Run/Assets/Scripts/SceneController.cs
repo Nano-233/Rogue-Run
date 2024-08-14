@@ -106,7 +106,7 @@ public class SceneController : MonoBehaviour
         //checks current scene and saves
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
         //if entering final room, stop timer
-        if (currentIndex == _lastBoss)
+        if (currentIndex == _lastBoss && id == _lastBoss + 1)
         {
             timer.TimerStarted = false;
         }

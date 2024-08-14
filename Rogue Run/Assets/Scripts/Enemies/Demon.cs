@@ -194,7 +194,7 @@ public class Demon : MonoBehaviour, IEnemy
     {
         //Wait
         yield return new WaitForSeconds(2);
-        SceneController.instance.NextScene(12);
+        SceneController.instance.NextScene(22);
     }
     
     
